@@ -93,3 +93,16 @@ Il sito è in inglese come l'originale, rivolto soprattutto al pubblico american
 - Foto e filmati provengono dal sito originale; il manifest ne mantiene la provenienza. Non sono utilizzati contenuti sostitutivi generati.
 
 Dominio, notifiche email, sincronizzazione calendari e verifica dell'invio effettivo dei moduli si completano nell'account del cliente dopo il collegamento a Netlify.
+
+
+## Ricerca ville con mappa
+
+La voce “Plan your stay” nel menu e il richiamo generale portano alla collezione ville, con elenco e mappa affiancati su desktop e selettore List / Map su telefono. I filtri per destinazione, ospiti, camere, bagni e servizi aggiornano sia i risultati sia gli indicatori. Le date vengono riportate nella richiesta al team: non sono usate per dichiarare disponibilità confermata.
+
+La mappa usa Leaflet **1.9.4**, conservato in `public/assets/vendor/leaflet/` insieme alla licenza BSD, e le immagini cartografiche di OpenStreetMap. Non richiede chiavi API o servizi a pagamento. Si inizializza quando visibile; su telefono resta inattiva finché viene selezionata Map. L’attribuzione OpenStreetMap rimane visibile e le richieste rispettano il caricamento ordinario e la cache del browser, senza download massivi o pre-caricamento offline. Il servizio pubblico delle immagini non offre una garanzia di disponibilità; il provider è configurabile con `data-tile-url` in `src/finder.mjs`. La pagina Privacy descrive questa connessione esterna.
+
+Le coordinate provengono dai dati originali e indicano aree approssimative. Ville con coordinate identiche vengono raggruppate nel medesimo indicatore; le ville senza coordinate rimangono nell’elenco. I popup mostrano foto originali, capienza e camere, consentono di ritrovare la villa nell’elenco e aprono il modulo esistente con villa, ospiti e date già scelti. Non vengono inventati indirizzi, prezzi o disponibilità.
+
+La sezione “Other homes to fall for” propone fino a tre alternative non presenti nei risultati attualmente mostrati. Rispetta la capienza richiesta, preferisce zona e servizi affini e chiarisce che le altre preferenze possono differire. Si aggiorna quando cambiano i filtri o si espande l’elenco; scompare se non esistono alternative.
+
+Implementazione: `src/finder.mjs`, `public/assets/app.js`, `public/assets/villa-map.js` e `public/assets/villa-map.css`. Gli asset specifici della mappa vengono caricati solo sulla collezione ville. Su richiesta del cliente non sono stati eseguiti build, test locali o verifiche nel browser per questa modifica.

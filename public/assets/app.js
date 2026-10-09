@@ -68,6 +68,16 @@
       rows.forEach(row=>row.hidden=true);matches.slice(0,limit).forEach(i=>{rows[i].hidden=false;$('#home-results-grid').append(rows[i]);});
       const kind=type()==='villa'?(matches.length===1?'villa':'villas'):(matches.length===1?'experience':'experiences');$('#home-result-count').textContent=`${matches.length} ${kind}${type()==='villa'&&groupSize()?' for '+groupSize()+' guests':''}`;
       $('#home-search-empty').hidden=matches.length>0;$('#home-results-more').hidden=matches.length<=limit;
+      if(finder.dataset.searchMode==='villa'){
+        const visible=matches.slice(0,limit),selected=$$('input[name=amenity]:checked',homeForm).map(c=>c.value);
+        const score=item=>(city.value&&item.city===city.value?20:0)+selected.filter(a=>item.amenities.includes(a)).length*4+(item.bedrooms>=Number(bedrooms.value)?2:0)+(item.bathrooms>=Number(bathrooms.value)?2:0);
+        const alternatives=items.map((item,i)=>({item,i})).filter(({item,i})=>item.type==='villa'&&!visible.includes(i)&&item.sleeps>=groupSize()).sort((a,b)=>score(b.item)-score(a.item)||(groupSize()?a.item.sleeps-b.item.sleeps:a.i-b.i)).slice(0,3);
+        $$('[data-villa-suggestion]').forEach(row=>row.hidden=true);
+        alternatives.forEach(({i})=>{const row=$('[data-villa-suggestion="'+i+'"]');row.hidden=false;$('#villa-suggestions-grid').append(row);});
+        $('#villa-suggestions').hidden=!alternatives.length;
+        finder.villaResults={indices:[...matches],visible};
+        finder.dispatchEvent(new CustomEvent('villa:results',{detail:finder.villaResults}));
+      }
     }
     function findResults(){
       const selected=$$('input[name=amenity]:checked',homeForm).map(c=>c.value);
@@ -114,6 +124,14 @@
         $('#general-panel textarea[name=message]').value=`We would like to arrange ${button.dataset.topic} for ${adults.value} adults and ${children.value} children.`;
       }
     }));
+    finder.addEventListener('villa:reveal',e=>{
+      const index=Number(e.detail?.index),position=matches.indexOf(index);if(position<0)return;
+      limit=Math.max(limit,position+1);showResults();
+      $$('[data-home-result]').forEach(row=>row.classList.remove('is-map-selected'));
+      rows[index].classList.add('is-map-selected');
+      rows[index].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+      $('a',rows[index])?.focus({preventScroll:true});
+    });
     updateGuests();setType();
   }
   const search=$('#villa-search'),destination=$('#villa-destination');
