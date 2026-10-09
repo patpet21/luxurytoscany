@@ -8,7 +8,7 @@ http.createServer((req,res)=>{
   let file = path.resolve(root, '.' + decodeURIComponent(url.pathname));
   if (!file.startsWith(root + path.sep) && file !== root) {res.writeHead(403);res.end();return;}
   if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file,'index.html');
-  if (!fs.existsSync(file)) {res.writeHead(404,{'Content-Type':'text/html; charset=utf-8'});res.end(fs.readFileSync(path.join(root,'404.html')));return;}
+  if (!fs.existsSync(file)) {const fallback=path.join(root,'404.html');res.writeHead(fs.existsSync(fallback)?404:503,{'Content-Type':'text/html; charset=utf-8'});res.end(fs.existsSync(fallback)?fs.readFileSync(fallback):'Preview is rebuilding. Please reload shortly.');return;}
   const stat = fs.statSync(file);
   const range = req.headers.range;
   if (range && path.extname(file)==='.mp4') {

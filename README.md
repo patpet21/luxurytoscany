@@ -37,7 +37,11 @@ La fonte dei contenuti è `content/source.json`; `content/media-manifest.json` c
 
 ## Moduli e prenotazioni
 
-La home include una ricerca per ville oppure esperienze e servizi. Le ville si filtrano per testo, destinazione, numero minimo di camere e servizi combinabili (piscina, piscina riscaldata, Jacuzzi, aria condizionata, Wi-Fi, barbecue, ricarica EV e ascensore). Le esperienze si filtrano per testo e categoria. I servizi delle ville sono ricavati dalle descrizioni originali tramite `src/search.mjs`; i filtri non verificano la disponibilità nelle date del soggiorno.
+La home e le pagine delle collezioni includono una ricerca per ville oppure esperienze, senza dover conoscere il nome di una proprietà. Le ville si filtrano per destinazione, numero di adulti e bambini, camere, bagni e servizi combinabili. Capienza, camere e bagni sono recuperati dai campi esplicitamente etichettati nella pagina originale delle ville; i servizi sono ricavati dalle descrizioni tramite `src/finder.mjs`. Le date facoltative sono preferenze per la richiesta, non un controllo automatico della disponibilità: vengono trasferite al modulo insieme agli ospiti. Le esperienze si filtrano per interesse e contesto; il gruppo viene riportato nella richiesta senza campi data.
+
+La navigazione è divisa in ville, esperienze, destinazioni, famiglie e il team, con menu illustrati e collegamenti raggruppati. I filmati locali hanno 30 anteprime fotografiche estratte dal video originale: passaggio del mouse per un'anteprima silenziosa, uscita del mouse per fermarla e ripristinare l'immagine, pulsante per la visione con audio. Su dispositivi touch e con movimento ridotto resta la riproduzione esplicita. Rigenerare le immagini con `python scripts/video_posters.py` (richiede FFmpeg); i filmati non vengono modificati.
+
+CSS e JavaScript hanno URL con la versione del contenuto, così gli aggiornamenti non riutilizzano una copia precedente degli stili nella cache.
 
 **Plan a stay** richiede arrivo, partenza e numero di ospiti. La partenza deve essere successiva all'arrivo. **Ask a question** e le richieste su esperienze/proprietari non hanno campi data. Entrambi i moduli includono honeypot antispam e informativa privacy.
 
@@ -48,8 +52,8 @@ La sincronizzazione con gli altri siti richiede identificazione dei rispettivi g
 ## Modificare il sito
 
 - Contenuti, immagini e dati delle ville: `content/source.json`.
-- Struttura e componenti: `src/render.mjs`.
-- Grafica responsive: `public/assets/site.css`.
+- Struttura e componenti: `src/render.mjs`, `src/navigation.mjs`, `src/finder.mjs`.
+- Grafica responsive: `public/assets/site.css` e `public/assets/experience.css`.
 - Menu, moduli, filtri e gallerie: `public/assets/app.js`.
 - Generazione delle pagine, redirect, sitemap e informative: `scripts/build.mjs`.
 

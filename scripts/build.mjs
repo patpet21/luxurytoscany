@@ -1,8 +1,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import {adapt,render,normalizePath,imageSrc,paths} from '../src/render.mjs';
 const source=JSON.parse(fs.readFileSync('content/source.json','utf8'));
+source.assetVersion=Object.fromEntries(['site.css','app.js','experience.css'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync('public/assets/'+file)).digest('hex').slice(0,12)]));
 let pages=adapt(source);
+const posters=JSON.parse(fs.readFileSync('content/video-posters.json','utf8'));
+for(const p of pages)for(const v of p.videos||[]){v.poster=posters.find(f=>f.video===v.local)?.poster||v.poster;}
 const known=new Map(pages.map(p=>[p.path,p]));
 function localLinks(html='') {
   return html.replace(/href="https?:\/\/(?:www\.)?supertuscany\.org([^"#]*)(#[^"]*)?"/g,(m,p,h)=>`href="${p||'/'}${h||''}"`)
