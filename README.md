@@ -37,6 +37,8 @@ La fonte dei contenuti è `content/source.json`; `content/media-manifest.json` c
 
 ## Moduli e prenotazioni
 
+La home include una ricerca per ville oppure esperienze e servizi. Le ville si filtrano per testo, destinazione, numero minimo di camere e servizi combinabili (piscina, piscina riscaldata, Jacuzzi, aria condizionata, Wi-Fi, barbecue, ricarica EV e ascensore). Le esperienze si filtrano per testo e categoria. I servizi delle ville sono ricavati dalle descrizioni originali tramite `src/search.mjs`; i filtri non verificano la disponibilità nelle date del soggiorno.
+
 **Plan a stay** richiede arrivo, partenza e numero di ospiti. La partenza deve essere successiva all'arrivo. **Ask a question** e le richieste su esperienze/proprietari non hanno campi data. Entrambi i moduli includono honeypot antispam e informativa privacy.
 
 I moduli raccolgono richieste: non confermano prenotazioni, non incassano pagamenti e non bloccano automaticamente i calendari. I calendari Google sono quelli già collegati sul sito originale; vengono caricati solo su richiesta. Per Villa Roncovisi è preservato anche il feed iCal originale.

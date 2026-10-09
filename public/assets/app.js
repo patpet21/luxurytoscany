@@ -33,6 +33,23 @@
   $('.photo-close')?.addEventListener('click',()=>closeDialog(photoDialog));$('.photo-prev')?.addEventListener('click',()=>displayPhoto(current-1));$('.photo-next')?.addEventListener('click',()=>displayPhoto(current+1));
   document.addEventListener('keydown',e=>{if(photoDialog?.open){if(e.key==='ArrowLeft')displayPhoto(current-1);if(e.key==='ArrowRight')displayPhoto(current+1);}});
   let startX=0;photoDialog?.addEventListener('touchstart',e=>{startX=e.changedTouches[0].screenX;},{passive:true});photoDialog?.addEventListener('touchend',e=>{const diff=e.changedTouches[0].screenX-startX;if(Math.abs(diff)>50)displayPhoto(current+(diff<0?1:-1));},{passive:true});
+  const homeForm=$('#home-search-form');
+  if(homeForm){
+    const items=JSON.parse($('#home-search-data').textContent);
+    const results=$('#home-search-results'),rows=$$('[data-home-result]');
+    const keyword=$('#home-keyword'),city=$('#home-destination'),category=$('#home-category'),bedrooms=$('#home-bedrooms');
+    let matches=[],limit=6,searched=false;
+    const normalized=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,'').replace(/florence/g,'firenze').trim();
+    function showResults(){rows.forEach(row=>row.hidden=true);matches.slice(0,limit).forEach(i=>rows[i].hidden=false);$('#home-result-count').textContent=`${matches.length} ${matches.length===1?'match':'matches'} found`;$('#home-search-empty').hidden=matches.length>0;$('#home-results-more').hidden=matches.length<=limit;}
+    function findResults(){const type=homeForm.elements['search-type'].value;const terms=normalized(keyword.value).split(/\s+/).filter(Boolean);const selected=$$('input[name=amenity]:checked',homeForm).map(c=>c.value);matches=items.flatMap((item,i)=>{if(item.type!==type)return [];const haystack=normalized(item.text);if(!terms.every(t=>haystack.includes(t)))return [];if(type==='villa'&&((city.value&&item.city!==city.value)||item.bedrooms<Number(bedrooms.value)||!selected.every(a=>item.amenities.includes(a))))return [];if(type==='experience'&&category.value&&item.category!==category.value)return [];return [i];});limit=6;results.hidden=false;showResults();}
+    function setType(){const villa=homeForm.elements['search-type'].value==='villa';$('#home-destination-field').hidden=!villa;$('#home-category-field').hidden=villa;$('#home-villa-filters').hidden=!villa;keyword.placeholder=villa?'Villa name, destination or an amenity':'Cooking, wine, tours or a personal service';if(searched)findResults();}
+    homeForm.addEventListener('submit',e=>{e.preventDefault();searched=true;findResults();results.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});});
+    $$('input[name=search-type]',homeForm).forEach(input=>input.addEventListener('change',setType));
+    homeForm.addEventListener('change',e=>{if(searched&&e.target.name!=='search-type')findResults();});
+    keyword.addEventListener('input',()=>{if(searched)findResults();});
+    $('#home-results-more').addEventListener('click',()=>{limit+=6;showResults();});
+    $('#home-search-reset').addEventListener('click',()=>{homeForm.reset();setType();findResults();keyword.focus();});
+  }
   const search=$('#villa-search'),destination=$('#villa-destination');
   function filterVillas(){const term=(search?.value||'').toLowerCase().trim();const city=(destination?.value||'').toLowerCase();let count=0;$$('.villa-card').forEach(c=>{const haystack=`${c.dataset.name} ${c.dataset.location}`;const matches=haystack.includes(term)&&(!city||haystack.includes(city)||(city==='firenze'&&haystack.includes('florence')));c.hidden=!matches;if(matches)count++;});$('#result-count').textContent=count;$('#no-results').hidden=count>0;}
   search?.addEventListener('input',filterVillas);destination?.addEventListener('change',filterVillas);
