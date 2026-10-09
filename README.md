@@ -65,7 +65,13 @@ About ha un impaginato dedicato: paesaggio originale, racconto in capitoli, foto
 
 Per queste modifiche, su richiesta del cliente, **non sono stati eseguiti build, test locali o verifiche nel browser**. Il deploy Netlify compila le nuove pagine.
 
-## File principali
+## Grafica luxury
+
+La direzione visiva usa avorio caldo, tonalità scure e dettagli in ottone, con la tipografia serif e sans già ospitata nel sito. Titoli ampi, spaziature editoriali, fotografie verticali nella collezione, cornici sottili, ricerca essenziale e sezioni scure per esperienze e servizio personale. Lo stile è esteso a menu, pagine delle proprietà, gallerie, filmati, About, moduli e concierge, con adattamenti per tablet e telefono e rispetto delle preferenze di movimento ridotto.
+
+`public/assets/luxury.css` viene caricato dopo gli stili esistenti e usa una versione basata sul contenuto, così ogni deploy aggiorna anche la cache. Questa modifica riguarda la presentazione: struttura, ordine delle sezioni, logo, testi, file fotografici e video, filtri, anteprime al passaggio del mouse, moduli, WhatsApp e telefono sono conservati. Nessun servizio AI o altro servizio esterno aggiunto. Su richiesta del cliente non sono stati eseguiti build, test locali o controlli nel browser per questa modifica grafica.
+
+## File da modificare
 
 - Contenuti, immagini e dati delle ville: `content/source.json`.
 - Struttura e componenti: `src/render.mjs`, `src/navigation.mjs`, `src/finder.mjs`.
@@ -74,6 +80,7 @@ Per queste modifiche, su richiesta del cliente, **non sono stati eseguiti build,
 - Generazione delle pagine, redirect, sitemap e informative: `scripts/build.mjs`.
 - About: `src/about.mjs`; concierge: `src/concierge.mjs`, `public/assets/concierge.js`, `public/assets/concierge-engine.js`.
 - Stili About e concierge: `public/assets/story-concierge.css`.
+- Direzione visiva luxury per tutte le pagine: `public/assets/luxury.css`.
 
 Il sito è in inglese come l'originale, rivolto soprattutto al pubblico americano. Non include ancora un pannello CMS per modifiche autonome del cliente; può essere aggiunto successivamente.
 
