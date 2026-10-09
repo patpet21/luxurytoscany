@@ -7,3 +7,4 @@ content/source-html/
 __pycache__/
 *.log
 .cache/
+content/concierge-knowledge.json

@@ -1,0 +1,19 @@
+export function aboutContent(page,{esc,imageSrc,gallery,journeyCTA}) {
+  const paragraphs=(page.sections?.[0]?.html||'').match(/<p\b[^>]*>[\s\S]*?<\/p>/gi)||[];
+  const strip=page.images.find(i=>/top half/i.test(i.alt||''))||page.images[0];
+  const landscape=page.images.find(i=>/Jarno/i.test(i.alt||''));
+  const map=page.images.find(i=>/map of Italy/i.test(i.alt||''));
+  const hills=page.images.find(i=>/Silhouette/i.test(i.alt||''));
+  const moment=(frame,caption)=>`<figure class="story-photo"><div class="story-moment"><img src="${esc(imageSrc(strip))}" alt="${esc(caption)}" loading="lazy" decoding="async" style="top:-${frame*100}%"></div><figcaption>${esc(caption)}</figcaption></figure>`;
+  return `<div class="about-story">
+    <section class="story-opening"><div class="story-opening-copy"><p class="eyebrow">OUR STORY / SUPER TUSCANY</p><h1>A place we call home.<br>A feeling we want<br>to <em>share.</em></h1><p>Born in Tuscany. Inspired by friendship.<br>Created to bring you a little closer.</p><a class="text-link" href="#meet-christian">Meet the people behind your journey <span aria-hidden="true">↓</span></a></div><figure class="story-landscape"><img src="${esc(imageSrc(landscape))}" alt="Tuscan hills and cypress trees at sunset" fetchpriority="high" decoding="async"><figcaption>Tuscany, where our story begins.</figcaption></figure></section>
+    <section class="story-introduction"><p class="eyebrow">MORE THAN A DESTINATION</p><h2>It begins with a love<br>for <em>where we come from.</em></h2><div class="prose">${paragraphs[0]||''}</div></section>
+    <section class="story-chapter" id="meet-christian">${moment(0,'Christian Ferrara, at home in Italy.')}<div class="story-chapter-copy"><span class="story-number">01 / THE FOUNDER</span><h2>Meet Christian.<br><em>Hospitality is personal.</em></h2><div class="prose">${paragraphs[1]||''}</div><span class="story-signature">Christian Ferrara<span>Founder, Super Tuscany</span></span></div></section>
+    <section class="story-chapter story-chapter-reverse">${moment(1,'Friends, familiar faces and a warm Italian welcome.')}<div class="story-chapter-copy"><span class="story-number">02 / THE IDEA</span><h2>From a conversation<br>to <em>a different kind of journey.</em></h2><div class="prose">${paragraphs[2]||''}</div></div></section>
+    <section class="story-interlude">${map?`<img class="story-map" src="${esc(imageSrc(map))}" alt="Vintage map of Italy" loading="lazy">`:''}<p class="eyebrow">THE TUSCANY WE WANT YOU TO KNOW</p><p class="story-quote">The places are beautiful.<br><em>The people make them unforgettable.</em></p><a class="text-link" href="/unforgettable-experience">Discover our local experiences ↗</a></section>
+    <section class="story-chapter">${moment(3,'Christian and friends: local connections at the heart of Super Tuscany.')}<div class="story-chapter-copy"><span class="story-number">03 / OUR PEOPLE</span><h2>A shared home.<br><em>A shared passion.</em></h2><div class="prose">${paragraphs[3]||''}</div><a class="text-link" href="/contact">Start a conversation with our team ↗</a></div></section>
+    <section class="story-values"><div><p class="eyebrow">THE WAY WE WELCOME YOU</p><h2>Four values.<br><em>One personal promise.</em></h2><div class="story-value-list"><span>Passion</span><span>Honesty</span><span>Professionalism</span><span>Trustworthiness</span></div><div class="prose">${paragraphs.slice(4).join('')}</div></div>${moment(2,'Family, friendship and the joy of sharing everyday life.')}</section>
+    ${hills?`<img class="story-hills" src="${esc(imageSrc(hills))}" alt="Illustration of the Tuscan countryside" loading="lazy">`:''}
+    <div class="section story-archive"><details><summary>Photographs from our story <span aria-hidden="true">+</span></summary>${gallery(page,false)}</details></div>
+  </div>${journeyCTA()}`;
+}

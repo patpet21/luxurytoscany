@@ -19,6 +19,14 @@
     $('#inquiry-subtitle').textContent=booking?'Share your dates. We’ll confirm availability and prepare a personal quote.':'A question about an experience, a villa or anything else? We’re here to help.';
   }
   $$('[data-inquiry]').forEach(b=>b.addEventListener('click',()=>{chooseForm(b.dataset.inquiry);if(b.dataset.property){const select=$('select[name="villa"]',inquiry);select.value=b.dataset.property;$('#general-panel input[name="topic"]').value=b.dataset.property;}if(b.dataset.topic)$('#general-panel input[name="topic"]').value=b.dataset.topic;showDialog(inquiry);nav?.classList.remove('open');toggle?.setAttribute('aria-expanded','false');}));
+  document.addEventListener('concierge:inquiry',event=>{
+    const detail=event.detail||{},kind=detail.kind==='booking'?'booking':'general';chooseForm(kind);
+    const panel=$(kind==='booking'?'#booking-panel':'#general-panel');
+    $('textarea[name="message"]',panel).value=String(detail.message||'').slice(0,6000);
+    if(kind==='general')$('input[name="topic"]',panel).value=String(detail.topic||'Concierge enquiry').slice(0,200);
+    else if(detail.adults){$('input[name="adults"]',panel).value=String(Math.max(1,Math.min(100,Number(detail.adults)||2)));$('input[name="children"]',panel).value=String(Math.max(0,Math.min(100,Number(detail.children)||0)));}
+    showDialog(inquiry);
+  });
   $$('[data-form-tab]').forEach(b=>{b.addEventListener('click',()=>chooseForm(b.dataset.formTab));b.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const target=b.dataset.formTab==='booking'?$('#general-tab'):$('#booking-tab');target.click();target.focus();}});});
   $('[data-close-dialog]')?.addEventListener('click',()=>closeDialog(inquiry));
   $$('dialog').forEach(d=>{d.addEventListener('cancel',()=>document.body.classList.remove('modal-open'));d.addEventListener('click',e=>{if(e.target!==d)return;const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDialog(d);});});
