@@ -53,15 +53,15 @@ La sincronizzazione con gli altri siti richiede identificazione dei rispettivi g
 
 Il concierge è presente in tutte le pagine, con schede delle ville e delle esperienze originali, preferenze mantenute durante la conversazione, risposte alle principali FAQ e passaggio al modulo Netlify. La conversazione viene riportata nel messaggio: il visitatore la rivede, inserisce i contatti e invia personalmente. Le richieste generali e sulle esperienze non chiedono date. La chat non è una conversazione in diretta con un operatore e non invia richieste automaticamente.
 
-Senza configurazione esterna funziona come **guida del sito**, con risposte e filtri in italiano/inglese basati sul catalogo, senza AI generativa. Per attivare risposte AI multilingue, aggiungere **OPENAI_API_KEY** nelle variabili d'ambiente Netlify con scope **Functions**, quindi ridistribuire il sito. È opzionale **OPENAI_MODEL**; il valore predefinito è `gpt-4.1-mini-2025-04-14`. La chiave resta nel backend, mai nel browser o nel repository. Le chiamate API hanno un costo sul relativo account. Il visitatore sceglie la modalità AI; solo allora i messaggi vengono inviati a OpenAI. La conversazione resta in memoria nella scheda, senza cookie o localStorage, e “Start again” la azzera. `store: false` è impostato sulle chiamate API, senza promettere l'assenza dei log tecnici del fornitore.
+Il concierge funziona interamente nel browser come **guida del sito**, con risposte e filtri in italiano/inglese basati sul catalogo. Non richiede chiavi API, abbonamenti AI o servizi AI a pagamento. Usa regole e contenuti pubblicati: riconosce preferenze e domande previste; per domande senza risposta verificata propone di contattare il team. Non è un'AI generativa.
 
-La funzione `netlify/functions/concierge.mjs` usa la Responses API e risposte strutturate, limita dimensioni e cronologia, verifica i collegamenti contro il catalogo e ha rate limiting Netlify per IP/dominio. In caso di errore o chiave assente resta la guida del sito. Il catalogo pubblico e quello della funzione vengono generati insieme da `src/concierge.mjs` durante `npm run build`; `content/concierge-knowledge.json` è un file generato escluso da Git, disponibile prima del bundling delle funzioni.
+Il catalogo pubblico viene generato da `src/concierge.mjs` durante `npm run build` e caricato dal sito stesso. La conversazione resta in memoria nella scheda, senza cookie o localStorage, e “Start again” la azzera. I messaggi vengono riportati nel modulo solo quando il visitatore sceglie di preparare una richiesta; l'invio al team avviene con il normale modulo Netlify.
 
 **Prezzi e disponibilità aggiornati non sono collegati**: il concierge indirizza queste domande al team e non conferma prenotazioni. Per interrogarli occorre prima identificare e collegare il gestionale/API delle proprietà.
 
 About ha un impaginato dedicato: paesaggio originale, racconto in capitoli, foto di Christian e amici distribuite lungo lo scorrimento, mappa e valori. Le foto vengono mostrate nei singoli riquadri della striscia originale tramite CSS; i file originali e la galleria completa sono preservati. Nessuno scorrimento forzato o animazione indispensabile.
 
-Per questa modifica, su richiesta del cliente, **non sono stati eseguiti build, test locali o verifiche nel browser**. Il deploy Netlify compila le nuove pagine e la funzione.
+Per queste modifiche, su richiesta del cliente, **non sono stati eseguiti build, test locali o verifiche nel browser**. Il deploy Netlify compila le nuove pagine.
 
 ## File principali
 
@@ -70,7 +70,7 @@ Per questa modifica, su richiesta del cliente, **non sono stati eseguiti build, 
 - Grafica responsive: `public/assets/site.css` e `public/assets/experience.css`.
 - Menu, moduli, filtri e gallerie: `public/assets/app.js`.
 - Generazione delle pagine, redirect, sitemap e informative: `scripts/build.mjs`.
-- About: `src/about.mjs`; concierge: `src/concierge.mjs`, `public/assets/concierge.js`, `public/assets/concierge-engine.js`, `netlify/functions/concierge.mjs`.
+- About: `src/about.mjs`; concierge: `src/concierge.mjs`, `public/assets/concierge.js`, `public/assets/concierge-engine.js`.
 - Stili About e concierge: `public/assets/story-concierge.css`.
 
 Il sito è in inglese come l'originale, rivolto soprattutto al pubblico americano. Non include ancora un pannello CMS per modifiche autonome del cliente; può essere aggiunto successivamente.
