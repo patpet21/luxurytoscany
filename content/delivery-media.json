@@ -1,0 +1,186 @@
+[
+  {
+    "file": "181c661e631129329a.mp4",
+    "optimized": true,
+    "originalBytes": 7819080,
+    "bytes": 5225346,
+    "durationPreserved": true
+  },
+  {
+    "file": "1a7755b51675a29e5d.mp4",
+    "optimized": false,
+    "bytes": 3416461
+  },
+  {
+    "file": "1cbf8848cbd988c741.mp4",
+    "optimized": false,
+    "bytes": 1591314
+  },
+  {
+    "file": "27d550da8b57cb9677.mp4",
+    "optimized": false,
+    "bytes": 3498542
+  },
+  {
+    "file": "2b0bbed6303ed8429a.mp4",
+    "optimized": false,
+    "bytes": 4252478
+  },
+  {
+    "file": "2bb6a2bc9ac32b2461.mp4",
+    "optimized": true,
+    "originalBytes": 8616141,
+    "bytes": 4296300,
+    "durationPreserved": true
+  },
+  {
+    "file": "2c25e5703744ce9fa1.mp4",
+    "optimized": false,
+    "bytes": 1151366
+  },
+  {
+    "file": "3d82d5ca09cc19b850.mp4",
+    "optimized": true,
+    "originalBytes": 6927249,
+    "bytes": 3162395,
+    "durationPreserved": true
+  },
+  {
+    "file": "4b9680e1efc13d8a23.mp4",
+    "optimized": true,
+    "originalBytes": 61082328,
+    "bytes": 35986878,
+    "durationPreserved": true
+  },
+  {
+    "file": "4df2ad5540ed17be35.mp4",
+    "optimized": true,
+    "originalBytes": 45038510,
+    "bytes": 35604698,
+    "durationPreserved": true
+  },
+  {
+    "file": "629ddfbf957c95f620.mp4",
+    "optimized": false,
+    "bytes": 7565725
+  },
+  {
+    "file": "6932a30cd359a80ac4.mp4",
+    "optimized": false,
+    "bytes": 5776876
+  },
+  {
+    "file": "763808ab573d06ced5.mp4",
+    "optimized": true,
+    "originalBytes": 19520571,
+    "bytes": 12622683,
+    "durationPreserved": true
+  },
+  {
+    "file": "8a5c7a02ecbbd8b1e5.mp4",
+    "optimized": false,
+    "bytes": 4081554
+  },
+  {
+    "file": "8db1ab61c1c3301543.mp4",
+    "optimized": true,
+    "originalBytes": 18863063,
+    "bytes": 14888318,
+    "durationPreserved": true
+  },
+  {
+    "file": "92768d10289833719f.mp4",
+    "optimized": true,
+    "originalBytes": 30186427,
+    "bytes": 19501714,
+    "durationPreserved": true
+  },
+  {
+    "file": "9fed6c4669a45ff683.mp4",
+    "optimized": true,
+    "originalBytes": 12360120,
+    "bytes": 7484655,
+    "durationPreserved": true
+  },
+  {
+    "file": "a11ba71fd3c3430a15.mp4",
+    "optimized": true,
+    "originalBytes": 52017035,
+    "bytes": 28748976,
+    "durationPreserved": true
+  },
+  {
+    "file": "b06176c4d28cfb3bd1.mp4",
+    "optimized": false,
+    "bytes": 3404080
+  },
+  {
+    "file": "bb973b8e9ad91978fc.mp4",
+    "optimized": true,
+    "originalBytes": 53595982,
+    "bytes": 34595504,
+    "durationPreserved": true
+  },
+  {
+    "file": "bd027edccebd8314af.mp4",
+    "optimized": true,
+    "originalBytes": 10512655,
+    "bytes": 5440835,
+    "durationPreserved": true
+  },
+  {
+    "file": "d5b79a709ea132392e.mp4",
+    "optimized": true,
+    "originalBytes": 25120130,
+    "bytes": 18793164,
+    "durationPreserved": true
+  },
+  {
+    "file": "d8fbdafcfb92d099b6.mp4",
+    "optimized": false,
+    "bytes": 45270896
+  },
+  {
+    "file": "d938fbda6c429942d1.mp4",
+    "optimized": true,
+    "originalBytes": 19420292,
+    "bytes": 11850240,
+    "durationPreserved": true
+  },
+  {
+    "file": "df667ff00ad2d3c3be.mp4",
+    "optimized": true,
+    "originalBytes": 7620303,
+    "bytes": 4374271,
+    "durationPreserved": true
+  },
+  {
+    "file": "e1aa194fec4e4c30df.mp4",
+    "optimized": true,
+    "originalBytes": 19180537,
+    "bytes": 12229489,
+    "durationPreserved": true
+  },
+  {
+    "file": "e3d00ab67de2f3c803.mp4",
+    "optimized": false,
+    "bytes": 2011374
+  },
+  {
+    "file": "ef0452ed83ece7a385.mp4",
+    "optimized": true,
+    "originalBytes": 16925611,
+    "bytes": 7574826,
+    "durationPreserved": true
+  },
+  {
+    "file": "f31fbaa601e9dec487.mp4",
+    "optimized": false,
+    "bytes": 930163
+  },
+  {
+    "file": "f6002f348250b00513.mp4",
+    "optimized": false,
+    "bytes": 7199361
+  }
+]

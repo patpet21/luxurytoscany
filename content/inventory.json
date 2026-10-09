@@ -1,0 +1,693 @@
+{
+  "pageCount": 75,
+  "imageCount": 1095,
+  "uniqueMedia": 1048,
+  "downloadedMedia": 1048,
+  "videoCount": 43,
+  "uniqueVideoCount": 30,
+  "totalAssetBytes": 922103143,
+  "errors": [],
+  "pages": [
+    {
+      "path": "/",
+      "title": "Unforgettable Experiences by Local Guides",
+      "category": "home",
+      "sections": 5,
+      "images": 13,
+      "videos": 2,
+      "tables": 0
+    },
+    {
+      "path": "/a-meal-with-an-italian-family",
+      "title": "A Meal with an Italian Family",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/about",
+      "title": "About",
+      "category": "about",
+      "sections": 1,
+      "images": 6,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/accessibility-statement",
+      "title": "Accessibility Statement",
+      "category": "legal",
+      "sections": 1,
+      "images": 0,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/adventure-parks",
+      "title": "Adventure Parks",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/beach-days",
+      "title": "Beach Days",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/bike-tours",
+      "title": "Bike Tours",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/bistecca-alla-fiorentina",
+      "title": "Bistecca alla Fiorentina",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/boboli-garden",
+      "title": "Boboli Gardens",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/chestnut-harvest",
+      "title": "Chestnut Harvest",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/chianti-sculpture-park",
+      "title": "Chianti Sculpture Park",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/children-museum",
+      "title": "Children's Museums",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/cigar-factories",
+      "title": "Cigar Factories",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/collodi-butterfly-house",
+      "title": "Collodi Butterfly House (Casa delle Farfalle)",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/cookie-policy",
+      "title": "Cookie Policy",
+      "category": "legal",
+      "sections": 21,
+      "images": 0,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/cooking-classes",
+      "title": "Cooking Classes",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/copy-of-a-meal-with-an-italian-family",
+      "title": "Tuscany Museums",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/copy-of-videos",
+      "title": "Photo Gallery",
+      "category": "gallery",
+      "sections": 0,
+      "images": 26,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/courses",
+      "title": "Packages",
+      "category": "packages",
+      "sections": 4,
+      "images": 4,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/courses/don't-worry",
+      "title": "Don't Worry",
+      "category": "package",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/courses/food-package-",
+      "title": "Food Package",
+      "category": "package",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/courses/nature",
+      "title": "Nature",
+      "category": "package",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/courses/wines-&-culture-",
+      "title": "Wines & Culture",
+      "category": "package",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/cycling-tours",
+      "title": "Cycling Tours",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/destinations",
+      "title": "Destinations",
+      "category": "destinations",
+      "sections": 1,
+      "images": 9,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/destinations/arezzo",
+      "title": "Arezzo",
+      "category": "city",
+      "sections": 5,
+      "images": 3,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/destinations/firenze",
+      "title": "Firenze",
+      "category": "city",
+      "sections": 4,
+      "images": 2,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/destinations/grosseto",
+      "title": "Grosseto",
+      "category": "city",
+      "sections": 4,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/destinations/lucca",
+      "title": "Lucca",
+      "category": "city",
+      "sections": 4,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/destinations/pisa",
+      "title": "Pisa",
+      "category": "city",
+      "sections": 7,
+      "images": 5,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/destinations/pistoia",
+      "title": "Pistoia",
+      "category": "city",
+      "sections": 5,
+      "images": 3,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/destinations/siena",
+      "title": "Siena",
+      "category": "city",
+      "sections": 5,
+      "images": 3,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/everything-you-need-to-know-about-villa-rentals",
+      "title": "FAQs",
+      "category": "about",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/festivals-and-entertainment",
+      "title": "Countryside Festivals & Entertainments",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/for-villa-owners",
+      "title": "Rent Your Villa through Super Tuscany",
+      "category": "about",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/hiking",
+      "title": "Hiking",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/honey-tasting",
+      "title": "Honey Tasting",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/ice-cream-days",
+      "title": "Ice Cream Days",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/indoors",
+      "title": "Experience the Indoors of Tuscany",
+      "category": "experience",
+      "sections": 1,
+      "images": 10,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/jewelry",
+      "title": "Jewelry",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/leaning-tower-of-pisa",
+      "title": "Leaning Tower of Pisa",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/museo-leonardiano",
+      "title": "Museo Leonardiano",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/olive-oil-testing",
+      "title": "Olive Oil Tasting",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/outdoors",
+      "title": "Experience the Outdoors of Tuscany",
+      "category": "experience",
+      "sections": 1,
+      "images": 12,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/packages",
+      "title": "Packages",
+      "category": "packages",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/personal-chefs",
+      "title": "Personal Chefs",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/personal-trainer",
+      "title": "Personal Trainers",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/pinocchio-park",
+      "title": "Pinocchio Park (Parco di Pinocchio)",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/pistoia-zoo",
+      "title": "Pistoia Zoo (Zoo di Pistoia)",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/pizza-making-classes",
+      "title": "Pizza-Making Classes",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 1,
+      "tables": 0
+    },
+    {
+      "path": "/privacy-policy",
+      "title": "Privacy Policy",
+      "category": "legal",
+      "sections": 74,
+      "images": 0,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/properties",
+      "title": "Our Villas",
+      "category": "villas",
+      "sections": 12,
+      "images": 11,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/properties/palazzo-rosadi",
+      "title": "Palazzo Rosadi",
+      "category": "villa",
+      "sections": 13,
+      "images": 90,
+      "videos": 1,
+      "tables": 1
+    },
+    {
+      "path": "/properties/villa-casciano",
+      "title": "Villa Casciano",
+      "category": "villa",
+      "sections": 13,
+      "images": 66,
+      "videos": 1,
+      "tables": 1
+    },
+    {
+      "path": "/properties/villa-de’-michelangioli",
+      "title": "Villa De’ Michelangioli",
+      "category": "villa",
+      "sections": 13,
+      "images": 171,
+      "videos": 1,
+      "tables": 1
+    },
+    {
+      "path": "/properties/villa-dell’angelo",
+      "title": "Villa dell’Angelo",
+      "category": "villa",
+      "sections": 13,
+      "images": 82,
+      "videos": 1,
+      "tables": 1
+    },
+    {
+      "path": "/properties/villa-ginestra",
+      "title": "Villa Ginestra",
+      "category": "villa",
+      "sections": 13,
+      "images": 77,
+      "videos": 1,
+      "tables": 1
+    },
+    {
+      "path": "/properties/villa-girasole",
+      "title": "Villa Girasole",
+      "category": "villa",
+      "sections": 13,
+      "images": 83,
+      "videos": 1,
+      "tables": 1
+    },
+    {
+      "path": "/properties/villa-guardistallo",
+      "title": "Villa Guardistallo",
+      "category": "villa",
+      "sections": 13,
+      "images": 65,
+      "videos": 1,
+      "tables": 1
+    },
+    {
+      "path": "/properties/villa-roncovisi",
+      "title": "Villa Roncovisi",
+      "category": "villa",
+      "sections": 13,
+      "images": 80,
+      "videos": 1,
+      "tables": 1
+    },
+    {
+      "path": "/properties/villa-sant'andrea",
+      "title": "Villa Sant'Andrea",
+      "category": "villa",
+      "sections": 13,
+      "images": 37,
+      "videos": 1,
+      "tables": 1
+    },
+    {
+      "path": "/properties/villa-torre-del-cielo",
+      "title": "Villa Torre del Cielo",
+      "category": "villa",
+      "sections": 13,
+      "images": 56,
+      "videos": 1,
+      "tables": 1
+    },
+    {
+      "path": "/properties/villa-volterra",
+      "title": "Villa Volterra",
+      "category": "villa",
+      "sections": 13,
+      "images": 78,
+      "videos": 1,
+      "tables": 1
+    },
+    {
+      "path": "/see-tuscany",
+      "title": "See Tuscany",
+      "category": "destinations",
+      "sections": 2,
+      "images": 3,
+      "videos": 1,
+      "tables": 0
+    },
+    {
+      "path": "/shopping-and-crafts",
+      "title": "100% Made in Italy Shopping & Crafts",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/truffle-tasting",
+      "title": "Truffle Tasting",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/tuscany-culture-and-museums",
+      "title": "Tuscany Culture",
+      "category": "experience",
+      "sections": 2,
+      "images": 2,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/tuscany-farms",
+      "title": "Tuscany Farms",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/tuscany-villas-for-rent",
+      "title": "Our Villas",
+      "category": "villas",
+      "sections": 12,
+      "images": 11,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/tuscany-with-your-children",
+      "title": "Enjoy Tuscany with Your Children",
+      "category": "experience",
+      "sections": 2,
+      "images": 14,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/unforgettable-experience",
+      "title": "Unforgettable Experiences",
+      "category": "experience",
+      "sections": 2,
+      "images": 12,
+      "videos": 4,
+      "tables": 0
+    },
+    {
+      "path": "/videos",
+      "title": "Videos",
+      "category": "gallery",
+      "sections": 0,
+      "images": 17,
+      "videos": 24,
+      "tables": 0
+    },
+    {
+      "path": "/why-supertuscany",
+      "title": "Why Super Tuscany",
+      "category": "about",
+      "sections": 5,
+      "images": 3,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/wine-experts",
+      "title": "Wine Experts",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    },
+    {
+      "path": "/wine-tasting",
+      "title": "Wine Tasting",
+      "category": "experience",
+      "sections": 1,
+      "images": 1,
+      "videos": 0,
+      "tables": 0
+    }
+  ],
+  "delivery": {
+    "files": 1048,
+    "bytes": 769677401,
+    "videos": 30,
+    "originalFootagePreserved": true
+  }
+}
