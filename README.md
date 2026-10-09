@@ -8,7 +8,7 @@ Ricostruzione del sito **supertuscany.org** con grafica editoriale, contenuti e 
 2. Seleziona `patpet21/luxurytoscany`, branch `main`.
 3. Build command: `npm run build`. Publish directory: `dist`. Node: `22`.
 4. Il file `netlify.toml` contiene già queste impostazioni.
-5. Abilita **form detection** nella sezione Forms, poi esegui un deploy. I moduli rilevati devono essere `stay-request` e `information-request`.
+5. Abilita **form detection** nella sezione Forms, poi esegui un deploy. I moduli rilevati devono essere `stay-request`, `information-request` e `concierge-message`.
 6. Configura le notifiche dei moduli verso l'indirizzo scelto dal cliente. Fai una richiesta di prova sul sito pubblicato e controlla che compaia in Forms. Nessuna email viene inviata direttamente dal browser.
 
 Il sito contiene numerosi media originali: usa l'importazione Git, non il caricamento manuale del repository completo nel browser.
@@ -56,6 +56,8 @@ Il concierge è presente in tutte le pagine, con schede delle ville e delle espe
 Il concierge funziona interamente nel browser come **guida del sito**, con risposte e filtri in italiano/inglese basati sul catalogo. Non richiede chiavi API, abbonamenti AI o servizi AI a pagamento. Usa regole e contenuti pubblicati: riconosce preferenze e domande previste; per domande senza risposta verificata propone di contattare il team. Non è un'AI generativa.
 
 Il catalogo pubblico viene generato da `src/concierge.mjs` durante `npm run build` e caricato dal sito stesso. La conversazione resta in memoria nella scheda, senza cookie o localStorage, e “Start again” la azzera. I messaggi vengono riportati nel modulo solo quando il visitatore sceglie di preparare una richiesta; l'invio al team avviene con il normale modulo Netlify.
+
+Nel box concierge sono sempre visibili WhatsApp (link fornito dal cliente) e il telefono **+1 917 724 3124**. La scheda **Leave a message** contiene il modulo rapido `concierge-message`, con email e messaggio obbligatori, consenso privacy e honeypot. Non chiede nomi o date. Il visitatore scrive e invia direttamente al team tramite Netlify Forms; non viene simulata una risposta di un operatore. Le richieste generali dalla guida aprono questo box, precompilando l'ultima domanda se il campo è vuoto. Le richieste esplicite di soggiorno mantengono il modulo dedicato con date. Configurare su Netlify anche le notifiche del nuovo modulo: l'indirizzo `email` della richiesta serve per rispondere al visitatore. Il collegamento WhatsApp apre la chat con il messaggio iniziale proposto; l'invio resta una scelta del visitatore.
 
 **Prezzi e disponibilità aggiornati non sono collegati**: il concierge indirizza queste domande al team e non conferma prenotazioni. Per interrogarli occorre prima identificare e collegare il gestionale/API delle proprietà.
 
