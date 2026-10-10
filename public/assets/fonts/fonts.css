@@ -1,3 +1,18 @@
+/* Bodoni Moda, SIL Open Font License. Hosted locally with the other typefaces. */
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(/assets/fonts/bodoni-moda-italic.ttf) format('truetype');
+}
 @font-face {
   font-family: 'Cormorant Garamond';
   font-style: italic;
