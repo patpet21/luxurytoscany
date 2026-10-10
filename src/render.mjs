@@ -1,4 +1,5 @@
 import {homeSearch} from './finder.mjs';
+import {applyVillaMapLinks} from './locations.mjs';
 import {navigation} from './navigation.mjs';
 import {aboutContent} from './about.mjs';
 import {conciergeWidget} from './concierge.mjs';
@@ -37,6 +38,7 @@ export function adapt(source) {
       }
     }
   }
+  applyVillaMapLinks(adapted);
   return adapted;
 }
 export function collections(pages) {

@@ -25,6 +25,7 @@ body[data-page="/tuscany-villas-for-rent"] .subhero-copy{bottom:38px}
 .villa-view-switch button[aria-pressed="true"]{background:#252820;color:#faf7f0}
 .villa-pin{background:none;border:0}
 .villa-pin span{display:grid;place-items:center;height:36px;white-space:nowrap;border-radius:30px;background:#faf7f0;border:1px solid #85663c;color:#252820;box-shadow:0 3px 15px #25282026;font-size:11px;font-weight:700;transition:background .15s,color .15s}
+.villa-pin-area span{border-style:dashed}
 .villa-pin:hover span,.villa-pin:focus span,.villa-pin.is-highlighted span{background:#252820;color:#faf7f0}
 .villa-pin:focus-visible{outline:2px solid #85663c;outline-offset:3px;border-radius:30px}
 .villa-map-aside .leaflet-popup-content-wrapper{border-radius:0;background:#faf7f0;color:#252820}
@@ -36,7 +37,7 @@ body[data-page="/tuscany-villas-for-rent"] .subhero-copy{bottom:38px}
 .villa-popup-title{font:500 23px/1.05 'Cormorant Garamond',serif;color:#252820!important;text-decoration:none}
 .villa-popup-entry p{margin:8px 0!important;font-size:10px}
 .villa-popup-actions{display:flex;flex-wrap:wrap;gap:10px}
-.villa-popup-actions button{border:0;border-bottom:1px solid #b69a68;padding:4px 0;background:none;color:#85663c;font:600 10px 'Manrope',sans-serif;cursor:pointer}
+.villa-popup-actions button,.villa-popup-actions a{border:0;border-bottom:1px solid #b69a68;padding:4px 0;background:none;color:#85663c;font:600 10px 'Manrope',sans-serif;cursor:pointer}
 .villa-popup-note{font-size:9px;color:#6d6f65;margin:12px 0 0!important}
 .villa-map-aside .leaflet-control-attribution{font-size:9px;background:#faf7f0e8;color:#252820}
 .villa-map-aside .leaflet-control-attribution a{color:#525d43}

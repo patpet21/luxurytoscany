@@ -18,7 +18,8 @@
   buttons.forEach(button=>button.addEventListener('click',()=>setView(button.dataset.villaView)));
   function popup(indices){
     const content=node('div',null,'villa-map-popup');
-    content.append(node('p','APPROXIMATE AREA · '+(items[indices[0]].city||'Tuscany'),'villa-popup-area'));
+    const area=indices.some(index=>items[index].locationPrecision==='area');
+    content.append(node('p',(area?'AREA LOCATION · ':'PUBLISHED MAP LOCATION · ')+(items[indices[0]].city||'Tuscany'),'villa-popup-area'));
     indices.forEach(index=>{
       const item=items[index],entry=node('article',null,'villa-popup-entry');
       const link=node('a',null,'villa-popup-photo');link.href=item.path;
@@ -26,6 +27,8 @@
       const copy=node('div'),title=node('a',item.title,'villa-popup-title');title.href=item.path;
       copy.append(title,node('p',`${item.sleeps} guests · ${item.bedrooms} bedrooms`));
       const actions=node('div',null,'villa-popup-actions');
+      if(item.mapUrl){const originalMap=node('a','Google Maps ↗');originalMap.href=item.mapUrl;originalMap.target='_blank';originalMap.rel='noopener noreferrer';actions.append(originalMap);}
+      if(item.locationPrecision==='area')copy.append(node('p','The original map link shows the town. The exact villa position is to be confirmed.','villa-popup-note'));
       const reveal=node('button','Show in list');reveal.type='button';
       reveal.addEventListener('click',()=>{setView('list');finder.dispatchEvent(new CustomEvent('villa:reveal',{detail:{index}}));});
       const enquire=node('button','Request this villa');enquire.type='button';
@@ -43,19 +46,20 @@
       const item=items[index];if(item.type!=='villa'||!Array.isArray(item.coordinates))return;
       const key=item.coordinates.join(',');if(!groups.has(key))groups.set(key,[]);groups.get(key).push(index);
     });
-    const points=[];let located=0;
+    const points=[];let located=0,areaOnly=0;
     groups.forEach(indices=>{
       const item=items[indices[0]],label=indices.length>1?`${indices.length} villas`:`${item.sleeps} guests`;
-      located+=indices.length;points.push(item.coordinates);
-      const icon=L.divIcon({className:'villa-pin',html:`<span>${label}</span>`,iconSize:[88,36],iconAnchor:[44,18],popupAnchor:[0,-20]});
-      const marker=L.marker(item.coordinates,{icon,title:indices.map(i=>items[i].title).join(' · '),alt:`${label}, approximate ${item.city||'Tuscany'} area`,keyboard:true}).bindPopup(popup(indices),{maxWidth:340,minWidth:280,maxHeight:350}).addTo(layer);
-      marker.getElement()?.setAttribute('aria-label',`${indices.map(i=>items[i].title).join(', ')}. Approximate ${item.city||'Tuscany'} area. Open villa details.`);
+      const area=indices.some(index=>items[index].locationPrecision==='area');
+      located+=indices.length;areaOnly+=indices.filter(index=>items[index].locationPrecision==='area').length;points.push(item.coordinates);
+      const icon=L.divIcon({className:'villa-pin'+(area?' villa-pin-area':''),html:`<span>${label}${area?' · area':''}</span>`,iconSize:[area?110:88,36],iconAnchor:[area?55:44,18],popupAnchor:[0,-20]});
+      const marker=L.marker(item.coordinates,{icon,title:indices.map(i=>items[i].title).join(' · '),keyboard:true}).bindPopup(popup(indices),{maxWidth:340,minWidth:280,maxHeight:350}).addTo(layer);
+      marker.getElement()?.setAttribute('aria-label',`${indices.map(i=>items[i].title).join(', ')}. ${area?'Approximate area':'Original Google Maps pin'}. Open villa details.`);
       indices.forEach(index=>markers.set(index,marker));
     });
-    if(points.length)map.fitBounds(L.latLngBounds(points),{padding:[55,55],maxZoom:10,animate:false});
+    if(points.length)map.fitBounds(L.latLngBounds(points),{padding:[55,55],maxZoom:14,animate:false});
     else map.setView([43.45,11.3],8,{animate:false});
     const total=state.indices.length;
-    status.textContent=tileFailed?'Map imagery is temporarily unavailable. You can still explore the villa markers or use the list.':total?`${located} of ${total} matching villas mapped${total-located?` · ${total-located} without published coordinates`:''}.`:'No villas match these filters. Try fewer filters to see more locations.';
+    status.textContent=tileFailed?'Map imagery is temporarily unavailable. You can still explore the villa markers or use the list.':total?`${located} of ${total} matching villas mapped${areaOnly?` · ${areaOnly} area-only location${areaOnly===1?'':'s'}`:''}${total-located?` · ${total-located} without published coordinates`:''}.`:'No villas match these filters. Try fewer filters to see more locations.';
   }
   function ensureMap(){
     if(!desktop.matches&&finder.dataset.mapView!=='map')return;
@@ -63,13 +67,13 @@
     if(!rect.width||!rect.height||rect.top>innerHeight||rect.bottom<0)return;
     if(!window.L){status.textContent='The map could not load. Please use the villa list or open the Tuscany map above.';return;}
     if(map){map.invalidateSize({pan:false});return;}
-    map=L.map(canvas,{scrollWheelZoom:false,maxZoom:14}).setView([43.45,11.3],8);
+    map=L.map(canvas,{scrollWheelZoom:true,maxZoom:19}).setView([43.45,11.3],8);
     layer=L.layerGroup().addTo(map);
-    const tiles=L.tileLayer(canvas.dataset.tileUrl,{maxZoom:14,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+    const tiles=L.tileLayer(canvas.dataset.tileUrl,{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
     tiles.on('tileerror',()=>{tileFailed=true;status.textContent='Map imagery is temporarily unavailable. You can still explore the villa markers or use the list.';});
     draw();
   }
-  finder.addEventListener('villa:results',event=>{state=event.detail;draw();});
+  finder.addEventListener('villa:results',event=>{const changed=state.indices.join(',')!==event.detail.indices.join(',');state=event.detail;if(changed)draw();});
   finder.querySelectorAll('[data-home-result]').forEach(row=>{
     const highlight=active=>markers.get(Number(row.dataset.homeResult))?.getElement()?.classList.toggle('is-highlighted',active);
     row.addEventListener('mouseenter',()=>highlight(true));row.addEventListener('mouseleave',()=>highlight(false));
