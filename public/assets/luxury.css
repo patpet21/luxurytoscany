@@ -242,3 +242,50 @@ h2{font-size:clamp(43px,4.6vw,68px);line-height:1.15}
 .general-layout .explore-aside-premium{position:static;top:auto;align-self:start}
 .villa-layout .booking-aside,.general-layout .explore-aside-premium{max-height:none;overflow:visible}
 @media(min-width:1100px){.villa-layout{gap:5%;grid-template-columns:minmax(0,1fr) 330px}}
+
+
+/* Villa detail refinements — shared by the complete villa collection */
+.villa-line-icon{display:inline-block;vertical-align:middle;flex:none;width:19px;height:19px;stroke:currentColor}
+.villa-meta{display:flex;align-items:center;flex-wrap:wrap;gap:9px 10px}
+.villa-meta .villa-badge{display:inline-flex;align-items:center;min-height:36px;padding:7px 11px;border:1px solid #cdb78c;background:#fdfbf7;color:#926e3c;font-size:9px;font-weight:600;line-height:1.2;letter-spacing:.105em}
+.villa-meta .villa-meta-pill{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:7px 11px;border:1px solid #e8e1d4;background:#fffdf9;color:#354137;font-size:11px;line-height:1.25;white-space:nowrap}
+.villa-meta-pill .villa-line-icon{width:16px;height:16px;color:#947345}
+.villa-meta .villa-meta-cta{margin-left:auto;font-size:11px;white-space:nowrap}
+.villa-fact-icon .villa-line-icon{width:23px;height:23px}
+.villa-overview-location{gap:7px}
+.villa-overview-location .villa-line-icon{width:16px;height:16px;color:#947345}
+.villa-included-section{padding-top:2px}
+.villa-included-section>.eyebrow{margin:0 0 10px;color:#997946;font-size:9px}
+.villa-included-section>h2{margin:0 0 18px}
+.villa-benefit-content>p{font-size:13px;line-height:1.75;color:#667166;margin:0 0 18px}
+.villa-benefit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0 22px}
+.villa-benefit-card{display:flex;align-items:flex-start;gap:12px;min-width:0;min-height:74px;padding:16px 14px;border:1px solid #e5ddce;background:#fbf9f4;transition:border-color .2s,background .2s}
+.villa-benefit-card:hover{border-color:#cbb38a;background:#f8f4eb}
+.villa-benefit-icon{display:grid;place-items:center;flex:none;width:33px;height:33px;border-radius:50%;border:1px solid #ded0b5;background:#fffefa;color:#987849}
+.villa-benefit-icon .villa-line-icon{width:18px;height:18px}
+.villa-benefit-label{min-width:0;overflow-wrap:break-word;font-size:12px;line-height:1.65;color:#3c4b40;padding-top:6px}
+.villa-benefit-label p{margin:0}
+.villa-benefit-label a{color:#435a45;text-decoration:underline;text-decoration-color:#bd9a67;text-underline-offset:3px}
+.explore-main-cta{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:41px;margin:0 0 17px;padding:10px 13px;background:#35493a;border:1px solid #35493a;color:#fffdf7;font-size:10px;font-weight:600;line-height:1.3;letter-spacing:.035em;text-transform:uppercase;transition:background .2s,transform .2s}
+.explore-main-cta span{font-size:18px;line-height:1;transition:transform .2s}
+.explore-main-cta:hover{background:#52664f;color:#fff;transform:translateY(-1px)}
+.explore-main-cta:hover span{transform:translate(2px,-2px)}
+.explore-main-cta:focus-visible{outline:2px solid #ae8348;outline-offset:3px}
+.villa-nearby .explore-main-cta{margin:1px 0 13px}
+@media(max-width:1100px){.villa-meta .villa-meta-cta{margin-left:0}}
+@media(max-width:900px){.villa-meta .villa-meta-pill{font-size:11px}}
+@media(max-width:640px){
+ .villa-meta{gap:8px}
+ .villa-meta .villa-badge,.villa-meta .villa-meta-pill{min-height:33px;padding:7px 9px;font-size:10px}
+ .villa-meta .villa-badge{font-size:8px}
+ .villa-meta-pill .villa-line-icon{width:15px;height:15px}
+ .villa-meta .villa-meta-cta{margin-top:5px;font-size:10px}
+ .villa-included-section>h2{font-size:32px}
+ .villa-benefit-grid{grid-template-columns:1fr 1fr;gap:9px}
+ .villa-benefit-card{padding:12px 10px;gap:9px;min-height:68px}
+ .villa-benefit-icon{width:28px;height:28px}
+ .villa-benefit-icon .villa-line-icon{width:16px;height:16px}
+ .villa-benefit-label{padding-top:3px;font-size:11px}
+}
+@media(max-width:400px){.villa-benefit-grid{grid-template-columns:1fr}.villa-benefit-card{min-height:59px}}
+@media(prefers-reduced-motion:reduce){.villa-benefit-card,.explore-main-cta,.explore-main-cta span{transition:none}.explore-main-cta:hover{transform:none}}
