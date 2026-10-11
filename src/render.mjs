@@ -70,6 +70,10 @@ function sectionBody(page, {villa=false}={}) {
     const title=cleanTitle(s.heading||s.title||'');
     if(galleryTitles.test(title)) return '';
     const html=s.html||s.content|| (s.text?`<p>${esc(s.text)}</p>`:'');
+    // The imported property summary repeats location, rate and capacity as tall
+    // plain-text fields. The redesigned overview owns those facts for every villa.
+    const sourceText=(s.text||html.replace(/<[^>]+>/g,' ')).replace(/&nbsp;/gi,' ').replace(/\s+/g,' ');
+    if(villa && /\b(?:Bed|Bedrooms)\s*[:\-]?\s*\d+\b/i.test(sourceText) && /\bSleeps\s*[:\-]?\s*\d+\b/i.test(sourceText) && /\bBath\s*[:\-]?\s*\d+\b/i.test(sourceText)) return '';
     if(!html.trim()) return '';
     if(villa && /pric/i.test(title) && (/<table/i.test(html)|| /202[0-5]/.test(html))) return `<details class="content-section historical-prices"><summary><span>Published rate archive</span><span aria-hidden="true">+</span></summary><p class="notice">These are the rates published on the original site. They may refer to past seasons. Please request a quote for current dates, rates and availability.</p><div class="table-scroll">${html}</div></details>`;
     return `<section class="content-section" id="section-${i}">${title?`<h2>${esc(title)}</h2>`:''}<div class="prose ${/<table/i.test(html)?'table-scroll':''}">${html}</div></section>`;
@@ -94,7 +98,9 @@ function villaOverview(page){
  const f=page.facts||{};
  const facts=[['♙',f.sleeps,'Guests'],['▤',f.bedrooms,'Bedrooms'],['♨',f.bathrooms,'Bathrooms'],['▧',f.area&&f.area!=='x'?f.area:null,'Property size']].filter(x=>x[1]);
  const rosadi=page.path.includes('palazzo-rosadi');
- const intro=rosadi?'Discover an exclusive retreat between Tuscany and Umbria, near Cortona and Arezzo. Palazzo Rosadi offers generous living spaces, a private swimming pool and an outdoor Jacuzzi in the beauty of the Italian countryside.':'Discover an exceptional private villa in Tuscany. Enjoy the freedom to slow down, explore the countryside and create a stay that feels entirely your own.';
+ const imported=(page.sections||[]).map(section=>section.text||section.html?.replace(/<[^>]+>/g,' ')||'').find(t=>/\bSleeps\s*[:\-]?\s*\d+\b/i.test(t)&&/\bBath\s*[:\-]?\s*\d+\b/i.test(t))||'';
+ const extracted=imported.replace(/\s+/g,' ').replace(/^.*?\bFrom\s*€?\s*[\d,.]+\s*/i,'').split(/\b(?:Bed|Bedrooms)\s*[:\-]?\s*\d+\b/i)[0].trim();
+ const intro=rosadi?'Discover an exclusive retreat between Tuscany and Umbria, near Cortona and Arezzo. Palazzo Rosadi offers generous living spaces, a private swimming pool and an outdoor Jacuzzi in the beauty of the Italian countryside.':extracted.length>55&&extracted.length<900?extracted:'Discover an exceptional private villa in Tuscany. Enjoy the freedom to slow down, explore the countryside and create a stay that feels entirely your own.';
  return '<section class="villa-overview" aria-label="Property highlights"><p class="eyebrow">A PRIVATE TUSCAN RETREAT</p><h2>Stay somewhere <em>extraordinary.</em></h2><p class="villa-overview-location">⌖ '+esc(f.location||'Tuscany, Italy')+'</p><div class="villa-fact-grid">'+facts.map(([icon,value,label])=>'<div class="villa-fact"><span class="villa-fact-icon" aria-hidden="true">'+icon+'</span><div><strong>'+esc(value)+'</strong><small>'+label+'</small></div></div>').join('')+'</div><p class="villa-overview-copy">'+intro+'</p>'+(rosadi?'<div class="villa-feature-pills"><span>≈ &nbsp; Private swimming pool</span><span>✦ &nbsp; Outdoor Jacuzzi</span></div>':'')+'</section>';
 }
 function discoveryAside(isCity,page){
