@@ -63,6 +63,74 @@ function homeContent(page,data) {
   return `<section class="hero hero-home">${homeVideo?`<video class="hero-media" autoplay muted loop playsinline poster="${esc(pageImage(hero))}"><source src="${esc(homeVideo.local||homeVideo.url)}" type="video/mp4"></video><button class="video-control" aria-label="Pause background video" data-video-toggle>Ⅱ</button>`:picture(hero,'hero-media',0,true)}<div class="hero-shade"></div><div class="hero-copy"><p class="eyebrow">PRIVATE VILLAS · AUTHENTIC EXPERIENCES · LOCAL EXPERTISE</p><h1>Tuscany, as it<br>was meant to <em>be.</em></h1><p>Extraordinary homes. Unhurried days.<br>A Tuscany you’ll carry with you.</p><a class="button button-light" href="${paths.villas}">Discover our villas ${arrow}</a></div><div class="hero-foot"><span>YOUR DREAM VACATION</span><a href="#collection">EXPLORE <span aria-hidden="true">↓</span></a><span>43°46′ N · 11°15′ E</span></div></section>${homeSearch(data,{esc,card,arrow})}<div class="discovery-strip"><span>Beautiful places. <em>Meaningful connections.</em></span><a href="${paths.experiences}">Experience the real Tuscany ${arrow}</a></div><section class="section intro-section"><p class="eyebrow">WELCOME TO SUPER TUSCANY</p><h2>A place to slow down.<br>A world to <em>fall in love with.</em></h2><p>Discover a more personal side of Italy with people who call it home. From a private villa in the hills to a meal around a local family’s table, we bring you closer to the places, traditions and people that make Tuscany extraordinary.</p><a class="text-link" href="${paths.about}">Our story ${arrow}</a><span class="intro-stamp">Passion · Honesty<br>Professionalism · Trust</span></section><section class="section" id="collection">${heading('THE VILLA COLLECTION','Exceptional homes.<br><em>Entirely yours.</em>','Private pools, beautiful surroundings and the space to make yourself at home.',`<a class="text-link" href="${paths.villas}">View all ${data.villas.length} villas ${arrow}</a>`)}<div class="card-grid villas-grid">${data.villas.slice(0,3).map(p=>card(p,'villa')).join('')}</div></section><section class="editorial-split">${picture(data.get('/wine-tasting')||data.experiences[0]||page,'editorial-image')}<div class="editorial-copy"><p class="eyebrow">BEYOND THE BEAUTIFUL</p><h2>Don’t just visit.<br><em>Become part of it.</em></h2><p>Cook with a local chef. Follow the scent of truffles through the woods. Taste a wine where it was made. Our trusted Italian guides open the door to the Tuscany they know and love.</p><a class="button" href="${paths.experiences}">Explore the experiences ${arrow}</a><div class="editorial-links"><a href="/indoors">Indoors ${arrow}</a><a href="/outdoors">Outdoors ${arrow}</a><a href="/courses">Curated packages ${arrow}</a></div></div></section><section class="section">${heading('A REGION, MANY WORLDS','Find your corner<br>of <em>Tuscany.</em>','Art-filled cities, medieval villages and countryside that stays with you.',`<a class="text-link" href="${paths.cities}">Explore all destinations ${arrow}</a>`)}<div class="destination-grid">${data.cityPages.slice(0,4).map(p=>`<a class="destination" href="${esc(p.path)}">${picture(p)}<div><span class="eyebrow">TUSCANY, ITALY</span><h3>${esc(p.title)}</h3>${arrow}</div></a>`).join('')}</div></section><section class="family-feature"><div class="family-copy"><p class="eyebrow">TUSCANY, TOGETHER</p><h2>Little discoveries.<br><em>Lifelong memories.</em></h2><p>Pizza-making, butterfly houses, beach days and adventures outdoors. A holiday that makes room for every member of your family.</p><p>We work with villa owners to understand your family’s accessibility and accommodation needs before your stay.</p><a class="text-link" href="${paths.children}">Tuscany with your children ${arrow}</a></div>${picture(data.get('/pizza-making-classes')||data.families[0]||page,'family-image')}</section><section class="section story-section">${picture(data.get('/about')||page,'story-image')}<div><p class="eyebrow">REAL PEOPLE. PERSONAL CARE.</p><h2>From Tuscany,<br><em>with love.</em></h2><p>Founded by Christian Ferrara, Super Tuscany brings together carefully chosen homes and trusted local guides. Our approach is personal: we listen, share our knowledge and help you create your own unforgettable stay.</p><a class="text-link" href="${paths.about}">Meet Super Tuscany ${arrow}</a></div></section><section class="section visual-journal">${heading('A WINDOW INTO OUR WORLD','Let Tuscany <em>inspire you.</em>','A glimpse of the landscapes, homes and everyday moments waiting for you.')}<div class="journal-grid"><a href="${paths.gallery}">${picture(pool?{title:'Tuscany photo gallery',images:[pool]}:page)}<h3>The photo journal ${arrow}</h3></a><a href="${paths.videos}">${picture(page,'',Math.min(2,page.images.length-1))}<h3>Tuscany in motion ${arrow}</h3></a></div></section><div class="section">${gallery(page,true)}${videos(page)}</div>${journeyCTA()}`;
 }
 function subHero(page,kicker='THE SUPER TUSCANY COLLECTION') {return `<section class="subhero">${picture(page,'hero-media',0,true)}<div class="hero-shade"></div><div class="subhero-copy"><p class="eyebrow">${esc(kicker)}</p><h1>${esc(page.title)}</h1></div></section>`;}
+
+/* Shared villa presentation: lightweight inline SVGs, no icon font or dependency. */
+function villaIcon(name) {
+  const drawing={
+    guests:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+    bed:'<path d="M3 18v-7m18 7v-7M3 14h18M5 14V9a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5M3 18v2m18-2v2"/>',
+    bath:'<path d="M3 12h18v3a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6v-3ZM6 12V5a3 3 0 0 1 6 0v1M5 21l2-3m12 3-2-3"/>',
+    area:'<rect x="4" y="4" width="16" height="16" rx="1"/><path d="m8 16 8-8m-6 0h6v6"/>',
+    location:'<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',
+    wifi:'<path d="M2 8.8a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0m-10.5 4a5 5 0 0 1 7 0M12 20h.01"/>',
+    towel:'<path d="M6 4h12v16H6zM9 4v5m6-5v5M6 11h12"/>',
+    linen:'<rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 5v14m4-10h5m-5 4h5"/>',
+    baby:'<circle cx="12" cy="11" r="8"/><path d="M9 9h.01M15 9h.01M9 14c2 2 4 2 6 0M12 3V1"/>',
+    food:'<path d="M4 3v7a3 3 0 0 0 6 0V3M7 3v18m8-12c0-3 2-6 5-6v18m-5-12h5"/>',
+    tour:'<path d="M3 10 12 3l9 7v10H3V10ZM8 20v-7h8v7M3 10h18"/>',
+    wine:'<path d="M8 3h8l-1 8a3 3 0 0 1-6 0L8 3ZM12 14v7m-4 0h8M8.5 8h7"/>',
+    cleaning:'<path d="m4 20 8-8m-2-3 5-5 5 5-5 5-5-5ZM3 10l2 1m13 7 1 2m-8-17 1-2"/>',
+    pool:'<path d="M2 17c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2M2 21c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2M8 13V5a2 2 0 0 1 4 0M8 9h4"/>',
+    garden:'<path d="M12 21v-10M12 15C5 15 4 8 4 4c6 0 8 4 8 11Zm0-3c0-6 3-8 8-8 0 5-2 8-8 8Z"/>',
+    support:'<path d="M3 13v-1a9 9 0 0 1 18 0v1M3 13h3v7H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 1-2Zm18 0h-3v7h2a2 2 0 0 0 2-2v-3a2 2 0 0 0-1-2Z"/>',
+    clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    star:'<path d="m12 2 3 7 7 .5-5.5 4.7 1.8 7-6.3-4-6.3 4 1.8-7L2 9.5 9 9z"/>',
+    check:'<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>'
+  };
+  return '<svg class="villa-line-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'+(drawing[name]||drawing.check)+'</svg>';
+}
+function villaBenefitIcon(label) {
+  const name=String(label).replace(/<[^>]*>/g,' ').toLowerCase();
+  if(/wifi|wi-fi|internet/.test(name)) return 'wifi';
+  if(/towels?|bathrobe/.test(name)) return 'towel';
+  if(/linen|sheets?|bedding/.test(name)) return 'linen';
+  if(/crib|cot|highchair|children|baby/.test(name)) return 'baby';
+  if(/breakfast|buffet|chef|meal|food/.test(name)) return 'food';
+  if(/wine|tasting/.test(name)) return 'wine';
+  if(/tour|monastery|museum|excursion/.test(name)) return 'tour';
+  if(/clean|maid|housekeep/.test(name)) return 'cleaning';
+  if(/pool|swimming/.test(name)) return 'pool';
+  if(/garden|maintenance|grounds/.test(name)) return 'garden';
+  if(/support|concierge|assistance|24\/7/.test(name)) return 'support';
+  if(/hour|midweek|mid-week|daily/.test(name)) return 'clock';
+  if(/quality|finest|selected|welcome|guarantee/.test(name)) return 'star';
+  return 'check';
+}
+function villaIncludedSection(title,html,id) {
+  let count=0;
+  const decorated=html.replace(/<(ul|ol)\b[^>]*>[\s\S]*?<\/\1>/gi,list=>{
+    const items=[...list.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)];
+    if(!items.length) return list;
+    count+=items.length;
+    return '<div class="villa-benefit-grid">'+items.map(match=>{
+      const item=match[1].trim();
+      return '<div class="villa-benefit-card"><span class="villa-benefit-icon">'+villaIcon(villaBenefitIcon(item))+'</span><div class="villa-benefit-label">'+item+'</div></div>';
+    }).join('')+'</div>';
+  });
+  if(!count) return null;
+  return '<section class="content-section villa-included-section" id="section-'+id+'"><p class="eyebrow">YOUR STAY, THOUGHTFULLY PREPARED</p><h2>'+esc(title)+'</h2><div class="villa-benefit-content">'+decorated+'</div></section>';
+}
+function villaMeta(page) {
+  const f=page.facts||{};
+  const pill=(icon,text)=>'<span class="villa-meta-pill">'+villaIcon(icon)+'<span>'+text+'</span></span>';
+  return '<div class="villa-meta"><span class="villa-badge">PRIVATE VILLA</span>'
+    +(f.sleeps?pill('guests','Up to '+esc(f.sleeps)+' guests'):'')
+    +(f.bedrooms?pill('bed',esc(f.bedrooms)+' bedrooms'):'')
+    +(f.bathrooms?pill('bath',esc(f.bathrooms)+' bathrooms'):'')
+    +(f.area&&f.area!=='x'?pill('area',esc(f.area)):'')
+    +'<button class="text-link villa-meta-cta" data-inquiry="booking" data-property="'+esc(page.title)+'">Enquire about this villa <span aria-hidden="true">↗</span></button></div>';
+}
+
 function sectionBody(page, {villa=false}={}) {
   const sections=page.sections || [];
   const galleryTitles=/^(interior gallery|exterior gallery|photo gallery|gallery)$/i;
@@ -75,6 +143,10 @@ function sectionBody(page, {villa=false}={}) {
     const sourceText=(s.text||html.replace(/<[^>]+>/g,' ')).replace(/&nbsp;/gi,' ').replace(/\s+/g,' ');
     if(villa && /\b(?:Bed|Bedrooms)\s*[:\-]?\s*\d+\b/i.test(sourceText) && /\bSleeps\s*[:\-]?\s*\d+\b/i.test(sourceText) && /\bBath\s*[:\-]?\s*\d+\b/i.test(sourceText)) return '';
     if(!html.trim()) return '';
+    if(villa && /(?:included\s+in\s+(?:the\s+)?(?:rental\s+)?price|what(?:'|’)?s\s+included)/i.test(title) && !/^not\s+included/i.test(title)) {
+      const decorated=villaIncludedSection(title,html,i);
+      if(decorated) return decorated;
+    }
     if(villa && /pric/i.test(title) && (/<table/i.test(html)|| /202[0-5]/.test(html))) return `<details class="content-section historical-prices"><summary><span>Published rate archive</span><span aria-hidden="true">+</span></summary><p class="notice">These are the rates published on the original site. They may refer to past seasons. Please request a quote for current dates, rates and availability.</p><div class="table-scroll">${html}</div></details>`;
     return `<section class="content-section" id="section-${i}">${title?`<h2>${esc(title)}</h2>`:''}<div class="prose ${/<table/i.test(html)?'table-scroll':''}">${html}</div></section>`;
   }).join('') || `<div class="prose"><p>${esc(page.text||'')}</p></div>`;
@@ -96,7 +168,7 @@ function videos(page) {
 
 function villaOverview(page){
  const f=page.facts||{};
- const facts=[['♙',f.sleeps,'Guests'],['▤',f.bedrooms,'Bedrooms'],['♨',f.bathrooms,'Bathrooms'],['▧',f.area&&f.area!=='x'?f.area:null,'Property size']].filter(x=>x[1]);
+ const facts=[['guests',f.sleeps,'Guests'],['bed',f.bedrooms,'Bedrooms'],['bath',f.bathrooms,'Bathrooms'],['area',f.area&&f.area!=='x'?f.area:null,'Property size']].filter(x=>x[1]);
  const rosadi=page.path.includes('palazzo-rosadi');
  const imported=(page.sections||[]).map(section=>section.text||section.html?.replace(/<[^>]+>/g,' ')||'').find(t=>/\bSleeps\s*[:\-]?\s*\d+\b/i.test(t)&&/\bBath\s*[:\-]?\s*\d+\b/i.test(t))||'';
  const extracted=imported.replace(/\s+/g,' ').replace(/^.*?\bFrom\s*€?\s*[\d,.]+\s*/i,'').split(/\b(?:Bed|Bedrooms)\s*[:\-]?\s*\d+\b/i)[0].trim();
@@ -105,12 +177,12 @@ function villaOverview(page){
 }
 function discoveryAside(isCity,page){
  const links=isCity?cities.filter(n=>n.toLowerCase()!==page.path.split('/').at(-1)).map(n=>[n,'/destinations/'+n.toLowerCase()]):[['Our villas',paths.villas],['Indoor experiences','/indoors'],['Outdoor experiences','/outdoors'],['Curated packages',paths.packages],['Tuscany with children',paths.children]];
- return '<aside class="explore-aside explore-aside-premium"><div class="explore-title"><span aria-hidden="true">✧</span><div><p class="eyebrow">DISCOVER MORE</p><h3>Explore Tuscany</h3></div></div><nav class="explore-tiles" aria-label="Discover more">'+links.map(([name,path])=>'<a href="'+esc(path)+'"><span aria-hidden="true">⌖</span><span>'+esc(name)+'</span><span aria-hidden="true">↗</span></a>').join('')+'</nav><div class="explore-help"><p class="eyebrow">WE’RE HERE TO HELP</p><h3>Plan your stay</h3><p>Questions? Our local team is here to help.</p><a href="mailto:info@supertuscany.org">✉ &nbsp; Email our team</a><a href="tel:+19177243124">☎ &nbsp; Call us</a></div></aside>';
+ return '<aside class="explore-aside explore-aside-premium"><div class="explore-title"><span aria-hidden="true">✧</span><div><p class="eyebrow">DISCOVER MORE</p><h3>Explore Tuscany</h3><a class="explore-main-cta" href="/destinations">Browse destinations <span aria-hidden="true">↗</span></a></div></div><nav class="explore-tiles" aria-label="Discover more">'+links.map(([name,path])=>'<a href="'+esc(path)+'"><span aria-hidden="true">⌖</span><span>'+esc(name)+'</span><span aria-hidden="true">↗</span></a>').join('')+'</nav><div class="explore-help"><p class="eyebrow">WE’RE HERE TO HELP</p><h3>Plan your stay</h3><p>Questions? Our local team is here to help.</p><a href="mailto:info@supertuscany.org">✉ &nbsp; Email our team</a><a href="tel:+19177243124">☎ &nbsp; Call us</a></div></aside>';
 }
 
 function villaContent(page,data) {
   const f=page.facts||{};
-  return `<div class="villa-title section"><a class="breadcrumb" href="${paths.villas}">← THE VILLA COLLECTION</a><p class="eyebrow">${esc(f.location||'TUSCANY, ITALY')}</p><h1>${esc(page.title)}</h1><div class="villa-meta"><span>PRIVATE VILLA</span>${f.sleeps?`<span>Up to ${esc(f.sleeps)} guests</span>`:''}${f.bedrooms?`<span>${esc(f.bedrooms)} bedrooms</span>`:''}${f.bathrooms?`<span>${esc(f.bathrooms)} bathrooms</span>`:''}${f.area&&f.area!=='x'?`<span>${esc(f.area)}</span>`:''}<button class="text-link" data-inquiry="booking" data-property="${esc(page.title)}">Enquire about this villa ${arrow}</button></div></div><div class="villa-cover">${picture(page,'',0,true)}<button class="button button-light" data-gallery-index="0">View all photographs ${arrow}</button></div><div class="section villa-layout"><article class="villa-body">${villaOverview(page)}${sectionBody(page,{villa:true})}${page.calendar?`<section class="content-section"><p class="eyebrow">PLAN YOUR STAY</p><h2>Availability <em>calendar.</em></h2><p>The original Google Calendar is available below. Please contact us to confirm availability before making travel arrangements.</p><div class="embed-placeholder"><button class="button" data-embed="${esc(page.calendar)}" data-embed-title="${esc(page.title)} availability calendar">View the calendar ${arrow}</button><small>Loading the calendar connects to Google.</small></div></section>`:''}</article><aside class="booking-aside"><p class="eyebrow">LET’S MAKE IT YOURS</p><h2>Your stay at<br><em>${esc(page.title)}</em></h2><p>Share your dates and we’ll confirm availability and prepare a personal quote.</p><button class="button" data-inquiry="booking" data-property="${esc(page.title)}">Request availability ${arrow}</button><div class="aside-line"></div><p>Questions before you book?</p><button class="text-link" data-inquiry="general" data-property="${esc(page.title)}">Speak with our team ${arrow}</button><a class="aside-contact" href="tel:+19177243124">+1 917 724 3124</a><small>A request does not confirm a reservation.</small><div class="villa-nearby"><p class="eyebrow">DISCOVER MORE</p><h3>Explore Tuscany</h3><div class="villa-nearby-links"><a href="/destinations/firenze"><span>⌖</span>Firenze <span aria-hidden="true">↗</span></a><a href="/destinations/siena"><span>⌖</span>Siena <span aria-hidden="true">↗</span></a><a href="/destinations/lucca"><span>⌖</span>Lucca <span aria-hidden="true">↗</span></a><a href="/destinations/pisa"><span>⌖</span>Pisa <span aria-hidden="true">↗</span></a><a href="/destinations/grosseto"><span>⌖</span>Grosseto <span aria-hidden="true">↗</span></a><a href="/destinations/pistoia"><span>⌖</span>Pistoia <span aria-hidden="true">↗</span></a></div></div></aside></div><div class="section">${gallery(page,true)}${videos(page)}</div><section class="section related">${heading('MORE PLACES TO CALL HOME','Explore the <em>collection.</em>')}<div class="card-grid">${data.villas.filter(p=>p.path!==page.path).slice(0,3).map(p=>card(p,'villa')).join('')}</div></section>`;
+  return `<div class="villa-title section"><a class="breadcrumb" href="${paths.villas}">← THE VILLA COLLECTION</a><p class="eyebrow">${esc(f.location||'TUSCANY, ITALY')}</p><h1>${esc(page.title)}</h1>${villaMeta(page)}</div><div class="villa-cover">${picture(page,'',0,true)}<button class="button button-light" data-gallery-index="0">View all photographs ${arrow}</button></div><div class="section villa-layout"><article class="villa-body">${villaOverview(page)}${sectionBody(page,{villa:true})}${page.calendar?`<section class="content-section"><p class="eyebrow">PLAN YOUR STAY</p><h2>Availability <em>calendar.</em></h2><p>The original Google Calendar is available below. Please contact us to confirm availability before making travel arrangements.</p><div class="embed-placeholder"><button class="button" data-embed="${esc(page.calendar)}" data-embed-title="${esc(page.title)} availability calendar">View the calendar ${arrow}</button><small>Loading the calendar connects to Google.</small></div></section>`:''}</article><aside class="booking-aside"><p class="eyebrow">LET’S MAKE IT YOURS</p><h2>Your stay at<br><em>${esc(page.title)}</em></h2><p>Share your dates and we’ll confirm availability and prepare a personal quote.</p><button class="button" data-inquiry="booking" data-property="${esc(page.title)}">Request availability ${arrow}</button><div class="aside-line"></div><p>Questions before you book?</p><button class="text-link" data-inquiry="general" data-property="${esc(page.title)}">Speak with our team ${arrow}</button><a class="aside-contact" href="tel:+19177243124">+1 917 724 3124</a><small>A request does not confirm a reservation.</small><div class="villa-nearby"><p class="eyebrow">DISCOVER MORE</p><h3>Explore Tuscany</h3><a class="explore-main-cta" href="/destinations">Browse destinations <span aria-hidden="true">↗</span></a><div class="villa-nearby-links"><a href="/destinations/firenze"><span>⌖</span>Firenze <span aria-hidden="true">↗</span></a><a href="/destinations/siena"><span>⌖</span>Siena <span aria-hidden="true">↗</span></a><a href="/destinations/lucca"><span>⌖</span>Lucca <span aria-hidden="true">↗</span></a><a href="/destinations/pisa"><span>⌖</span>Pisa <span aria-hidden="true">↗</span></a><a href="/destinations/grosseto"><span>⌖</span>Grosseto <span aria-hidden="true">↗</span></a><a href="/destinations/pistoia"><span>⌖</span>Pistoia <span aria-hidden="true">↗</span></a></div></div></aside></div><div class="section">${gallery(page,true)}${videos(page)}</div><section class="section related">${heading('MORE PLACES TO CALL HOME','Explore the <em>collection.</em>')}<div class="card-grid">${data.villas.filter(p=>p.path!==page.path).slice(0,3).map(p=>card(p,'villa')).join('')}</div></section>`;
 }
 function listingContent(page,data,type) {
   if(type==='villa'||type==='experience') return `${subHero(page,type==='villa'?'PRIVATE HOMES. YOUR OWN TUSCANY.':'LOCAL PEOPLE. EXTRAORDINARY DAYS.')}${homeSearch(data,{esc,card,arrow,mode:type==='villa'?'villa':'experience',category:page.path==='/indoors'?'indoors':page.path==='/outdoors'?'outdoors':''})}${type==='villa'?'':`<section class="section original-intro">${sectionBody(page)}</section><div class="section">${gallery(page,true)}${videos(page)}</div>`}${journeyCTA()}`;
