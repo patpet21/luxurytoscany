@@ -510,3 +510,228 @@ h2{font-size:clamp(43px,4.6vw,68px);line-height:1.15}
   .editorial-copy>p:not(.eyebrow){font-size:12px;line-height:1.8;margin-bottom:18px}
   .editorial-links{margin-top:20px;padding-top:14px}
 }
+
+ 
+
+/* Site-wide compact luxury rhythm (October 2026).
+   Consistent vertical spacing and moderate image/heading scale across
+   homepage, collections, villa details and editorial pages.
+   Keep body copy readable and interactive controls easy to tap. */
+body{font-size:14px}
+.section{max-width:1450px;padding:76px 7%}
+.section-heading{margin-bottom:31px;gap:25px}
+.section-heading h2{font-size:clamp(36px,3.65vw,56px)}
+.section-intro{font-size:13px;line-height:1.8;margin-top:15px}
+.section-heading .eyebrow{margin-bottom:11px}
+h2{font-size:clamp(36px,3.65vw,56px)}
+.eyebrow{margin-bottom:12px}
+.button{min-height:48px;padding:13px 20px;gap:20px}
+.button-small{min-height:44px}
+
+/* Hero images remain cinematic, without consuming an entire viewport. */
+.hero-home{height:min(740px,calc(100svh - 138px));min-height:560px;max-height:740px}
+.hero-copy{padding:clamp(72px,7vw,105px) 7% 78px}
+.hero h1{font-size:clamp(58px,6.3vw,92px);line-height:1.08}
+.hero-copy>p:not(.eyebrow){font-size:14px;margin:22px 0 26px;line-height:1.75}
+.hero-foot{bottom:22px;padding-top:15px}
+.subhero{height:375px}
+.subhero-copy{bottom:40px}
+.subhero h1{font-size:clamp(49px,5.2vw,76px)}
+
+/* Home introduction and collection cards. */
+.intro-section{padding-top:77px;padding-bottom:20px}
+.intro-section h2{font-size:clamp(38px,4vw,57px)}
+.intro-section>p:not(.eyebrow){font-size:14px;line-height:1.8;margin:19px auto}
+.intro-stamp{top:88px;width:88px;height:88px;font-size:13px}
+.card-grid{gap:35px 25px}
+.card-image{aspect-ratio:4/4.4}
+.card-info{padding:17px 0 17px}
+.card-info h3,.stay-finder .card-info h3{font-size:clamp(25px,2.1vw,29px)}
+.card-facts{margin:10px 0 9px}
+.destination-grid{gap:18px}
+.destination{aspect-ratio:4/5}
+.destination h3{font-size:clamp(29px,3vw,38px)}
+.destination>div{bottom:21px;padding-top:15px}
+.discovery-strip{padding:20px 7%}
+.discovery-strip>span{font-size:26px}
+
+/* Previously resized wine feature: one more small reduction to match the rest. */
+.editorial-split{margin-top:29px;margin-bottom:18px}
+.editorial-copy{padding:30px clamp(28px,4vw,55px)}
+.editorial-copy h2{font-size:clamp(35px,3vw,46px)}
+@media(min-width:901px){.editorial-split{min-height:350px}}
+
+/* Family, story and photo-led sections. */
+.family-feature{min-height:415px;margin-block:0}
+.family-image{min-height:415px}
+.family-copy{padding:41px 10%}
+.family-copy h2{font-size:clamp(36px,3.6vw,52px);margin-bottom:19px}
+.family-copy p:not(.eyebrow){font-size:13px;line-height:1.75;margin-bottom:16px}
+.story-section{padding-top:85px;padding-bottom:85px;gap:8%}
+.story-image{aspect-ratio:4/4.3}
+.story-section h2{font-size:clamp(38px,3.9vw,57px)}
+.visual-journal{padding-top:8px}
+.journal-grid{gap:23px}
+.journal-grid img{aspect-ratio:16/9}
+.journal-grid h3{font-size:clamp(24px,2.6vw,31px);padding:18px 0}
+.photo-section .section-heading{margin-bottom:24px}
+.detail-gallery{gap:12px}
+.detail-gallery .gallery-photo{aspect-ratio:5/4}
+
+/* The large "Your Tuscany" footer CTA is deliberately less tall. */
+.journey{margin-top:8px;padding:55px 7% 58px}
+.journey-inner{max-width:1190px}
+.journey .eyebrow{margin-bottom:12px}
+.journey h2{font-size:clamp(40px,4.65vw,65px);line-height:1.13}
+.journey p:not(.eyebrow){font-size:13px;line-height:1.75;max-width:420px;margin:19px 0 24px}
+.journey .button{min-height:48px;padding:13px 20px}
+.journey .button-row{gap:23px}
+.journey-mark{font-size:clamp(180px,24vw,350px);top:1%;right:6%;line-height:1.15}
+
+/* Villa details, other inner pages and booking panels. */
+.villa-title{padding-top:36px;padding-bottom:24px}
+.villa-title h1{font-size:clamp(48px,5.35vw,79px);margin-bottom:17px}
+.villa-title .breadcrumb{margin-bottom:20px}
+.villa-cover{height:clamp(340px,34vw,460px)}
+.section.villa-layout{padding-top:51px;padding-bottom:0}
+.content-section{margin-bottom:35px}
+.content-section h2{font-size:clamp(30px,3vw,38px);margin-bottom:16px}
+.prose{font-size:13px;line-height:1.85}
+.general-layout{padding-top:55px;padding-bottom:15px}
+.section.listing-section{padding-top:45px}
+.section.original-intro{padding-top:0;padding-bottom:18px}
+.legal-title{padding-bottom:0}
+.section.legal-title + .general-layout{padding-top:34px}
+.booking-aside{padding:27px 23px}
+.villa-overview{padding:26px 26px 24px;margin-bottom:30px}
+.villa-fact-grid{margin:15px 0 19px}
+.villa-fact{min-height:88px}
+.villa-overview h2{font-size:clamp(29px,2.6vw,39px)}
+.stay-finder{padding-top:34px;padding-bottom:28px}
+.finder-listing{padding-top:44px;padding-bottom:52px}
+.stay-finder #home-search-results{margin-top:30px;padding-top:25px}
+.stay-finder .search-results-heading{margin-bottom:23px}
+.footer{padding-top:54px}
+.footer-top{padding-bottom:30px}
+.footer-grid{margin-top:29px;margin-bottom:29px}
+
+/* Editorial About page: shorten the long vertical pauses. */
+.story-opening{padding-top:54px;padding-bottom:61px}
+.story-landscape{min-height:460px}
+.story-opening-copy h1{font-size:clamp(49px,5.2vw,77px)}
+.story-introduction{padding-top:65px;padding-bottom:72px}
+.story-introduction h2{font-size:clamp(38px,4.1vw,60px)}
+.story-chapter{margin-bottom:85px;gap:8%}
+.story-chapter-copy h2{font-size:clamp(36px,3.6vw,53px)}
+.story-interlude{padding-top:76px;padding-bottom:76px;margin-bottom:85px}
+.story-quote{font-size:clamp(38px,4.7vw,64px)}
+.story-values{padding-bottom:65px}
+.story-values h2{font-size:clamp(38px,4vw,59px)}
+
+/* Tablet: compact but avoid crowding headings or cropping key imagery. */
+@media(max-width:1100px){
+  .section{padding-top:64px;padding-bottom:64px}
+  .hero-home{min-height:530px;max-height:650px}
+  .hero h1{font-size:clamp(56px,7.4vw,81px)}
+  .intro-section{padding-top:66px;padding-bottom:15px}
+  .family-feature,.family-image{min-height:355px}
+  .family-copy{padding:35px 8%}
+  .story-section{padding-top:65px;padding-bottom:65px}
+  .story-landscape{min-height:380px}
+  .journey{padding:48px 7%}
+  .journey h2{font-size:clamp(40px,5vw,58px)}
+  .section.villa-layout{padding-top:43px;padding-bottom:0}
+  .villa-cover{height:400px}
+}
+@media(max-width:900px){
+  .section{padding-top:53px;padding-bottom:53px}
+  .section-heading{margin-bottom:24px}
+  .section-heading h2{font-size:clamp(35px,5.2vw,48px)}
+  .hero-home{height:min(630px,calc(100svh - 110px));min-height:510px}
+  .subhero{height:310px}
+  .intro-section{padding-top:57px;padding-bottom:10px}
+  .intro-section h2{font-size:clamp(37px,5.6vw,49px)}
+  .card-grid{gap:27px 18px}
+  .editorial-visual{height:245px}
+  .editorial-copy{padding:27px 7% 32px}
+  .family-feature{min-height:0}
+  .family-image{height:300px;min-height:0}
+  .family-copy{padding:29px 8%}
+  .story-section{padding-top:53px;padding-bottom:53px}
+  .journal-grid{gap:18px}
+  .journey{padding:45px 7%}
+  .journey-mark{font-size:clamp(165px,30vw,250px)}
+  .villa-cover{height:350px}
+  .section.villa-layout{padding-top:38px;padding-bottom:0}
+  .general-layout{padding-top:44px;padding-bottom:12px}
+  .section.original-intro{padding-top:0;padding-bottom:15px}
+  .section.listing-section{padding-top:38px}
+  .story-opening{padding-top:40px;padding-bottom:45px}
+  .story-landscape{min-height:330px}
+  .story-introduction{padding-top:50px;padding-bottom:55px}
+  .story-chapter{margin-bottom:63px}
+}
+@media(max-width:640px){
+  .section{padding:43px 7%}
+  .section-heading{margin-bottom:21px}
+  .section-heading h2{font-size:clamp(34px,8.5vw,41px)}
+  .section-intro{font-size:13px;margin-top:13px}
+  .hero-home{height:clamp(510px,76svh,640px);min-height:510px;max-height:640px}
+  .hero-copy{padding:63px 7% 78px}
+  .hero h1{font-size:clamp(46px,10.5vw,60px)}
+  .hero-copy>p:not(.eyebrow){font-size:13px;margin:19px 0 23px}
+  .hero-foot{bottom:19px}
+  .subhero{height:275px}
+  .subhero-copy{bottom:29px}
+  .subhero h1{font-size:clamp(42px,10.2vw,57px)}
+  .intro-section{padding-top:45px;padding-bottom:7px}
+  .intro-section h2{font-size:clamp(35px,9vw,43px)}
+  .intro-section>p:not(.eyebrow){font-size:13px;line-height:1.8;margin:16px auto}
+  .card-grid{gap:25px}
+  .card-image{aspect-ratio:4/4.35}
+  .card-info{padding:15px 0}
+  .card-info h3,.stay-finder .card-info h3{font-size:29px}
+  .destination{aspect-ratio:4/5.2}
+  .destination h3{font-size:27px}
+  .editorial-split{margin-top:20px;margin-bottom:15px}
+  .editorial-visual{height:200px}
+  .editorial-copy{padding:23px 21px 27px}
+  .editorial-copy h2{font-size:clamp(33px,8.5vw,40px)}
+  .family-image{height:240px}
+  .family-copy h2{font-size:37px}
+  .story-section{padding-top:44px;padding-bottom:44px}
+  .story-image{aspect-ratio:4/3.7;margin-bottom:28px}
+  .story-section h2{font-size:40px}
+  .visual-journal{padding-top:0}
+  .journal-grid{gap:20px}
+  .journal-grid h3{font-size:26px;padding:15px 0}
+  .journey{padding:39px 7% 43px}
+  .journey h2{font-size:clamp(39px,10vw,51px)}
+  .journey p:not(.eyebrow){font-size:13px;margin:16px 0 22px}
+  .journey-mark{font-size:185px;right:-38px;top:4%;opacity:.58}
+  .journey .button-row{gap:13px}
+  .villa-title{padding-top:26px;padding-bottom:21px}
+  .villa-title h1{font-size:clamp(45px,11vw,61px)}
+  .villa-title .breadcrumb{margin-bottom:15px}
+  .villa-cover{height:285px;margin-inline:4%}
+  .section.villa-layout{padding-top:33px;padding-bottom:0}
+  .content-section{margin-bottom:28px}
+  .content-section h2{font-size:32px}
+  .villa-overview{padding:22px 17px}
+  .villa-fact-grid{margin:13px 0 16px}
+  .villa-fact{min-height:78px}
+  .general-layout{padding-top:35px;padding-bottom:8px}
+  .section.original-intro{padding-top:0;padding-bottom:12px}
+  .section.listing-section{padding-top:34px}
+  .stay-finder{padding:29px 7%}
+  .finder-listing{padding-top:37px;padding-bottom:42px}
+  .footer{padding-top:41px}
+  .footer-top{padding-bottom:22px}
+  .footer-grid{margin:25px 0}
+  .story-opening{padding-top:33px;padding-bottom:37px}
+  .story-opening-copy h1{font-size:45px}
+  .story-landscape{height:310px;min-height:0}
+  .story-introduction{padding-top:43px;padding-bottom:47px}
+  .story-chapter{margin-bottom:55px}
+  .story-interlude{padding-top:50px;padding-bottom:50px;margin-bottom:55px}
+}
