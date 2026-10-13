@@ -1,0 +1,320 @@
+/* SUPER TUSCANY — PRIVATE RESERVE
+   Cinematic editorial direction inspired by the approved dark mockup.
+   Real property media, original information and existing journeys are retained. */
+
+/* The dark identity is purposely led by the homepage. Existing detail pages,
+   enquiry dialogs and navigation retain their accessible content hierarchy. */
+body[data-page="/"]{
+  --paper:#0d1211;--ink:#f2eee5;--muted:#c3bcb0;--line:#393e39;
+  --stone:#171e1c;--ivory:#111816;--champagne:#1a201d;
+  --gold:#c9a76e;--bronze:#c9a76e;--night:#0b1110;
+  background:#0d1211;color:#f2eee5
+}
+body[data-page="/"] .topbar{display:none}
+.site-header{
+  background:#101615f7;color:#f4eee1;border-bottom:1px solid #88724b45;
+  box-shadow:none
+}
+.site-header .brand img{display:none}
+.site-header .brand{gap:0}
+.site-header .brand>span{
+  font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(19px,2vw,26px);
+  letter-spacing:-.035em;color:#f4eee1;line-height:1.07;font-weight:400
+}
+.site-header .brand small{
+  color:#cbb488;font-family:'Manrope',Arial,sans-serif;
+  font-size:7px;letter-spacing:.18em;margin-top:5px
+}
+.site-header .nav-symbol,.site-header .nav-label>small{display:none}
+.site-header .nav-group>summary{
+  background:transparent;box-shadow:none;border:0;padding:18px 7px;
+  color:#f5f0e8;text-transform:uppercase;letter-spacing:.14em
+}
+.site-header .nav-label>span{color:#f5f0e8;font-size:10px;font-weight:500}
+.site-header .nav-group .chevron{font-size:12px;color:#c8a76b}
+.site-header .nav-group>summary:hover,.site-header .nav-group[open]>summary{
+  background:transparent;color:#ddbd7f
+}
+.site-header .nav-group[open] .nav-label>span{color:#ddbd7f}
+.site-header .nav-plan{
+  background:#c7a46b;color:#111713;border-color:#c7a46b;
+  border-radius:0;font-size:10px;text-transform:uppercase;
+  letter-spacing:.13em;min-height:42px;padding:11px 20px
+}
+.site-header .nav-plan:hover{background:#ebd7ac;color:#111713}
+.site-header .mega{background:#141a18;border-color:#65573c;box-shadow:0 25px 50px #0009}
+.site-header .mega-toolbar,.site-header .mega-bottom{background:#1b211d;border-color:#3d453b;color:#e8e1d3}
+.site-header .mega-heading strong,.site-header .nav-section h3,.site-header .nav-feature h2,.site-header .nav-feature p,.site-header .nav-tile-name{color:#f1ecdf}
+.site-header .nav-tile{border-color:#3e463d}
+.site-header .nav-tile:hover{background:#26302a}
+.site-header .mega-view-all,.site-header .mega-bottom a,.site-header .nav-feature strong{color:#dec08b}
+.site-header .nav-filter input{background:#202924;color:#fff;border-color:#485044}
+body[data-page="/"] .site-header{
+  position:absolute;top:0;left:0;right:0;z-index:60;
+  background:linear-gradient(180deg,rgba(7,13,11,.85),rgba(7,13,11,.34) 70%,transparent);
+  border:0
+}
+body[data-page="/"] .site-header nav{background:transparent}
+body[data-page="/"] .site-header .mega{background:#141a18}
+body[data-page="/"] #main{overflow:hidden}
+body[data-page="/"] h1,body[data-page="/"] h2,body[data-page="/"] h3{
+  font-family:'Bodoni Moda',Didot,Georgia,serif;font-weight:400;
+  text-wrap:balance;letter-spacing:-.038em
+}
+body[data-page="/"] .eyebrow{
+  color:#c9a76e;font-size:10px;letter-spacing:.2em;font-weight:500
+}
+body[data-page="/"] .text-link{
+  color:#e7d3ab;border-color:#ae8c58;font-size:10px;
+  letter-spacing:.14em;text-transform:uppercase
+}
+body[data-page="/"] .button{
+  background:#c9a76e;color:#0e1512;border:1px solid #c9a76e;
+  box-shadow:none;border-radius:0;font-size:10px;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase
+}
+body[data-page="/"] .button:hover{background:#e7d4b0;border-color:#e7d4b0;color:#111714}
+body[data-page="/"] .button-outline{
+  background:transparent;color:#e9d7b5;border-color:#94794f
+}
+body[data-page="/"] .button-outline:hover{background:#c9a76e;color:#111714}
+.cinema-hero{
+  position:relative;min-height:690px;height:min(850px,95svh);
+  width:100%;isolation:isolate;background:#101712
+}
+.cinema-hero .hero-media{
+  width:100%;height:100%;position:absolute;inset:0;object-fit:cover;
+  object-position:50% 48%;filter:brightness(.7) saturate(.84) contrast(1.11)
+}
+.cinema-hero .hero-shade{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(5,11,10,.89) 0%,rgba(5,11,10,.62) 35%,rgba(5,11,10,.13) 76%),
+             linear-gradient(0deg,rgba(5,10,9,.8),transparent 33%,rgba(4,9,8,.30))
+}
+.cinema-hero .hero-copy{
+  position:relative;z-index:2;padding:185px max(6.2vw,26px) 100px;
+  max-width:1500px;min-height:100%;margin:auto;display:flex;align-items:flex-start;
+  justify-content:center;flex-direction:column
+}
+.cinema-hero .hero-copy .eyebrow{font-size:10px;color:#e2c68f;letter-spacing:.21em;max-width:100%}
+.cinema-hero h1{
+  margin:13px 0 20px;max-width:710px;
+  font-size:clamp(74px,7.4vw,126px);line-height:.99;
+  letter-spacing:-.045em;color:#faf5ea
+}
+.cinema-hero h1 em{font-style:normal;color:#faf5ea}
+.cinema-hero .hero-copy>p:not(.eyebrow){
+  margin:12px 0 30px;font-size:15px;line-height:1.9;
+  max-width:395px;color:#e4e0d8
+}
+.cinema-hero .cinema-hero-cta{
+  display:inline-flex;gap:15px;align-items:center;text-transform:uppercase;
+  color:#f7f1e6;font-size:11px;font-weight:600;letter-spacing:.15em
+}
+.cinema-hero-cta .circle{
+  display:grid;place-items:center;width:45px;height:45px;
+  border:1px solid #c7a36a;border-radius:50%;color:#e3bd79;
+  transition:background .2s,color .2s
+}
+.cinema-hero-cta:hover .circle{background:#c9a76e;color:#101715}
+.cinema-hero .hero-foot{
+  z-index:3;left:max(6.2vw,26px);right:max(6.2vw,26px);bottom:30px;
+  display:flex;justify-content:space-between;border-color:#dcc99a55;
+  color:#ece6d9;font-size:9px;letter-spacing:.18em
+}
+.cinema-hero .hero-foot a{color:#f1e0bd}
+.cinema-hero-side{
+  position:absolute;z-index:2;right:6.2vw;top:48%;
+  display:flex;flex-direction:column;gap:15px;
+  color:#dfc99c;font-size:9px;letter-spacing:.2em
+}
+.cinema-hero-side span{display:block;width:1px;height:40px;background:#a88e60;margin:auto}
+.cinema-promises{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  background:#0b1311;border-top:1px solid #343b33;border-bottom:1px solid #343b33;
+  padding:50px max(6.2vw,26px);gap:0
+}
+.cinema-promise{text-align:center;padding:4px 30px;border-right:1px solid #3c453b}
+.cinema-promise:last-child{border:0}
+.cinema-promise .villa-line-icon{width:29px;height:29px;color:#c4a069;stroke-width:1.2}
+.cinema-promise h2{
+  font-size:15px;margin:17px 0 9px;letter-spacing:.01em;color:#f0e9d8
+}
+.cinema-promise p{font-size:11px;line-height:1.9;max-width:270px;margin:0 auto;color:#bdb8a9}
+.cinema-editorial{
+  display:grid;grid-template-columns:1.09fr .91fr;min-height:520px;background:#111816;
+  border-bottom:1px solid #2c352e
+}
+.cinema-editorial-photo{position:relative;min-height:470px;overflow:hidden}
+.cinema-editorial-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.cinema-editorial-copy{
+  padding:clamp(65px,6vw,125px) clamp(32px,6vw,100px);
+  display:flex;flex-direction:column;justify-content:center
+}
+.cinema-editorial-copy h2{
+  color:#f1eee7;font-size:clamp(47px,4.8vw,83px);line-height:1.09;
+  max-width:550px;margin:10px 0 24px
+}
+.cinema-editorial-copy>p:not(.eyebrow){font-size:13px;line-height:2;color:#bcb9af;max-width:460px}
+.cinema-editorial-copy .text-link{align-self:start;margin-top:16px}
+.cinema-villas{padding:90px max(6.2vw,26px) 94px;background:#0d1412}
+.cinema-villas-header{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:33px}
+.cinema-villas-header h2{font-size:clamp(44px,4.6vw,74px);line-height:1.06;color:#f3eee3;margin:8px 0 0}
+.cinema-villas-header .text-link{margin-bottom:12px}
+.cinema-villas .card-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px
+}
+.cinema-villas .card{background:#0d1412;border:0;min-width:0}
+.cinema-villas .card-image{aspect-ratio:1.22;background:#252820}
+.cinema-villas .card-image img{width:100%;height:100%;object-fit:cover}
+.cinema-villas .card-info{padding:19px 3px 17px;border-bottom:1px solid #3b443b}
+.cinema-villas .card-info .eyebrow{color:#bf9d68;letter-spacing:.17em;font-size:9px}
+.cinema-villas .card-info h3{color:#f0e8d9;font-size:clamp(25px,2.4vw,38px);line-height:1.2}
+.cinema-villas .card-info .card-facts{color:#c2bcb0;font-size:11px}
+.cinema-villas .card-info .text-link{margin-top:11px;color:#dcc394}
+.cinema-villas .image-label{background:#141a17d9;color:#e9d1a0;border:1px solid #997d4d88}
+.cinema-villas .image-arrow{background:#151b18cc;color:#e6ce9e}
+.cinema-experience{
+  display:grid;grid-template-columns:1fr 1fr;min-height:450px;
+  background:#101714;border-block:1px solid #363b32
+}
+.cinema-experience-copy{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:70px clamp(30px,7vw,120px)
+}
+.cinema-experience-copy h2{
+  font-size:clamp(45px,4.5vw,73px);line-height:1.06;margin:10px 0 22px;
+  color:#f3ede2
+}
+.cinema-experience-copy>p:not(.eyebrow){
+  max-width:430px;font-size:13px;line-height:2;color:#c2bdaf;margin-bottom:25px
+}
+.cinema-experience-copy .text-link{align-self:flex-start}
+.cinema-experience-photo{position:relative;overflow:hidden;min-height:420px}
+.cinema-experience-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+.cinema-destinations{padding:90px max(6.2vw,26px);background:#141b18}
+.cinema-destinations>div:first-child{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:30px}
+.cinema-destinations h2{font-size:clamp(43px,4.2vw,68px);margin:6px 0;color:#f1eddf}
+.cinema-destination-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.cinema-destination{position:relative;min-height:300px;overflow:hidden}
+.cinema-destination img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .5s}
+.cinema-destination:hover img{transform:scale(1.04)}
+.cinema-destination:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#000b,transparent 65%)}
+.cinema-destination span,.cinema-destination h3{position:absolute;z-index:1;left:23px;color:#fff}
+.cinema-destination span{bottom:65px;color:#d5b985;font-size:9px;letter-spacing:.2em}
+.cinema-destination h3{bottom:18px;font-size:37px}
+.cinema-search{background:#17201b;padding:65px max(6.2vw,26px);border-block:1px solid #3c453b}
+.cinema-search-header{text-align:center;max-width:720px;margin:0 auto 25px}
+.cinema-search-header h2{font-size:clamp(42px,4vw,65px);margin:7px 0 11px}
+.cinema-search-header p:last-child{font-size:13px;color:#cbc4b4}
+.cinema-search .home-search{max-width:1250px;margin:auto;padding:30px;background:#f5f1e8;color:#16201a;border:1px solid #c5aa78}
+.cinema-search .home-search h2,.cinema-search .home-search h3,.cinema-search .home-search p{color:#17211b}
+.cinema-search .home-search .eyebrow{color:#836639}
+.cinema-search .home-search .button{background:#b3945e;color:#0c1511}
+.cinema-search .home-search .text-link{color:#4d492b}
+.cinema-search .home-search input,.cinema-search .home-search select{color:#16201a}
+.cinema-search .home-search .card-info h3{color:#132019}
+.cinema-search .home-search .card-info .card-facts,.cinema-search .home-search .section-intro{color:#505b53}
+.cinema-search .home-search .card-image{aspect-ratio:4/3}
+.cinema-about{display:grid;grid-template-columns:.8fr 1.2fr;min-height:460px;background:#0c1311}
+.cinema-about-copy{padding:75px clamp(30px,6vw,105px);display:flex;flex-direction:column;justify-content:center}
+.cinema-about-copy h2{font-size:clamp(43px,4.3vw,72px);line-height:1.08;margin:8px 0 24px;color:#faf2e3}
+.cinema-about-copy>p:not(.eyebrow){color:#c1bdaf;font-size:13px;line-height:2}
+.cinema-about-copy .text-link{align-self:flex-start;margin-top:12px}
+.cinema-about-photo{position:relative;min-height:390px}
+.cinema-about-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.cinema-last-word{
+  position:relative;isolation:isolate;min-height:410px;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  background:#111813;text-align:center
+}
+.cinema-last-word img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:brightness(.48) saturate(.85)}
+.cinema-last-word:before{content:"";position:absolute;inset:0;background:#0b130e6e;z-index:-1}
+.cinema-last-word h2{font-size:clamp(46px,5vw,79px);color:#fff6e5;max-width:830px;margin:10px 20px 24px}
+.cinema-last-word .eyebrow{color:#e1c285}
+.cinema-last-word .button{padding:14px 30px}
+body[data-page="/"] .journey{
+  background:radial-gradient(ellipse at 85% 15%,#273026 0%,transparent 60%),#101815;
+  color:#f4ecde;border-color:#3e463a;margin:0;padding-block:65px
+}
+body[data-page="/"] .journey h2{font-size:clamp(44px,5vw,76px);color:#f4ecde}
+body[data-page="/"] .journey h2 em{color:#d2ae72}
+body[data-page="/"] .journey p:not(.eyebrow){color:#c7c0b4}
+body[data-page="/"] .journey .text-link{color:#e5ce9e}
+.footer{background:#0b1210;border-top:1px solid #a88c5c;color:#eee8dc}
+.footer .footer-grid .eyebrow,.footer .footer-contact .eyebrow{color:#cba66d}
+.footer .footer-bottom{color:#b1ad9f}
+@media(max-width:1090px){
+  .site-header .nav-group>summary{padding:12px 2px}
+  .site-header .nav-plan{padding:10px 12px}
+  .cinema-hero h1{font-size:clamp(64px,7.8vw,98px)}
+  .cinema-editorial-copy{padding:60px 7%}
+}
+@media(max-width:900px){
+  .site-header .menu-toggle{color:#f5f0e8}
+  .site-header nav,body[data-page="/"] .site-header nav.open{
+    background:#111815!important;top:94px;border-bottom:1px solid #a88c5c;
+    padding:22px 6% 30px
+  }
+  .site-header .nav-label>span{font-size:27px;letter-spacing:0;text-transform:none}
+  .site-header .nav-group>summary{padding:14px 0}
+  .site-header .mega{position:static;background:#19211c;max-height:none}
+  .site-header .nav-feature{display:none}
+  .site-header .mega-inner{display:block;padding:16px}
+  .site-header .nav-plan{display:flex;justify-content:center}
+  .cinema-hero{min-height:690px;height:min(840px,95svh)}
+  .cinema-hero .hero-copy{padding-top:160px}
+  .cinema-editorial{grid-template-columns:1fr}
+  .cinema-editorial-photo{min-height:430px}
+  .cinema-experience{grid-template-columns:1fr}
+  .cinema-experience-photo{min-height:380px;order:-1}
+  .cinema-villas .card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cinema-destination-grid{gap:12px}
+  .cinema-about{grid-template-columns:1fr}
+  .cinema-about-photo{min-height:390px;order:-1}
+}
+@media(max-width:640px){
+  .site-header{height:76px;padding:0 6%}
+  .site-header .brand>span{font-size:22px}
+  .site-header nav,body[data-page="/"] .site-header nav.open{top:76px}
+  .cinema-hero{height:90svh;min-height:610px;max-height:830px}
+  .cinema-hero .hero-media{object-position:62% center}
+  .cinema-hero .hero-shade{
+    background:linear-gradient(90deg,#06100fdb,#09100f73 87%),
+               linear-gradient(0deg,#06100fba,transparent 55%)
+  }
+  .cinema-hero .hero-copy{padding:125px 7% 105px}
+  .cinema-hero h1{font-size:clamp(57px,12.3vw,81px)}
+  .cinema-hero .hero-copy .eyebrow{max-width:270px;font-size:9px;line-height:1.8}
+  .cinema-hero .hero-copy>p:not(.eyebrow){font-size:13px;margin:15px 0 25px}
+  .cinema-hero .hero-foot{left:7%;right:7%;bottom:16px;font-size:8px}
+  .cinema-hero .hero-foot>span:last-child,.cinema-hero-side{display:none}
+  .cinema-promises{padding:30px 7%;grid-template-columns:1fr}
+  .cinema-promise{padding:24px 6px;border-right:0;border-bottom:1px solid #354039}
+  .cinema-promise:last-child{border:0}
+  .cinema-editorial-photo{min-height:320px}
+  .cinema-editorial-copy{padding:53px 7%}
+  .cinema-editorial-copy h2{font-size:49px}
+  .cinema-villas{padding:61px 7% 70px}
+  .cinema-villas-header{display:block;margin-bottom:25px}
+  .cinema-villas-header .text-link{margin-top:15px}
+  .cinema-villas .card-grid{grid-template-columns:1fr;gap:28px}
+  .cinema-villas .card-image{aspect-ratio:1.3}
+  .cinema-experience-photo{min-height:315px}
+  .cinema-experience-copy{padding:54px 7%}
+  .cinema-destinations{padding:62px 7%}
+  .cinema-destinations>div:first-child{display:block}
+  .cinema-destinations>div:first-child .text-link{margin-top:13px}
+  .cinema-destination-grid{grid-template-columns:1fr}
+  .cinema-destination{min-height:240px}
+  .cinema-search{padding:55px 5%}
+  .cinema-search .home-search{padding:24px 4%;width:100%}
+  .cinema-search .home-search h2{font-size:33px}
+  .cinema-about-photo{min-height:300px}
+  .cinema-about-copy{padding:55px 7%}
+  .cinema-last-word{min-height:350px}
+  .cinema-last-word h2{font-size:43px}
+}
+@media(prefers-reduced-motion:reduce){
+  .cinema-hero-cta .circle,.cinema-destination img{transition:none}
+}
