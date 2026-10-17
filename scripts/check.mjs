@@ -27,6 +27,14 @@ for(const f of files.filter(f=>f.endsWith('.html'))){
   if(gallery)for(const img of JSON.parse(gallery)){assets++;if(!fs.existsSync(path.join(root,img.src.slice(1))))errors.push(`Missing gallery image: ${img.src}`);}
 }
 const source=JSON.parse(fs.readFileSync('content/source.json','utf8'));
+const homeHtml=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const villaPages=source.pages.filter(page=>page.path?.startsWith('/properties/') && page.images?.length);
+const showcaseCards=(homeHtml.match(/data-villa-slide(?:\\s|>)/g)||[]).length;
+if(!homeHtml.includes('data-villa-carousel'))errors.push('Missing immersive villa showcase on homepage.');
+if(showcaseCards!==villaPages.length)errors.push(`Villa showcase renders ${showcaseCards} cards, expected ${villaPages.length}.`);
+for(const assetName of ['villa-showcase.js','villa-showcase.css']){
+  if(!homeHtml.includes(`/assets/${assetName}?v=`))errors.push(`Villa showcase asset missing: ${assetName}`);
+}
 for(const page of source.pages)for(const media of [...page.images,...page.videos]){
   if(/\b(logo|instagram|facebook|icon)\b/i.test(media.alt||''))continue;
   if(!allRendered.includes(media.local))errors.push(`Original media not exposed on any page: ${media.local}`);
