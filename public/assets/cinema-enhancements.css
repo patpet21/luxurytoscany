@@ -1,0 +1,122 @@
+/* Cinematic interactions — progressive enhancement, no third-party runtime.
+   Kept separate from the approved Private Reserve design. */
+
+/* Subtle entrance, only when JS and user motion preferences allow it. */
+body[data-page="/"].cinema-motion-ready .cinema-hero .hero-copy > * {
+  animation: cinema-hero-arrive .95s cubic-bezier(.2,.75,.24,1) both;
+}
+body[data-page="/"].cinema-motion-ready .cinema-hero .hero-copy > :nth-child(2) {animation-delay:110ms}
+body[data-page="/"].cinema-motion-ready .cinema-hero .hero-copy > :nth-child(3) {animation-delay:220ms}
+body[data-page="/"].cinema-motion-ready .cinema-hero .hero-copy > :nth-child(4) {animation-delay:300ms}
+@keyframes cinema-hero-arrive {
+  from {opacity:0;transform:translate3d(0,20px,0)}
+  to {opacity:1;transform:translate3d(0,0,0)}
+}
+
+/* Section reveals are opt-in: content remains visible when JS is unavailable. */
+body[data-page="/"] .cinema-scroll-reveal {
+  opacity:0;
+  transform:translate3d(0,23px,0);
+  transition:opacity .85s cubic-bezier(.2,.75,.25,1),
+             transform .85s cubic-bezier(.2,.75,.25,1);
+  transition-delay:var(--cinema-stagger,0ms);
+}
+body[data-page="/"] .cinema-scroll-reveal.is-in-view {
+  opacity:1;
+  transform:translate3d(0,0,0);
+}
+
+/* Direction-aware hover on the existing villa links, with no extra navigation. */
+body[data-page="/"] .cinema-villas .card-image.has-cinema-curtain {
+  isolation:isolate;
+}
+body[data-page="/"] .cinema-villas .card-image .cinema-card-curtain {
+  position:absolute;inset:0;z-index:2;
+  display:flex;flex-direction:column;justify-content:end;align-items:flex-start;
+  padding:clamp(20px,2.25vw,34px);
+  background:linear-gradient(180deg,rgba(7,13,11,.1) 0%,rgba(7,13,11,.72) 60%,rgba(7,13,11,.95) 100%);
+  color:#f8f0e1;pointer-events:none;
+  opacity:0;
+  transform:translate3d(var(--curtain-x,0%),var(--curtain-y,100%),0);
+  transition:transform .52s cubic-bezier(.22,.73,.22,1),opacity .42s ease;
+}
+body[data-page="/"] .cinema-villas .card-image .cinema-card-curtain__kicker {
+  font-family:Manrope,Arial,sans-serif;
+  font-size:9px;letter-spacing:.21em;color:#e5c991;
+  margin-bottom:10px;
+}
+body[data-page="/"] .cinema-villas .card-image .cinema-card-curtain__name {
+  font-family:'Bodoni Moda',Georgia,serif;
+  font-size:clamp(25px,2.4vw,39px);line-height:1.04;
+  letter-spacing:-.02em;max-width:95%;
+}
+body[data-page="/"] .cinema-villas .card-image .cinema-card-curtain__action {
+  margin-top:17px;padding-top:13px;
+  border-top:1px solid #d6b77b99;color:#eddbbb;
+  font-size:9px;letter-spacing:.17em;
+}
+body[data-page="/"] .cinema-villas .card-image .image-arrow,
+body[data-page="/"] .cinema-villas .card-image .image-label {z-index:3}
+body[data-page="/"] .cinema-villas .card-image.is-curtain-visible .cinema-card-curtain,
+body[data-page="/"] .cinema-villas .card-image:focus-visible .cinema-card-curtain {
+  opacity:1;transform:translate3d(0,0,0);
+}
+body[data-page="/"] .cinema-villas .card-image:focus-visible {
+  outline:2px solid #e9cb90;outline-offset:4px;
+}
+
+/* Destination emphasis: no JavaScript needed and no permanently dimmed cards. */
+@media (hover:hover) and (pointer:fine) {
+  body[data-page="/"] .cinema-destination {
+    transition:opacity .5s ease,filter .5s ease;
+  }
+  @supports selector(:has(*)) {
+    body[data-page="/"] .cinema-destination-grid:has(.cinema-destination:hover)
+    .cinema-destination:not(:hover) {opacity:.67;filter:saturate(.7)}
+  }
+}
+body[data-page="/"] .cinema-destination:focus-visible {
+  outline:2px solid #d9b779;outline-offset:5px;
+}
+
+/* Villa gallery: editorial details, existing grid and lightbox remain intact. */
+body[data-page^="/properties/"] .detail-gallery .gallery-photo {
+  overflow:hidden;
+  background:#151c19;
+  transition:box-shadow .35s ease;
+}
+body[data-page^="/properties/"] .detail-gallery .gallery-photo img {
+  transition:transform .8s cubic-bezier(.2,.75,.25,1);
+}
+@media (hover:hover) and (pointer:fine) {
+  body[data-page^="/properties/"] .detail-gallery .gallery-photo:hover {
+    box-shadow:0 14px 35px #10181426;
+  }
+  body[data-page^="/properties/"] .detail-gallery .gallery-photo:hover img {
+    transform:scale(1.045);
+  }
+}
+body[data-page^="/properties/"] .detail-gallery .gallery-photo:focus-visible {
+  outline:2px solid #c9a76e;outline-offset:4px;
+}
+
+/* No hidden content or motion for visitors asking for reduced motion. */
+@media (prefers-reduced-motion:reduce) {
+  body[data-page="/"].cinema-motion-ready .cinema-hero .hero-copy > * {
+    animation:none!important;
+  }
+  body[data-page="/"] .cinema-scroll-reveal {
+    opacity:1!important;transform:none!important;transition:none!important;
+  }
+  body[data-page="/"] .cinema-villas .card-image .cinema-card-curtain {
+    transform:none!important;transition:none!important;
+  }
+  body[data-page="/"] .cinema-destination,
+  body[data-page^="/properties/"] .detail-gallery .gallery-photo,
+  body[data-page^="/properties/"] .detail-gallery .gallery-photo img {
+    transition:none!important;
+  }
+  body[data-page^="/properties/"] .detail-gallery .gallery-photo:hover img {
+    transform:none!important;
+  }
+}
