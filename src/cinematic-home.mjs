@@ -1,3 +1,4 @@
+import {villaShowcase} from './villa-showcase.mjs';
 export function cinematicHome(page,data,ui) {
   const {esc,picture,card,arrow,paths,homeSearch,villaIcon,journeyCTA}=ui;
   const lead=data.villas.find(v=>/palazzo rosadi/i.test(v.title))||data.villas[0]||page;
@@ -5,7 +6,6 @@ export function cinematicHome(page,data,ui) {
   const experience=data.get('/wine-tasting')||data.get('/cooking-classes')||data.experiences[0]||page;
   const about=data.get('/about')||page;
   const destinations=data.cityPages.filter(p=>p.images?.length).slice(0,3);
-  const villas=data.villas.filter(p=>p.images?.length).slice(0,3);
   const backdrop=page.images?.length?page:country;
   const highlights=[
     {icon:'pool',title:'Exceptional Villas',text:'Private homes, personally selected for memorable stays.'},
@@ -36,11 +36,7 @@ export function cinematicHome(page,data,ui) {
       <a class="text-link" href="${esc(paths.about)}">Our story ${arrow}</a>
     </div>
   </section>
-  <section class="cinema-villas" id="collection" aria-labelledby="cinema-villas-title">
-    <div class="cinema-villas-header"><div><p class="eyebrow">OUR VILLAS</p><h2 id="cinema-villas-title">A private world of your own.</h2></div>
-      <a class="text-link" href="${esc(paths.villas)}">Explore all ${data.villas.length} villas ${arrow}</a></div>
-    <div class="card-grid villas-grid">${villas.map(v=>card(v,'villa')).join('')}</div>
-  </section>
+  ${villaShowcase(data.villas,{esc,picture,paths})}
   <section class="cinema-experience" aria-labelledby="cinema-experience-title">
     <div class="cinema-experience-copy"><p class="eyebrow">EXPERIENCES</p>
       <h2 id="cinema-experience-title">Taste. Explore.<br>Live Tuscany.</h2>
