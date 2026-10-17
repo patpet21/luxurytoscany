@@ -79,7 +79,9 @@
       setDirection(link, direction(event, link));
       // Start outside the image, then animate inward on the next paint.
       requestAnimationFrame(() => {
-        if (link.matches(':hover')) link.classList.add('is-curtain-visible');
+        requestAnimationFrame(() => {
+          if (link.matches(':hover')) link.classList.add('is-curtain-visible');
+        });
       });
     });
     link.addEventListener('mouseleave', event => {
