@@ -13,7 +13,7 @@ export function cinematicHome(page,data,ui) {
     {icon:'support',title:'Personal Service',text:'Local knowledge and thoughtful guidance at every step.'}
   ];
   return `
-  <section class="hero hero-home cinema-hero" aria-label="Discover private villas in Tuscany">
+  <section class="hero hero-home cinema-hero cinema-hero--search-first" aria-label="Discover private villas in Tuscany">
     ${picture(lead,'hero-media',0,true)}
     <div class="hero-shade"></div>
     <div class="hero-copy">
@@ -24,6 +24,9 @@ export function cinematicHome(page,data,ui) {
     </div>
     <div class="cinema-hero-side" aria-hidden="true">01<span></span>ST</div>
     <div class="hero-foot"><span>THE ART OF STAYING SOMEWHERE SPECIAL</span><a href="#cinema-discover">SCROLL TO DISCOVER ↓</a><span>SUPER TUSCANY · ITALY</span></div>
+  </section>
+  <section class="cinema-search cinema-search--intro" aria-labelledby="search-heading">
+    ${homeSearch(data,{esc,card,arrow})}
   </section>
   <section class="cinema-promises" id="cinema-discover" aria-label="The Super Tuscany difference">
     ${highlights.map(item=>`<article class="cinema-promise">${villaIcon(item.icon)}<h2>${esc(item.title)}</h2><p>${esc(item.text)}</p></article>`).join('')}
@@ -44,12 +47,6 @@ export function cinematicHome(page,data,ui) {
       <a class="text-link" href="${esc(paths.experiences)}">Discover experiences ${arrow}</a>
     </div>
     <div class="cinema-experience-photo">${picture(experience,'',0)}</div>
-  </section>
-  <section class="cinema-search" aria-labelledby="cinema-search-title">
-    <div class="cinema-search-header"><p class="eyebrow">LET'S FIND YOUR PLACE</p>
-      <h2 id="cinema-search-title">Your Tuscany begins here.</h2>
-      <p>Browse the collection by destination, guests and the details that make a villa feel right.</p></div>
-    ${homeSearch(data,{esc,card,arrow})}
   </section>
   ${destinations.length?`<section class="cinema-destinations" aria-labelledby="cinema-destinations-title">
     <div><div><p class="eyebrow">DISCOVER THE REGION</p><h2 id="cinema-destinations-title">A sense of place.</h2></div>
