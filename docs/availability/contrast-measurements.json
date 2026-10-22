@@ -1,0 +1,86 @@
+[
+  {
+    "background": "rgb(251, 248, 240)",
+    "color": "rgb(25, 35, 71)",
+    "element": "search-heading",
+    "opacity": "1",
+    "ratio": 14.41
+  },
+  {
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(25, 35, 71)",
+    "element": "SPAN",
+    "opacity": "1",
+    "ratio": 15.3
+  },
+  {
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(25, 35, 71)",
+    "element": "home-villa",
+    "opacity": "1",
+    "ratio": 15.3
+  },
+  {
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(25, 35, 71)",
+    "element": "home-arrival",
+    "opacity": "1",
+    "ratio": 15.3
+  },
+  {
+    "background": "rgb(232, 231, 228)",
+    "color": "rgb(83, 86, 93)",
+    "element": "calendar-day is-blocked is-past",
+    "opacity": "1",
+    "ratio": 5.94
+  },
+  {
+    "background": "rgb(240, 223, 217)",
+    "color": "rgb(109, 48, 48)",
+    "element": "calendar-day is-blocked",
+    "opacity": "1",
+    "ratio": 7.69
+  },
+  {
+    "background": "rgb(25, 35, 71)",
+    "color": "rgb(255, 255, 255)",
+    "element": "calendar-day is-available in-range range-start",
+    "opacity": "1",
+    "ratio": 15.3
+  },
+  {
+    "background": "rgb(230, 209, 167)",
+    "color": "rgb(25, 35, 71)",
+    "element": "calendar-day is-available in-range",
+    "opacity": "1",
+    "ratio": 10.23
+  },
+  {
+    "background": "rgb(32, 41, 36)",
+    "color": "rgb(255, 255, 255)",
+    "element": "INPUT",
+    "opacity": "1",
+    "ratio": 14.96
+  },
+  {
+    "background": "rgb(227, 237, 225)",
+    "color": "rgb(36, 70, 46)",
+    "element": "calendar-day is-available",
+    "opacity": "1",
+    "ratio": 8.78
+  },
+  {
+    "background": "rgb(251, 248, 240)",
+    "color": "rgb(80, 88, 102)",
+    "element": "P",
+    "opacity": "1",
+    "ratio": 6.76
+  },
+  {
+    "background": "rgb(25, 35, 71)",
+    "color": "rgb(255, 255, 255)",
+    "element": "button",
+    "opacity": "1",
+    "ratio": 15.3
+  }
+]

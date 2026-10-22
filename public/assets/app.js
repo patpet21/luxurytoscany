@@ -66,6 +66,14 @@
     $('#inquiry-subtitle').textContent=booking?'Share your dates. We’ll confirm availability and prepare a personal quote.':'A question about an experience, a villa or anything else? We’re here to help.';
   }
   $$('[data-inquiry]').forEach(b=>b.addEventListener('click',()=>{chooseForm(b.dataset.inquiry);if(b.dataset.property){const select=$('select[name="villa"]',inquiry);select.value=b.dataset.property;$('#general-panel input[name="topic"]').value=b.dataset.property;}if(b.dataset.topic)$('#general-panel input[name="topic"]').value=b.dataset.topic;showDialog(inquiry);nav?.classList.remove('open');toggle?.setAttribute('aria-expanded','false');}));
+  document.addEventListener('stay:open',event=>{
+    const stay=event.detail;chooseForm('booking');
+    const form=$('form[name="stay-request"]');
+    for(const key of ['villa','arrival','departure','adults','children'])form.elements[key].value=String(stay[key]??'');
+    $('.form-status',form).textContent='';
+    for(const key of ['arrival','departure'])form.elements[key].dispatchEvent(new Event('input'));
+    showDialog(inquiry);
+  });
   document.addEventListener('concierge:inquiry',event=>{
     const detail=event.detail||{},kind=detail.kind==='booking'?'booking':'general';chooseForm(kind);
     const panel=$(kind==='booking'?'#booking-panel':'#general-panel');
@@ -95,7 +103,7 @@
     const results=$('#home-search-results'),city=$('#home-destination'),category=$('#home-category'),interest=$('#home-interest');
     const bedrooms=$('#home-bedrooms'),bathrooms=$('#home-bathrooms'),adults=$('#home-adults'),children=$('#home-children');
     const checkIn=$('#home-arrival'),checkOut=$('#home-departure'),guestPicker=$('#home-guests');
-    let matches=[],limit=6,searched=finder.dataset.searchMode!=='home';
+    let matches=[],limit=6,searched=finder.dataset.searchMode!=='home',searchEpoch=0;
     const type=()=>homeForm.elements['search-type'].value;
     const groupSize=()=>Number(adults.value)+Number(children.value);
     const setToday=new Date();const localDate=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
@@ -118,7 +126,7 @@
       if(finder.dataset.searchMode==='villa'){
         const visible=matches.slice(0,limit),selected=$$('input[name=amenity]:checked',homeForm).map(c=>c.value);
         const score=item=>(city.value&&item.city===city.value?20:0)+selected.filter(a=>item.amenities.includes(a)).length*4+(item.bedrooms>=Number(bedrooms.value)?2:0)+(item.bathrooms>=Number(bathrooms.value)?2:0);
-        const alternatives=items.map((item,i)=>({item,i})).filter(({item,i})=>item.type==='villa'&&!visible.includes(i)&&item.sleeps>=groupSize()).sort((a,b)=>score(b.item)-score(a.item)||(groupSize()?a.item.sleeps-b.item.sleeps:a.i-b.i)).slice(0,3);
+        const alternatives=(checkIn.value || $('#home-villa')?.value ? [] : items).map((item,i)=>({item,i})).filter(({item,i})=>item.type==='villa'&&!visible.includes(i)&&item.sleeps>=groupSize()).sort((a,b)=>score(b.item)-score(a.item)||(groupSize()?a.item.sleeps-b.item.sleeps:a.i-b.i)).slice(0,3);
         $$('[data-villa-suggestion]').forEach(row=>row.hidden=true);
         alternatives.forEach(({i})=>{const row=$('[data-villa-suggestion="'+i+'"]');row.hidden=false;$('#villa-suggestions-grid').append(row);});
         $('#villa-suggestions').hidden=!alternatives.length;
@@ -126,27 +134,41 @@
         finder.dispatchEvent(new CustomEvent('villa:results',{detail:finder.villaResults}));
       }
     }
-    function findResults(){
+    async function findResults(){
+      const epoch=++searchEpoch;
       const selected=$$('input[name=amenity]:checked',homeForm).map(c=>c.value);
       matches=items.flatMap((item,i)=>{
         if(item.type!==type())return [];
-        if(type()==='villa'&&((city.value&&item.city!==city.value)||item.sleeps<groupSize()||item.bedrooms<Number(bedrooms.value)||item.bathrooms<Number(bathrooms.value)||!selected.every(a=>item.amenities.includes(a))))return [];
+        if(type()==='villa'&&(( $('#home-villa')?.value && item.path!==$('#home-villa').value )||(city.value&&item.city!==city.value)||item.sleeps<groupSize()||item.bedrooms<Number(bedrooms.value)||item.bathrooms<Number(bathrooms.value)||!selected.every(a=>item.amenities.includes(a))))return [];
         if(type()==='experience'&&((category.value&&item.category!==category.value)||(interest.value&&item.interest!==interest.value)))return [];
         return [i];
       });
+      if(type()==='villa'&&(checkIn.value||checkOut.value)){
+        results.hidden=false;results.setAttribute('aria-busy','true');
+        $('#home-search-empty').hidden=true;$('#home-results-more').hidden=true;
+        if($('#villa-suggestions'))$('#villa-suggestions').hidden=true;
+        finder.villaResults={indices:[],visible:[]};finder.dispatchEvent(new CustomEvent('villa:results',{detail:finder.villaResults}));
+        $('#home-result-count').textContent='Checking verified availability…';
+        const candidates=matches;
+        matches=[];rows.forEach(row=>row.hidden=true);
+        const verified=window.SuperTuscanyAvailability ? await window.SuperTuscanyAvailability.filter(items,candidates,checkIn.value,checkOut.value) : [];
+        if(epoch!==searchEpoch)return;
+        matches=verified;
+        $('#home-search-note').textContent='Only stays with every night freshly reported available are shown. Unknown, conflicting or occupied dates are excluded. Reservations still require confirmation.';
+      }
       if(type()==='villa'&&groupSize())matches.sort((a,b)=>items[a].sleeps-items[b].sleeps);
-      limit=6;results.hidden=false;$('#home-filter-count').textContent=selected.length+(Number(bedrooms.value)>0?1:0)+(Number(bathrooms.value)>0?1:0)||'';showResults();
+      limit=6;results.hidden=false;results.removeAttribute('aria-busy');$('#home-filter-count').textContent=selected.length+(Number(bedrooms.value)>0?1:0)+(Number(bathrooms.value)>0?1:0)||'';showResults();
     }
     function setType(){
       const villa=type()==='villa';finder.dataset.searchType=type();
-      ['#home-destination-field','#home-arrival-field','#home-departure-field','#home-villa-filters'].forEach(id=>$(id).hidden=!villa);
+      ['#home-villa-field','#home-destination-field','#home-arrival-field','#home-departure-field','#home-villa-filters'].forEach(id=>$(id).hidden=!villa);
       ['#home-interest-field','#home-category-field'].forEach(id=>$(id).hidden=villa);
       $('#search-heading').innerHTML=villa?'Find your <em>place in Tuscany.</em>':'Make room for <em>discovery.</em>';
       $('#home-submit-label').textContent=villa?'Find villas':'Find experiences';
       $('#home-search-note').textContent=villa?'Search by capacity and amenities. Preferred dates are shared with our team to confirm availability.':'Experiences are arranged personally for your group; participation details are confirmed by our team.';
       $('#home-results-title').innerHTML=villa?'Homes to <em>make your own.</em>':'Days to <em>remember.</em>';
       $('.search-results-heading .eyebrow').textContent=villa?'THE VILLA COLLECTION':'THE EXPERIENCE COLLECTION';
-      validateDates();if(searched)findResults();
+      finder.dispatchEvent(new Event('finder:type'));validateDates();if(searched)findResults();
     }
     category.value=finder.dataset.searchCategory||'';
     homeForm.addEventListener('submit',e=>{e.preventDefault();searched=true;guestPicker.open=false;findResults();results.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});});
@@ -179,6 +201,8 @@
       rows[index].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
       $('a',rows[index])?.focus({preventScroll:true});
     });
+    window.addEventListener('availability:ready',()=>{if(searched)findResults();});
+    finder.addEventListener('availability:expired',()=>{if(searched)findResults();});
     updateGuests();setType();
   }
   const search=$('#villa-search'),destination=$('#villa-destination');
