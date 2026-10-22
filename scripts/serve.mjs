@@ -1,10 +1,22 @@
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
+import availability from '../netlify/functions/availability.mjs';
 const root = path.resolve('dist');
 const mime = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json','.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.webp':'image/webp','.avif':'image/avif','.svg':'image/svg+xml','.mp4':'video/mp4','.woff2':'font/woff2','.ttf':'font/ttf','.ico':'image/x-icon'};
-http.createServer((req,res)=>{
+http.createServer(async (req,res)=>{
   const url = new URL(req.url,'http://localhost');
+  if (url.pathname === '/.netlify/functions/availability') {
+    try {
+      const response = await availability(new Request(url, {method:req.method}));
+      res.writeHead(response.status, Object.fromEntries(response.headers));
+      res.end(await response.text());
+    } catch {
+      res.writeHead(503, {'Content-Type':'application/json','Cache-Control':'no-store'});
+      res.end(JSON.stringify({state:'unavailable', intervals:[]}));
+    }
+    return;
+  }
   let file = path.resolve(root, '.' + decodeURIComponent(url.pathname));
   if (!file.startsWith(root + path.sep) && file !== root) {res.writeHead(403);res.end();return;}
   if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file,'index.html');

@@ -4,7 +4,7 @@ import crypto from 'node:crypto';
 import {adapt,render,normalizePath,imageSrc,paths,collections,esc} from '../src/render.mjs';
 import {conciergeKnowledge} from '../src/concierge.mjs';
 const source=JSON.parse(fs.readFileSync('content/source.json','utf8'));
-source.assetVersion=Object.fromEntries(['fonts/fonts.css','site.css','app.js','experience.css','story-concierge.css','luxury.css','cinematic.css','cinema-enhancements.css','cinema-enhancements.js','villa-showcase.css','villa-showcase.js','villa-map.css','villa-map.js','concierge.js','concierge-engine.js'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync('public/assets/'+file)).digest('hex').slice(0,12)]));
+source.assetVersion=Object.fromEntries(['availability.js','availability.css','availability-model.js','fonts/fonts.css','site.css','app.js','experience.css','story-concierge.css','luxury.css','cinematic.css','cinema-enhancements.css','cinema-enhancements.js','villa-showcase.css','villa-showcase.js','villa-map.css','villa-map.js','concierge.js','concierge-engine.js'].map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync('public/assets/'+file)).digest('hex').slice(0,12)]));
 let pages=adapt(source);
 const posters=JSON.parse(fs.readFileSync('content/video-posters.json','utf8'));
 for(const p of pages)for(const v of p.videos||[]){v.poster=posters.find(f=>f.video===v.local)?.poster||v.poster;}
