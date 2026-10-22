@@ -2,6 +2,7 @@ import {villaShowcase} from './villa-showcase.mjs';
 export function cinematicHome(page,data,ui) {
   const {esc,picture,card,arrow,paths,homeSearch,villaIcon,journeyCTA}=ui;
   const lead=data.villas.find(v=>/palazzo rosadi/i.test(v.title))||data.villas[0]||page;
+  const homeVideo=(page.videos||[]).find(v=>v.type==='mp4'||/\.mp4(\?|$)/.test(v.local||v.url||''));
   const country=data.villas.find(v=>v.path!==lead.path && v.images?.length>1)||data.villas[1]||lead;
   const experience=data.get('/wine-tasting')||data.get('/cooking-classes')||data.experiences[0]||page;
   const about=data.get('/about')||page;
@@ -13,8 +14,8 @@ export function cinematicHome(page,data,ui) {
     {icon:'support',title:'Personal Service',text:'Local knowledge and thoughtful guidance at every step.'}
   ];
   return `
-  <section class="hero hero-home cinema-hero cinema-hero--search-first" aria-label="Discover private villas in Tuscany">
-    ${picture(lead,'hero-media',0,true)}
+  <section class="hero hero-home cinema-hero cinema-hero--video" aria-label="Discover private villas in Tuscany">
+    ${homeVideo?`<video id="home-hero-video" class="hero-media" muted loop playsinline preload="metadata"${homeVideo.poster?` poster="${esc(homeVideo.poster)}"`:''} aria-hidden="true"><source src="${esc(homeVideo.local||homeVideo.url)}" type="video/mp4"></video><button class="video-control" type="button" aria-label="Play background video" aria-controls="home-hero-video" data-video-toggle hidden>▶</button>`:picture(lead,'hero-media',0,true)}
     <div class="hero-shade"></div>
     <div class="hero-copy">
       <p class="eyebrow">PRIVATE VILLAS IN TUSCANY</p>

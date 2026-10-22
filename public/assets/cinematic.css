@@ -319,24 +319,29 @@ body[data-page="/"] .journey .text-link{color:#e5ce9e}
   .cinema-hero-cta .circle,.cinema-destination img{transition:none}
 }
 
-/* Keep the single finder directly after the opening copy, before the stories. */
-.cinema-hero.cinema-hero--search-first { height: auto; min-height: 0; max-height: none; }
-.cinema-hero--search-first .hero-copy { min-height: 0; padding: 122px max(6.2vw,26px) 64px; }
-.cinema-hero--search-first .hero-foot { bottom: 18px; }
+/* Give the original film room to breathe; the single finder follows the hero. */
+.cinema-hero.cinema-hero--video { height: 82svh; min-height: 620px; max-height: 920px; }
+.cinema-hero--video .hero-media { object-position: 50% 45%; filter: brightness(.9) saturate(.88) contrast(1.04); }
+.cinema-hero--video .hero-shade {
+  background: linear-gradient(90deg,rgba(5,11,10,.8),rgba(5,11,10,.42) 45%,rgba(5,11,10,.08) 80%),
+              linear-gradient(0deg,rgba(5,10,9,.8),transparent 35%,rgba(4,9,8,.25));
+}
+.cinema-hero--video .hero-copy { padding: 155px max(6.2vw,26px) 120px; }
+.cinema-hero--video .hero-foot { bottom: 24px; }
+.cinema-hero--video .video-control {
+  top: auto; right: max(6.2vw,26px); bottom: 80px; z-index: 4;
+  display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
+  background: #0b1512c9; color: #faf5ea; border-color: #e7d3ab;
+  font-family: Arial,sans-serif; font-size: 15px; line-height: 1;
+}
+.cinema-hero--video .video-control:hover { background: #213229; }
 .cinema-search.cinema-search--intro { padding: 0; background: #fbf8f0; border-top: 1px solid #c6bda9; border-bottom: 0; }
 .cinema-search--intro .stay-finder { padding: 30px max(6.2vw,26px) 28px; }
 .cinema-search--intro .finder-heading { margin-bottom: 20px; }
-@media(min-width:901px) {
-  .cinema-hero--search-first .hero-copy { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); column-gap: 60px; row-gap: 12px; align-items: center; }
-  .cinema-hero--search-first .hero-copy .eyebrow { grid-column: 1 / -1; margin: 0; }
-  .cinema-hero--search-first h1 { grid-column: 1; grid-row: 2 / span 2; margin: 0; font-size: clamp(56px,6vw,86px); }
-  .cinema-hero--search-first .hero-copy > p:not(.eyebrow) { grid-column: 2; grid-row: 2; margin: 0; align-self: end; }
-  .cinema-hero--search-first .cinema-hero-cta { grid-column: 2; grid-row: 3; align-self: start; }
-}
 @media(max-width:640px) {
-  .cinema-hero--search-first .hero-copy { padding: 100px 7% 55px; }
-  .cinema-hero--search-first .hero-copy .eyebrow { margin: 0; }
-  .cinema-hero--search-first h1 { font-size: 52px; margin: 8px 0 12px; }
-  .cinema-hero--search-first .hero-copy > p:not(.eyebrow) { margin: 8px 0 18px; line-height: 1.6; }
+  .cinema-hero.cinema-hero--video { height: 76svh; min-height: 540px; max-height: 760px; }
+  .cinema-hero--video .hero-copy { padding: 125px 7% 105px; }
+  .cinema-hero--video .hero-foot { bottom: 18px; }
+  .cinema-hero--video .video-control { right: 7%; bottom: 60px; }
   .cinema-search--intro .stay-finder { padding: 26px 7% 28px; }
 }

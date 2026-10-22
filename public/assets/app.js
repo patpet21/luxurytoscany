@@ -238,7 +238,22 @@
     if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)stop();},{threshold:.1});observer.observe(card);}
     document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
   });
-  const video=$('.hero video'),videoToggle=$('[data-video-toggle]');if(video&&videoToggle){videoToggle.addEventListener('click',()=>{if(video.paused){video.play().then(()=>{videoToggle.textContent='Ⅱ';videoToggle.setAttribute('aria-label','Pause background video');}).catch(()=>{});}else{video.pause();videoToggle.textContent='▶';videoToggle.setAttribute('aria-label','Play background video');}});if(matchMedia('(prefers-reduced-motion: reduce)').matches){video.pause();videoToggle.textContent='▶';videoToggle.setAttribute('aria-label','Play background video');}}
+  const video=$('.hero video'),videoToggle=$('[data-video-toggle]');
+  if(video&&videoToggle){
+    const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
+    const syncVideoControl=()=>{
+      videoToggle.textContent=video.paused?'▶':'Ⅱ';
+      videoToggle.setAttribute('aria-label',video.paused?'Play background video':'Pause background video');
+    };
+    videoToggle.hidden=false;
+    video.addEventListener('play',syncVideoControl);
+    video.addEventListener('pause',syncVideoControl);
+    video.addEventListener('error',()=>{videoToggle.hidden=true;});
+    videoToggle.addEventListener('click',()=>{if(video.paused)video.play().catch(syncVideoControl);else video.pause();});
+    motionPreference.addEventListener('change',event=>{if(event.matches)video.pause();});
+    if(motionPreference.matches)video.pause();else video.play().catch(syncVideoControl);
+    syncVideoControl();
+  }
   if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:.08});$$('.section-heading,.card,.editorial-copy,.family-copy,.story-section>div').forEach(el=>{el.classList.add('reveal');observer.observe(el);});}
   if(location.pathname.replace(/\/$/,'')==='/contact'&&new URLSearchParams(location.search).get('type')==='booking'){chooseForm('booking');showDialog(inquiry);}
 })();
