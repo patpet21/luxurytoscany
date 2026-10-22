@@ -154,8 +154,8 @@ test('allowlist prevents arbitrary upstream requests; GET only; date validation'
 
 test('Casciano API keeps conservative blocks and exposes source disagreement', async () => {
   const record=evidence.villas.find(v=>v.id===5054);
-  const service=createAvailabilityService({now:()=>epoch,fetchImpl:async()=>json(record.payload)});
-  const data=await (await service(req('villa=villa-casciano'))).json();
+  const service=createAvailabilityService({now:()=>epoch,fetchImpl:async()=>json(record.payload),calendarService:async()=>({'2026-10':{days:{'2026-10-22':'available'}}})});
+  const data=await (await service(req('villa=villa-casciano&months=2026-10'))).json();
   assert.match(data.sourceWarning,/discrepancy/);
   assert.equal(dayState(data,'2026-10-22',epoch),'blocked');
 });

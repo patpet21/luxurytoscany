@@ -1,0 +1,4476 @@
+{
+  "capturedAt": "2026-10-22T18:12:10.328518+00:00",
+  "calendar": "https://www.promozionevilla.it/availability/",
+  "client": "https://www.promozionevilla.it/wp-content/plugins/villa-availabilities/app/dist/app.js",
+  "clientBinding": "API availabilities are passed to v-calendar disabled-dates",
+  "semantics": "Blocked calendar dates, start and end inclusive. Arrival/departure times are not supplied.",
+  "villas": [
+    {
+      "id": 1081,
+      "name": "Palazzo Rosadi",
+      "url": "https://www.promozionevilla.it/wp-json/promovilla/v1/availabilities/1081",
+      "payload": [
+        {
+          "id": 1081,
+          "title": "Palazzo Rosadi",
+          "availabilities": [
+            {
+              "start": "06/12/2027",
+              "end": "06/18/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/04/2027",
+              "end": "09/17/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/30/2027",
+              "end": "11/05/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/26/2027",
+              "end": "07/02/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "05/15/2027",
+              "end": "05/21/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "08/07/2027",
+              "end": "08/13/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/31/2026",
+              "end": "11/06/2026",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/17/2026",
+              "end": "10/23/2026",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/03/2027",
+              "end": "07/09/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "04/03/2027",
+              "end": "04/09/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "05/29/2027",
+              "end": "06/04/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/19/2027",
+              "end": "06/25/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/10/2027",
+              "end": "07/16/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/18/2027",
+              "end": "09/24/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "11/13/2027",
+              "end": "03/10/2028",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/25/2027",
+              "end": "10/01/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "11/14/2026",
+              "end": "03/12/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            }
+          ]
+        }
+      ],
+      "publicDays": [
+        {
+          "date": "2026-10-01",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-09",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-10",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-11",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-12",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-13",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-14",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-15",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-16",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-17",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-18",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-19",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-20",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-21",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-22",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-23",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-24",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-25",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-26",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-27",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-28",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-29",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-30",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-31",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-01",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-02",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-03",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-04",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-05",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-06",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-07",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-08",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-09",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-10",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-11",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-12",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-13",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-14",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-15",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-16",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-17",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-18",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-19",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-20",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-21",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-22",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-23",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-24",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-25",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-26",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-27",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-28",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-29",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-30",
+          "public": "blocked",
+          "apiBlocked": true
+        }
+      ],
+      "differences": [
+        {
+          "date": "2026-10-01",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-09",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-10",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-11",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-12",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-13",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-14",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-15",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-16",
+          "public": "blocked",
+          "apiBlocked": false
+        }
+      ]
+    },
+    {
+      "id": 5054,
+      "name": "Villa Casciano",
+      "url": "https://www.promozionevilla.it/wp-json/promovilla/v1/availabilities/5054",
+      "payload": [
+        {
+          "id": 5054,
+          "title": "Villa Casciano",
+          "availabilities": [
+            {
+              "start": "10/26/2026",
+              "end": "10/29/2026",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/05/2027",
+              "end": "06/12/2027",
+              "status": "CONFIRMED",
+              "sequence": true
+            },
+            {
+              "start": "10/09/2027",
+              "end": "10/16/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "12/23/2026",
+              "end": "12/26/2026",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "05/22/2027",
+              "end": "05/29/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/12/2027",
+              "end": "06/25/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/30/2026",
+              "end": "11/01/2026",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/17/2026",
+              "end": "10/23/2026",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "08/28/2027",
+              "end": "09/03/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            }
+          ]
+        }
+      ],
+      "publicDays": [
+        {
+          "date": "2026-10-01",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-09",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-10",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-11",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-12",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-13",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-14",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-15",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-16",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-17",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-18",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-19",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-20",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-21",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-22",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-23",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-24",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-25",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-26",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-27",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-28",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-29",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-30",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-31",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-01",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-02",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-03",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-04",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-05",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-06",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-07",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-08",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-09",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-10",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-11",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-12",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-13",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-14",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-15",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-16",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-17",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-18",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-19",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-20",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-21",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-22",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-23",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-24",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-25",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-26",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-27",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-28",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-29",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-30",
+          "public": "source-available",
+          "apiBlocked": false
+        }
+      ],
+      "differences": [
+        {
+          "date": "2026-10-17",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-18",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-19",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-20",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-21",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-22",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-23",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-26",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-27",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-28",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-29",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-30",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-31",
+          "public": "source-available",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-01",
+          "public": "source-available",
+          "apiBlocked": true
+        }
+      ]
+    },
+    {
+      "id": 336,
+      "name": "Villa De’ Michelangioli",
+      "url": "https://www.promozionevilla.it/wp-json/promovilla/v1/availabilities/336",
+      "payload": [
+        {
+          "id": 336,
+          "title": "Villa De' Michelangioli",
+          "availabilities": [
+            {
+              "start": "01/11/2027",
+              "end": "12/30/2027",
+              "status": "",
+              "sequence": false
+            },
+            {
+              "start": "10/26/2026",
+              "end": "10/28/2026",
+              "status": "",
+              "sequence": false
+            },
+            {
+              "start": "12/29/2026",
+              "end": "01/02/2027",
+              "status": "",
+              "sequence": false
+            },
+            {
+              "start": "10/30/2026",
+              "end": "11/05/2026",
+              "status": "",
+              "sequence": false
+            },
+            {
+              "start": "11/20/2026",
+              "end": "11/21/2026",
+              "status": "",
+              "sequence": false
+            },
+            {
+              "start": "11/27/2026",
+              "end": "11/28/2026",
+              "status": "",
+              "sequence": false
+            }
+          ]
+        }
+      ],
+      "publicDays": [
+        {
+          "date": "2026-10-01",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-09",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-10",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-11",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-12",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-13",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-14",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-15",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-16",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-17",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-18",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-19",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-20",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-21",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-22",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-23",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-24",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-25",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-26",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-27",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-28",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-29",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-30",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-31",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-01",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-02",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-03",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-04",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-05",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-06",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-07",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-08",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-09",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-10",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-11",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-12",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-13",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-14",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-15",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-16",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-17",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-18",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-19",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-20",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-21",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-22",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-23",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-24",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-25",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-26",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-27",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-28",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-29",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-30",
+          "public": "source-available",
+          "apiBlocked": false
+        }
+      ],
+      "differences": [
+        {
+          "date": "2026-10-01",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "blocked",
+          "apiBlocked": false
+        }
+      ]
+    },
+    {
+      "id": 1811,
+      "name": "Villa dell’Angelo",
+      "url": "https://www.promozionevilla.it/wp-json/promovilla/v1/availabilities/1811",
+      "payload": [
+        {
+          "id": 1811,
+          "title": "Villa Dell'Angelo",
+          "availabilities": [
+            {
+              "start": "04/17/2027",
+              "end": "04/23/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/10/2027",
+              "end": "07/16/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/26/2027",
+              "end": "07/02/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/25/2027",
+              "end": "09/28/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "05/20/2028",
+              "end": "05/26/2028",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/19/2027",
+              "end": "06/25/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/04/2027",
+              "end": "09/10/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "11/21/2026",
+              "end": "11/27/2026",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "08/07/2027",
+              "end": "08/13/2027",
+              "status": "CONFIRMED",
+              "sequence": true
+            }
+          ]
+        }
+      ],
+      "publicDays": [
+        {
+          "date": "2026-10-01",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-09",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-10",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-11",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-12",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-13",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-14",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-15",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-16",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-17",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-18",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-19",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-20",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-21",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-22",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-23",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-24",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-25",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-26",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-27",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-28",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-29",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-30",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-31",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-01",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-02",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-03",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-04",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-05",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-06",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-07",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-08",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-09",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-10",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-11",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-12",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-13",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-14",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-15",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-16",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-17",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-18",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-19",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-20",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-21",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-22",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-23",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-24",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-25",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-26",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-27",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-28",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-29",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-30",
+          "public": "source-available",
+          "apiBlocked": false
+        }
+      ],
+      "differences": [
+        {
+          "date": "2026-10-01",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-09",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-10",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-11",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-12",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-13",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-14",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-15",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-16",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-17",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-18",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-19",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-20",
+          "public": "blocked",
+          "apiBlocked": false
+        }
+      ]
+    },
+    {
+      "id": 5359,
+      "name": "Villa Ginestra",
+      "url": "https://www.promozionevilla.it/wp-json/promovilla/v1/availabilities/5359",
+      "payload": [
+        {
+          "id": 5359,
+          "title": "Villa Ginestra",
+          "availabilities": [
+            {
+              "start": "09/04/2027",
+              "end": "09/24/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/25/2027",
+              "end": "09/26/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/31/2027",
+              "end": "08/06/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/19/2027",
+              "end": "07/02/2027",
+              "status": "CONFIRMED",
+              "sequence": true
+            },
+            {
+              "start": "05/29/2027",
+              "end": "06/04/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/31/2026",
+              "end": "03/19/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/30/2027",
+              "end": "03/31/2028",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "05/22/2027",
+              "end": "05/28/2027",
+              "status": "CONFIRMED",
+              "sequence": true
+            },
+            {
+              "start": "07/10/2027",
+              "end": "07/16/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            }
+          ]
+        }
+      ],
+      "publicDays": [
+        {
+          "date": "2026-10-01",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-09",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-10",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-11",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-12",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-13",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-14",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-15",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-16",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-17",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-18",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-19",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-20",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-21",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-22",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-23",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-24",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-25",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-26",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-27",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-28",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-29",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-30",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-31",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-01",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-02",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-03",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-04",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-05",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-06",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-07",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-08",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-09",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-10",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-11",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-12",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-13",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-14",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-15",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-16",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-17",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-18",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-19",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-20",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-21",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-22",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-23",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-24",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-25",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-26",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-27",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-28",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-29",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-30",
+          "public": "blocked",
+          "apiBlocked": true
+        }
+      ],
+      "differences": []
+    },
+    {
+      "id": 5358,
+      "name": "Villa Girasole",
+      "url": "https://www.promozionevilla.it/wp-json/promovilla/v1/availabilities/5358",
+      "payload": [
+        {
+          "id": 5358,
+          "title": "Villa Girasole",
+          "availabilities": [
+            {
+              "start": "05/22/2027",
+              "end": "05/28/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/18/2027",
+              "end": "09/24/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/17/2027",
+              "end": "07/23/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/24/2027",
+              "end": "07/30/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/04/2027",
+              "end": "09/10/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "05/15/2027",
+              "end": "05/21/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "08/14/2027",
+              "end": "08/20/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "08/07/2027",
+              "end": "08/13/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/19/2027",
+              "end": "06/25/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "04/25/2027",
+              "end": "05/07/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/31/2026",
+              "end": "03/03/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/03/2027",
+              "end": "07/09/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "05/29/2027",
+              "end": "06/04/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/12/2027",
+              "end": "06/18/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/11/2027",
+              "end": "09/17/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/05/2027",
+              "end": "06/11/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/16/2027",
+              "end": "10/22/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/10/2028",
+              "end": "09/16/2028",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/26/2027",
+              "end": "07/02/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "04/29/2028",
+              "end": "05/05/2028",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/10/2027",
+              "end": "07/16/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "05/08/2027",
+              "end": "05/14/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "03/05/2027",
+              "end": "03/07/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/25/2027",
+              "end": "09/26/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/02/2027",
+              "end": "10/15/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/31/2027",
+              "end": "08/06/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "08/05/2028",
+              "end": "08/11/2028",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/30/2027",
+              "end": "03/31/2028",
+              "status": "CONFIRMED",
+              "sequence": false
+            }
+          ]
+        }
+      ],
+      "publicDays": [
+        {
+          "date": "2026-10-01",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-09",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-10",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-11",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-12",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-13",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-14",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-15",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-16",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-17",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-18",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-19",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-20",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-21",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-22",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-23",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-24",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-25",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-26",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-27",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-28",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-29",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-30",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-31",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-01",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-02",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-03",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-04",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-05",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-06",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-07",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-08",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-09",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-10",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-11",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-12",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-13",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-14",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-15",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-16",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-17",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-18",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-19",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-20",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-21",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-22",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-23",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-24",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-25",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-26",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-27",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-28",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-29",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-30",
+          "public": "blocked",
+          "apiBlocked": true
+        }
+      ],
+      "differences": [
+        {
+          "date": "2026-10-01",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-09",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-10",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-11",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-12",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-13",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-14",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-15",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-16",
+          "public": "blocked",
+          "apiBlocked": false
+        }
+      ]
+    },
+    {
+      "id": 5158,
+      "name": "Villa Guardistallo",
+      "url": "https://www.promozionevilla.it/wp-json/promovilla/v1/availabilities/5158",
+      "payload": [
+        {
+          "id": 5158,
+          "title": "Villa Guardistallo",
+          "availabilities": [
+            {
+              "start": "08/07/2027",
+              "end": "08/13/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/11/2027",
+              "end": "09/17/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/30/2027",
+              "end": "03/31/2028",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/19/2027",
+              "end": "06/25/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "04/16/2027",
+              "end": "04/23/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/23/2027",
+              "end": "09/28/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/03/2027",
+              "end": "07/08/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/10/2027",
+              "end": "07/16/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/10/2028",
+              "end": "09/16/2028",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/12/2027",
+              "end": "06/18/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/17/2027",
+              "end": "07/29/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "05/29/2027",
+              "end": "06/04/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/31/2026",
+              "end": "03/12/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "05/15/2027",
+              "end": "05/21/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            }
+          ]
+        }
+      ],
+      "publicDays": [
+        {
+          "date": "2026-10-01",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-09",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-10",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-11",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-12",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-13",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-14",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-15",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-16",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-17",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-18",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-19",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-20",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-21",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-22",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-23",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-24",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-25",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-26",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-27",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-28",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-29",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-30",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-31",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-01",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-02",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-03",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-04",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-05",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-06",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-07",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-08",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-09",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-10",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-11",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-12",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-13",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-14",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-15",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-16",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-17",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-18",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-19",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-20",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-21",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-22",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-23",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-24",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-25",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-26",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-27",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-28",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-29",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-30",
+          "public": "blocked",
+          "apiBlocked": true
+        }
+      ],
+      "differences": []
+    },
+    {
+      "id": 1813,
+      "name": "Villa Roncovisi",
+      "url": "https://www.promozionevilla.it/wp-json/promovilla/v1/availabilities/1813",
+      "payload": [
+        {
+          "id": 1813,
+          "title": "Villa Roncovisi",
+          "availabilities": [
+            {
+              "start": "09/11/2027",
+              "end": "09/17/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "05/22/2027",
+              "end": "05/28/2027",
+              "status": "CONFIRMED",
+              "sequence": true
+            },
+            {
+              "start": "06/05/2027",
+              "end": "06/11/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "12/24/2026",
+              "end": "12/26/2026",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/17/2026",
+              "end": "10/23/2026",
+              "status": "CONFIRMED",
+              "sequence": true
+            },
+            {
+              "start": "11/07/2026",
+              "end": "11/13/2026",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "08/28/2027",
+              "end": "09/03/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/04/2027",
+              "end": "09/10/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/26/2027",
+              "end": "07/02/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/24/2027",
+              "end": "07/30/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "05/20/2028",
+              "end": "05/26/2028",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/03/2027",
+              "end": "07/09/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/19/2027",
+              "end": "06/25/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/12/2027",
+              "end": "06/18/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/31/2027",
+              "end": "08/06/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "08/21/2027",
+              "end": "08/27/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "12/30/2026",
+              "end": "01/01/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "09/25/2027",
+              "end": "09/28/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "08/07/2027",
+              "end": "08/13/2027",
+              "status": "CONFIRMED",
+              "sequence": true
+            }
+          ]
+        }
+      ],
+      "publicDays": [
+        {
+          "date": "2026-10-01",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-09",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-10",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-11",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-12",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-13",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-14",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-15",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-16",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-17",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-18",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-19",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-20",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-21",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-22",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-23",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-24",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-25",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-26",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-27",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-28",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-29",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-30",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-31",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-01",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-02",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-03",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-04",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-05",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-06",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-07",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-08",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-09",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-10",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-11",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-12",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-13",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-14",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-15",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-16",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-17",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-18",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-19",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-20",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-21",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-22",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-23",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-24",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-25",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-26",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-27",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-28",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-29",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-30",
+          "public": "source-available",
+          "apiBlocked": false
+        }
+      ],
+      "differences": [
+        {
+          "date": "2026-10-01",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "blocked",
+          "apiBlocked": false
+        }
+      ]
+    },
+    {
+      "id": 1335,
+      "name": "Villa Torre del Cielo",
+      "url": "https://www.promozionevilla.it/wp-json/promovilla/v1/availabilities/1335",
+      "payload": [
+        {
+          "id": 1335,
+          "title": "Villa Torre Del Cielo",
+          "availabilities": [
+            {
+              "start": "11/13/2027",
+              "end": "03/10/2028",
+              "status": "CONFIRMED",
+              "sequence": true
+            },
+            {
+              "start": "06/06/2027",
+              "end": "06/12/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "11/14/2026",
+              "end": "03/12/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/17/2026",
+              "end": "10/23/2026",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "03/17/2027",
+              "end": "03/21/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "04/10/2027",
+              "end": "04/16/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "10/28/2026",
+              "end": "11/04/2026",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/03/2027",
+              "end": "07/16/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "04/24/2027",
+              "end": "04/30/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "06/26/2027",
+              "end": "07/02/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "05/22/2027",
+              "end": "05/28/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "04/17/2027",
+              "end": "04/23/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            },
+            {
+              "start": "07/17/2027",
+              "end": "07/30/2027",
+              "status": "CONFIRMED",
+              "sequence": false
+            }
+          ]
+        }
+      ],
+      "publicDays": [
+        {
+          "date": "2026-10-01",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-09",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-10",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-11",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-12",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-13",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-14",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-15",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-16",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-17",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-18",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-19",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-20",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-21",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-22",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-23",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-24",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-25",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-26",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-27",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-28",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-29",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-30",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-31",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-01",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-02",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-03",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-04",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-05",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-06",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-07",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-08",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-09",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-10",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-11",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-12",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-13",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-14",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-15",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-16",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-17",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-18",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-19",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-20",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-21",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-22",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-23",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-24",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-25",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-26",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-27",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-28",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-29",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-11-30",
+          "public": "blocked",
+          "apiBlocked": true
+        }
+      ],
+      "differences": [
+        {
+          "date": "2026-10-03",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-09",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-10",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-11",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-12",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-13",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-14",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-15",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-16",
+          "public": "blocked",
+          "apiBlocked": false
+        }
+      ]
+    },
+    {
+      "id": 6630,
+      "name": "Villa Volterra",
+      "url": "https://www.promozionevilla.it/wp-json/promovilla/v1/availabilities/6630",
+      "payload": [
+        {
+          "id": 6630,
+          "title": "Villa Volterra",
+          "availabilities": [
+            {
+              "start": "10/24/2026",
+              "end": "10/28/2026",
+              "status": "",
+              "sequence": false
+            },
+            {
+              "start": "04/28/2027",
+              "end": "05/04/2027",
+              "status": "",
+              "sequence": false
+            },
+            {
+              "start": "06/12/2027",
+              "end": "07/02/2027",
+              "status": "",
+              "sequence": false
+            },
+            {
+              "start": "08/14/2027",
+              "end": "08/27/2027",
+              "status": "",
+              "sequence": false
+            },
+            {
+              "start": "09/04/2027",
+              "end": "09/17/2027",
+              "status": "",
+              "sequence": false
+            }
+          ]
+        }
+      ],
+      "publicDays": [
+        {
+          "date": "2026-10-01",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-09",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-10",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-11",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-12",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-13",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-14",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-15",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-16",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-17",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-18",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-19",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-20",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-21",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-22",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-23",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-24",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-25",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-26",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-27",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-28",
+          "public": "blocked",
+          "apiBlocked": true
+        },
+        {
+          "date": "2026-10-29",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-30",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-31",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-01",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-02",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-03",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-04",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-05",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-06",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-07",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-08",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-09",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-10",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-11",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-12",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-13",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-14",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-15",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-16",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-17",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-18",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-19",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-20",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-21",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-22",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-23",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-24",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-25",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-26",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-27",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-28",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-29",
+          "public": "source-available",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-11-30",
+          "public": "source-available",
+          "apiBlocked": false
+        }
+      ],
+      "differences": [
+        {
+          "date": "2026-10-01",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-02",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-03",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-04",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-05",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-06",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-07",
+          "public": "blocked",
+          "apiBlocked": false
+        },
+        {
+          "date": "2026-10-08",
+          "public": "blocked",
+          "apiBlocked": false
+        }
+      ]
+    }
+  ]
+}

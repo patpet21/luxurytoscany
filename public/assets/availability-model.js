@@ -55,17 +55,58 @@ export function normalizeFeed(data, villa) {
 export function usableSnapshot(snapshot, now = Date.now()) {
   const checked = Date.parse(snapshot?.checkedAt), expires = Date.parse(snapshot?.expiresAt);
   return snapshot?.state === 'synced' && Number.isFinite(checked) && Number.isFinite(expires) &&
-    checked <= now + 5000 && expires > now && expires - checked <= CACHE_MS &&
+    checked <= now + 5000 && expires > now && expires > checked && expires - checked <= CACHE_MS &&
     Array.isArray(snapshot.intervals) && snapshot.intervals.length > 0 &&
     snapshot.intervals.every(i => civilDate(i.start) && civilDate(i.endExclusive) && i.start < i.endExclusive);
 }
 export function dayState(snapshot, iso, now = Date.now()) {
   if (!civilDate(iso) || !usableSnapshot(snapshot, now)) return 'unknown';
-  return snapshot.intervals.some(i => i.start <= iso && iso < i.endExclusive) ? 'blocked' : 'unverified';
+  if(snapshot.intervals.some(i => i.start <= iso && iso < i.endExclusive))return 'blocked';
+  const month=snapshot.months?.[iso.slice(0,7)];
+  if(!month || !freshMonth(month,now))return 'unverified';
+  if(month.days[iso]==='blocked')return 'blocked';
+  return month.conflict ? 'unverified' : month.days[iso]==='available' ? 'available' : 'unverified';
 }
 export function stayState(snapshot, arrival, departure, now = Date.now()) {
   if (!civilDate(arrival) || !civilDate(departure) || departure <= arrival) return 'invalid';
   if (!usableSnapshot(snapshot, now)) return 'unknown';
   // A stay is [arrival, departure): check-out does not consume a night.
-  return snapshot.intervals.some(i => arrival < i.endExclusive && departure > i.start) ? 'blocked' : 'unverified';
+  if(snapshot.intervals.some(i => arrival < i.endExclusive && departure > i.start))return 'blocked';
+  let verified=true, nights=0;
+  for(let day=arrival;day<departure;day=nextDay(day)) {
+    if(++nights>366)return 'invalid';
+    const state=dayState(snapshot,day,now);
+    if(state==='blocked')return 'blocked';
+    if(state!=='available')verified=false;
+  }
+  return verified?'available':'unverified';
+}
+
+export const italyToday = (now=Date.now()) => new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(now));
+export function freshMonth(month,now=Date.now()) {
+  const checked=Date.parse(month?.checkedAt), expires=Date.parse(month?.expiresAt);
+  return !!month?.days && typeof month.days==='object' && !Array.isArray(month.days) && Number.isFinite(checked) && checked<=now+5000 && expires>now && expires>checked && expires-checked<=CACHE_MS;
+}
+export function requestState(snapshot,arrival,departure,now=Date.now()) {
+  if(civilDate(arrival) && arrival<italyToday(now))return 'past';
+  return stayState(snapshot,arrival,departure,now);
+}
+export function monthsForStay(arrival,departure) {
+  if(!civilDate(arrival)||!civilDate(departure)||departure<=arrival || (Date.parse(departure)-Date.parse(arrival))/86400000>366)return [];
+  const result=new Set();
+  for(let day=arrival;day<departure;day=nextDay(day))result.add(day.slice(0,7));
+  return [...result];
+}
+export function selectDate(snapshot, selection, date, now=Date.now()) {
+  const before=selection||{arrival:'',departure:''};
+  if(!civilDate(date) || date<italyToday(now))return {selection:before,error:'Please choose today or a future date.'};
+  // A blocked arrival day can be the departure boundary of a valid prior stay.
+  if(before.arrival && !before.departure && date>before.arrival) {
+    const state=requestState(snapshot,before.arrival,date,now);
+    if(['blocked','unknown','invalid','past'].includes(state))return {selection:before,error:state==='blocked'?'This stay crosses occupied nights. Choose an earlier check-out.':'These dates cannot currently be verified. Please refresh or ask our team.'};
+    return {selection:{arrival:before.arrival,departure:date},error:''};
+  }
+  const state=dayState(snapshot,date,now);
+  if(!['available','unverified'].includes(state))return {selection:before,error:state==='blocked'?'This night is occupied.':'These dates cannot currently be verified.'};
+  return {selection:{arrival:date,departure:''},error:''};
 }

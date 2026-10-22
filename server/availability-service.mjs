@@ -1,5 +1,6 @@
 import {createHash} from 'node:crypto';
-import {CACHE_MS, CATALOGUE, normalizeFeed, civilDate, stayState} from '../public/assets/availability-model.js';
+import {CACHE_MS, CATALOGUE, normalizeFeed, civilDate, requestState, italyToday, monthsForStay} from '../public/assets/availability-model.js';
+import {createPublicCalendar} from './public-calendar.mjs';
 
 const SOURCE = 'https://www.promozionevilla.it/wp-json/promovilla/v1/availabilities/';
 const MAX_BYTES = 512_000;
@@ -23,7 +24,8 @@ async function limitedJSON(response) {
 }
 
 // Per-instance cache, bounded by the ten-villa allowlist. No jobs or background writes.
-export function createAvailabilityService({fetchImpl = fetch, now = Date.now, timeoutMs = 6000} = {}) {
+export function createAvailabilityService({fetchImpl = fetch, now = Date.now, timeoutMs = 6000, calendarService} = {}) {
+  const calendar=calendarService||createPublicCalendar({fetchImpl,now,timeoutMs});
   const cache = new Map(), pending = new Map();
   async function refresh(villa, previous) {
     const controller = new AbortController();
@@ -46,8 +48,7 @@ export function createAvailabilityService({fetchImpl = fetch, now = Date.now, ti
       const snapshot = {state:'synced', villa:villa.slug, id:villa.id, title:villa.title, source:SOURCE+villa.id,
         semantics:'blocked-nights-inclusive-upstream', coverage:'not-declared', intervals:good.intervals,
         checkedAt:new Date(checked).toISOString(), expiresAt:new Date(checked+CACHE_MS).toISOString(),
-        changedAt:good.changedAt, version:good.version,
-        sourceWarning:villa.id === 5054 ? 'A discrepancy between the provider’s calendars was observed on 22 October 2026. Occupied dates remain blocked; please ask our team to verify every stay.' : null};
+        changedAt:good.changedAt, version:good.version, sourceWarning:null};
       cache.set(villa.slug, {snapshot, good, until:checked+CACHE_MS});
       return snapshot;
     } catch {
@@ -74,8 +75,18 @@ export function createAvailabilityService({fetchImpl = fetch, now = Date.now, ti
     if (!villa) return reply({state:'unverified', intervals:[], reason:'No verified source for this villa.'}, 404);
     const arrival = params.get('arrival'), departure = params.get('departure');
     if ((arrival !== null || departure !== null) && (!civilDate(arrival) || !civilDate(departure) || departure <= arrival)) return reply({state:'unavailable', reason:'Invalid stay dates.'}, 400);
-    const snapshot = await get(villa);
-    const data = arrival ? {...snapshot, stay:{arrival, departure, state:stayState(snapshot, arrival, departure, now())}} : snapshot;
+    const requested=params.has('months')?params.get('months').split(','):arrival?monthsForStay(arrival,departure):[];
+    const current=italyToday(now()).slice(0,7);
+    const monthNumber=value=>Number(value.slice(0,4))*12+Number(value.slice(5))-1;
+    if(requested.length>13 || (arrival&&!monthsForStay(arrival,departure).length) || requested.some(m=>!/^\d{4}-\d{2}$/.test(m)||!civilDate(m+'-01')||monthNumber(m)<monthNumber(current)||monthNumber(m)>monthNumber(current)+36))return reply({state:'unavailable',reason:'Choose dates within the next three years and a stay of up to 366 nights.'},400);
+    const [base,months]=await Promise.all([get(villa),requested.length?calendar(villa,[...new Set(requested)]):Promise.resolve({})]);
+    const snapshot={...base,months};
+    const today=italyToday(now());
+    for(const month of Object.values(months)) {
+      month.conflict=Object.entries(month.days).some(([date,state])=>date>=today && state==='available' && base.intervals.some(i=>i.start<=date&&date<i.endExclusive));
+    }
+    snapshot.sourceWarning=Object.values(months).some(m=>m.conflict)?'A discrepancy between the provider’s calendars was detected. Occupied dates remain blocked; other dates in affected months need confirmation.':null;
+    const data = arrival ? {...snapshot, stay:{arrival, departure, state:requestState(snapshot, arrival, departure, now())}} : snapshot;
     return reply(data, snapshot.state === 'synced' ? 200 : 503);
   };
 }

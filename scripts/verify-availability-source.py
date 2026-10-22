@@ -48,12 +48,15 @@ def parse_calendar(source):
 
 if __name__ == '__main__':
     overview = get(BASE+'availability/')
-    current = parse_calendar(overview)
     attrs = dict(re.findall(r'data-([a-z_]+)="([^"]*)"', re.search(r'<div class="wpbs-overview-container"[^>]+>', overview)[0]))
+    if attrs.get('current_year') == '2026' and attrs.get('current_month') == '10':
+        current = parse_calendar(overview)
+    else:
+        attrs.update(action='wpbs_refresh_calendar_overview', current_year='2026', current_month='10')
+        current = parse_calendar(get(BASE+'wp-admin/admin-ajax.php', attrs))
     # The public month selector uses this read-only AJAX action via POST.
-    # Keep the same exposed data attributes and request a representative July.
-    year = datetime.date.today().year + 1
-    attrs.update(action='wpbs_refresh_calendar_overview', current_year=str(year), current_month='7')
+    # Explicitly audit November 2026 alongside October, as requested.
+    attrs.update(action='wpbs_refresh_calendar_overview', current_year='2026', current_month='11')
     future = parse_calendar(get(BASE+'wp-admin/admin-ajax.php', attrs))
     client = get(BASE+'wp-content/plugins/villa-availabilities/app/dist/app.js')
     if '"disabled-dates":n.value' not in client or 'n.value=c[0].availabilities' not in client:
@@ -81,6 +84,6 @@ if __name__ == '__main__':
                 'client':BASE+'wp-content/plugins/villa-availabilities/app/dist/app.js',
                 'clientBinding':'API availabilities are passed to v-calendar disabled-dates',
                 'semantics':'Blocked calendar dates, start and end inclusive. Arrival/departure times are not supplied.', 'villas':villas}
-    output = ROOT/'tests/fixtures/availability-source.json'
+    output = ROOT/'tests/fixtures/availability-oct-nov-2026.json'
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(evidence, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
