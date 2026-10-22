@@ -409,3 +409,78 @@ body[data-page="/"] .journey .text-link{color:#e5ce9e}
   .cinema-hero--video .video-control { right: 7%; bottom: 60px; }
   .cinema-search--intro .stay-finder { padding: 26px 7% 28px; }
 }
+
+/* A small original portrait deserves an intimate frame, not a full-column crop. */
+.cinema-about .cinema-about-photo { min-height: 0; padding: 55px 8%; display: grid; place-items: center; background: radial-gradient(ellipse at center,#25382b,#111c16 75%); }
+.cinema-founder { width: min(100%,300px); margin: 0; padding: 14px; border: 1px solid #c9a76e70; background: #19271f; }
+.cinema-founder-portrait { position: relative; aspect-ratio: 1; overflow: hidden; }
+.cinema-about-photo .cinema-founder-portrait img { position: absolute; inset: 0 auto auto 0; width: 100%; height: 400%; max-width: none; object-fit: fill; }
+.cinema-founder figcaption { padding: 20px 4px 6px; display: grid; gap: 4px; }
+.cinema-founder figcaption .eyebrow { font-size: 8px; margin-bottom: 5px; }
+.cinema-founder figcaption strong { font: 400 29px/1.2 'Bodoni Moda',Georgia,serif; color: #f7f0e2; }
+.cinema-founder figcaption>span:last-child { font-size: 11px; color: #c6cbbc; }
+.about-story .story-photo { width: 100%; max-width: 360px; justify-self: center; align-self: center; }
+
+/* Concierge keeps its own palette on both the dark home and light inner pages. */
+.concierge-dialog {
+  --paper:#fbf8f1; --ink:#18281f; --muted:#596458; --ivory:#fffdf7;
+  --line:#dbd5c7; --gold:#846128; --bronze:#846128; --night:#10231a;
+  --gold-surface:#dfc18b; --brand-navy:#18281f;
+  background: #fbf8f1; color: #18281f; width: 450px; border: 1px solid #bd9b60;
+  border-radius: 16px; box-shadow: 0 24px 90px #07140e55;
+}
+.concierge-dialog::backdrop { background: #07140e70; backdrop-filter: blur(5px); }
+.concierge-launch {
+  gap: 12px; padding: 12px 16px 12px 12px; background: linear-gradient(135deg,#20392b,#0d2017);
+  border: 1px solid #cead70; border-radius: 16px; color: #faf3e5;
+  box-shadow: 0 12px 40px #07140e4d; letter-spacing: 0; max-width: calc(100vw - 32px);
+}
+.concierge-launch:hover { background: #294732; border-color: #efcf93; }
+.concierge-avatar { width: 52px; height: 52px; display: grid; place-items: center; flex: none; border-radius: 50%; background: linear-gradient(145deg,#f1dfb5,#bc9251); color: #173024; border: 1px solid #f3deae; box-shadow: inset 0 0 0 4px #fbf0d530; }
+.concierge-avatar svg { width: 42px; height: 42px; }
+.concierge-launch-copy { display: grid; gap: 3px; }
+.concierge-launch-kicker { color: #e4c88f; font-size: 8px; letter-spacing: .12em; }
+.concierge-launch-copy strong { font-size: 13px; font-weight: 500; line-height: 1.5; }
+.concierge-launch .concierge-launch-copy small { font-size: 10px; color: #d5dfd0; opacity: 1; margin: 0; letter-spacing: 0; }
+.concierge-chat-icon { display: grid; place-items: center; width: 31px; height: 31px; color: #e9cc92; margin-left: 4px; }
+.concierge-chat-icon svg { width: 24px; height: 24px; }
+.concierge-launch:focus-visible { outline: 2px solid #e9cc92; outline-offset: 4px; }
+.concierge-dialog .concierge-header { background: linear-gradient(120deg,#20392b,#10231a); padding: 20px; gap: 13px; border-bottom: 1px solid #c9a76e; }
+.concierge-dialog .concierge-header .eyebrow { color: #e4c88f; font-size: 8px; letter-spacing: .1em; }
+.concierge-dialog .concierge-header h2 { color: #faf3e5; font-size: 27px; }
+.concierge-dialog .concierge-header #concierge-mode { color: #d5dfd0; font-size: 10px; }
+.concierge-dialog .concierge-header>button { display: grid; place-items: center; width: 40px; height: 40px; flex: none; border: 1px solid #c9a76e90; border-radius: 50%; color: #f0d7a6; }
+.concierge-dialog .concierge-contact { background: #f0ecdf; }
+.concierge-dialog .concierge-contact a { color: #263e2c; background: #faf8f1; border-color: #c9cdbc; }
+.concierge-dialog .concierge-tabs button { font-size: 11px; color: #596458; }
+.concierge-dialog .concierge-tabs button[aria-selected="true"] { color: #72521d; border-color: #947039; font-weight: 600; }
+.concierge-dialog .concierge-message { background: #fffdf7; color: #18281f; border-color: #ded5c4; font-size: 13px; border-radius: 2px 12px 12px; }
+.concierge-dialog .concierge-message.user { background: #e8eddf; border-radius: 12px 2px 12px 12px; }
+.concierge-dialog .concierge-speaker { color: #72521d; font-size: 9px; }
+.concierge-dialog .concierge-prompts button { background: #faf6ea; color: #344832; border: 1px solid #b9aa8b; border-radius: 20px; font-size: 11px; padding: 9px 12px; min-height: 40px; }
+.concierge-dialog .concierge-prompts button:hover { background: #ebe2ce; }
+.concierge-dialog .concierge-composer { border: 1px solid #a49e89; border-radius: 12px; background: #fffdf7; }
+.concierge-dialog .concierge-composer textarea { color: #18281f; font-size: 14px; }
+.concierge-dialog .concierge-composer textarea::placeholder { color: #63705f; opacity: 1; }
+.concierge-dialog .concierge-composer button { width: 44px; height: 44px; border-radius: 50%; background: #173024; color: #f0d7a6; }
+.concierge-dialog .concierge-bottom { font-size: 10px; }
+.concierge-dialog .concierge-bottom button { color: #72521d; min-height: 30px; }
+@media(max-width:640px) {
+  .cinema-about .cinema-about-photo { padding: 40px 7%; }
+  .cinema-founder { width: min(100%,280px); }
+  .about-story .story-photo { max-width: 320px; }
+  .concierge-launch { right: 12px; bottom: 12px; padding: 10px 12px; gap: 10px; }
+  .concierge-launch .concierge-avatar { width: 44px; height: 44px; }
+  .concierge-launch .concierge-avatar svg { width: 36px; height: 36px; }
+  .concierge-launch-kicker { font-size: 7px; }
+  .concierge-launch-copy strong { font-size: 12px; }
+  .concierge-launch .concierge-launch-copy small { font-size: 9px; }
+  .concierge-chat-icon { display: none; }
+  .concierge-dialog { width: calc(100vw - 16px); border-radius: 14px; }
+  .concierge-dialog .concierge-header { padding: 16px 14px; gap: 10px; }
+  .concierge-dialog .concierge-header h2 { font-size: 24px; }
+  .concierge-dialog .concierge-header .concierge-avatar { width: 44px; height: 44px; }
+  .concierge-dialog .concierge-header .concierge-avatar svg { width: 36px; height: 36px; }
+  .concierge-dialog .concierge-header>button { width: 36px; height: 36px; }
+  .concierge-dialog .concierge-composer textarea { font-size: 16px; }
+}

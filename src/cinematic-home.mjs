@@ -6,6 +6,7 @@ export function cinematicHome(page,data,ui) {
   const country=data.villas.find(v=>v.path!==lead.path && v.images?.length>1)||data.villas[1]||lead;
   const experience=data.get('/wine-tasting')||data.get('/cooking-classes')||data.experiences[0]||page;
   const about=data.get('/about')||page;
+  const founderStrip=about.images?.find(i=>/top half/i.test(i.alt||''));
   const destinations=data.cityPages.filter(p=>p.images?.length).slice(0,3);
   const backdrop=page.images?.length?page:country;
   const highlights=[
@@ -60,7 +61,7 @@ export function cinematicHome(page,data,ui) {
       <p>Super Tuscany was founded by Christian Ferrara to share authentic Italian hospitality, carefully chosen properties and the kind of guidance that makes every journey personal.</p>
       <a class="text-link" href="${esc(paths.about)}">Meet Super Tuscany ${arrow}</a>
     </div>
-    <div class="cinema-about-photo">${picture(about,'',0)}</div>
+    <div class="cinema-about-photo">${founderStrip?`<figure class="cinema-founder"><div class="cinema-founder-portrait">${picture({images:[{...founderStrip,alt:'Christian Ferrara with his dog in Italy'}]})}</div><figcaption><span class="eyebrow">YOUR LOCAL HOST</span><strong>Christian Ferrara</strong><span>Founder, Super Tuscany</span></figcaption></figure>`:picture(about,'',0)}</div>
   </section>
   <section class="cinema-last-word" aria-labelledby="cinema-final-title">
     ${picture(backdrop,'',0)}

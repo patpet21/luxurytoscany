@@ -36,7 +36,7 @@ async function load(){
   const response=await fetch('/assets/concierge-data.json?v='+(versions.get('data')||'1'));if(!response.ok)throw Error('Catalogue unavailable');knowledge=await response.json();
   message('assistant',guideReply(knowledge,'Hello').text);
 }
-function mode(){ $('#concierge-mode').textContent=activePanel==='message'?label('Leave a message · reply by email','Lascia un messaggio · risposta via email'):label('Website guide · not live support','Guida del sito · non è assistenza in diretta'); }
+function mode(){ $('#concierge-mode').textContent=activePanel==='message'?label('Message our team · reply by email','Scrivi al team · risposta via email'):label('Automated guide · not live support','Guida automatica · non è assistenza in diretta'); }
 function send(text){
   if(!knowledge||!text.trim())return;
   message('user',text);history.push({role:'user',content:text});input.value='';
