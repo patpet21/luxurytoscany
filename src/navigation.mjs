@@ -1,4 +1,7 @@
-export function navigation(data,{esc,arrow,paths,cities,indoors,outdoors,families,picture}){
+export function navigation(data,{esc,paths,cities,indoors,outdoors,families,picture}){
+  const svg=(paths)=>`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${paths}</svg>`;
+  const arrow=`<span class="nav-action-icon" aria-hidden="true">${svg('<path d="M4 12h15m-6-6 6 6-6 6"/>')}</span>`;
+  const chevron=svg('<path d="m6 9 6 6 6-6"/>');
   const icons=[
     '<path d="m3 11 9-8 9 8v9H3v-9Zm6 9v-7h6v7"/>',
     '<circle cx="12" cy="12" r="9"/><path d="m15 9-2 4-4 2 2-4 4-2Z"/>',
@@ -7,7 +10,7 @@ export function navigation(data,{esc,arrow,paths,cities,indoors,outdoors,familie
     '<path d="M12 21s-9-5.5-9-12a5 5 0 0 1 9-2.8A5 5 0 0 1 21 9c0 6.5-9 12-9 12Z"/>'
   ];
   const navIcon=(i)=>'<svg class="nav-symbol-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">'+icons[i]+'</svg>';
-  const link=([name,url])=>`<a class="nav-tile" data-nav-item href="${esc(url)}"><span class="nav-tile-dot" aria-hidden="true"></span><span class="nav-tile-name">${esc(name)}</span><span class="nav-tile-arrow" aria-hidden="true">↗</span></a>`;
+  const link=([name,url])=>`<a class="nav-tile" data-nav-item href="${esc(url)}"><span class="nav-tile-dot" aria-hidden="true"></span><span class="nav-tile-name">${esc(name)}</span>${arrow}</a>`;
   const group=(title,items)=>`<section class="nav-section" data-nav-section><h3>${esc(title)}</h3><div class="nav-link-list">${items.map(link).join('')}</div></section>`;
   const menus=[
     {name:'Villas',hint:'Stay somewhere special',image:data.villas[0],url:paths.villas,title:'A home.<br><em>Entirely yours.</em>',text:'Eleven private villas. One personal way to travel.',cta:'Explore the collection',cols:[['Find your stay',[['All private villas',paths.villas],['By destination',paths.cities],['Ask about availability','/contact?type=booking']]],['The villa collection',data.villas.slice(0,6).map(p=>[p.title,p.path])],['More beautiful homes',data.villas.slice(6).map(p=>[p.title,p.path])]]},
@@ -26,10 +29,10 @@ export function navigation(data,{esc,arrow,paths,cities,indoors,outdoors,familie
   const total=m.cols.reduce((count,[,items])=>count+items.length,0);
   const searchable=total>=10;
   return `<details class="nav-group" data-nav-group>
-    <summary><span class="nav-symbol">${navIcon(i)}</span><span class="nav-label"><span>${esc(m.name)}</span><small>${esc(m.hint)}</small></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+    <summary><span class="nav-symbol">${navIcon(i)}</span><span class="nav-label"><span>${esc(m.name)}</span><small>${esc(m.hint)}</small></span><span class="chevron" aria-hidden="true">${chevron}</span></summary>
     <div class="mega" role="region" aria-label="${esc(m.name)} menu">
-      <div class="mega-toolbar"><div class="mega-heading"><span class="eyebrow">EXPLORE SUPER TUSCANY</span><strong>${esc(m.name)}</strong></div><div class="mega-actions"><a class="mega-view-all" href="${esc(m.url)}">View all ${esc(m.name)} <span aria-hidden="true">↗</span></a><button class="mega-close" type="button" data-nav-close aria-label="Close ${esc(m.name)} menu">×</button></div></div>
-      <div class="mega-inner"><a class="nav-feature" href="${esc(m.url)}"><div class="nav-feature-image">${picture(m.image)}<span>${arrow}</span></div><h2>${m.title}</h2><p>${esc(m.text)}</p><strong>${esc(m.cta)} ${arrow}</strong></a>
+      <div class="mega-toolbar"><div class="mega-heading"><span class="eyebrow">EXPLORE SUPER TUSCANY</span><strong>${esc(m.name)}</strong></div><div class="mega-actions"><a class="mega-view-all" href="${esc(m.url)}">View all ${esc(m.name)} ${arrow}</a><button class="mega-close" type="button" data-nav-close aria-label="Close ${esc(m.name)} menu">${svg('<path d="m6 6 12 12M18 6 6 18"/>')}</button></div></div>
+      <div class="mega-inner"><a class="nav-feature" href="${esc(m.url)}"><div class="nav-feature-image">${picture(m.image)}${arrow}</div><h2>${m.title}</h2><p>${esc(m.text)}</p><strong>${esc(m.cta)} ${arrow}</strong></a>
         <div class="nav-directory">
           ${searchable?`<div class="nav-filter"><label class="nav-search-field"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">Search ${esc(m.name)} links</span><input type="search" data-nav-search autocomplete="off" placeholder="Search ${esc(m.name.toLowerCase())}..." aria-label="Search ${esc(m.name)} links"></label><span class="nav-filter-count" data-nav-count aria-live="polite">${total} options</span></div>`:''}
           <div class="nav-sections">${m.cols.map(([title,items])=>group(title,items)).join('')}</div>
