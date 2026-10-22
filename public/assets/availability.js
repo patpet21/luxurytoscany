@@ -1,5 +1,7 @@
 const version=new URL(import.meta.url).searchParams.get('model')||'1';
 const {CATALOGUE,nameKey,dayState,requestState,usableSnapshot,freshMonth,italyToday,monthsForStay,selectDate,civilDate}=await import(`./availability-model.js?v=${encodeURIComponent(version)}`);
+const submissionVersion=new URL(import.meta.url).searchParams.get('submission')||'1';
+const {createStaySubmission,sendStayRequest}=await import(`./stay-request.js?v=${encodeURIComponent(submissionVersion)}`);
 const snapshots=new Map(), pending=new Map(), controllers=[];
 const endpoint='/.netlify/functions/availability';
 const field=(root,selector)=>root.querySelector(selector);
@@ -225,21 +227,51 @@ document.addEventListener('click',event=>{
   if(pageCalendar&&title===pageCalendar.title){pageCalendar.root.scrollIntoView({block:'center'});field(pageCalendar.root,'[data-calendar-instructions]').focus();}
   else openPicker(title,{arrival:field(document,'#home-arrival')?.value,departure:field(document,'#home-departure')?.value,adults:field(document,'#home-adults')?.value||2,children:field(document,'#home-children')?.value||0});
 },true);
-let approved='',busy=false;
-const signature=()=>JSON.stringify(['villa','arrival','departure','adults','children'].map(k=>form.elements[k].value));
-form.addEventListener('submit',async event=>{
-  if(approved===signature()){approved='';return;}
-  event.preventDefault();event.stopImmediatePropagation();if(busy)return;
-  const selected=byTitle(form.elements.villa.value),arrival=form.elements.arrival.value,departure=form.elements.departure.value,months=monthsForStay(arrival,departure);
-  if(!selected||!months.length){openPicker(form.elements.villa.value);return;}
-  busy=true;const before=signature(),button=field(form,'button[type="submit"]');button.disabled=true;
-  const snapshot=await readSource(selected,months,true);busy=false;button.disabled=false;
-  if(before!==signature()||!inquiry.open)return;
-  const state=requestState(snapshot,arrival,departure);updateForm();
-  const capacity=Number(form.elements.villa.selectedOptions[0]?.dataset.capacity)||100;
-  if(!['available','unverified'].includes(state)||Number(form.elements.adults.value)+Number(form.elements.children.value)>capacity){note.textContent='Your dates or group cannot currently be accepted. Please review them in the villa calendar.';return;}
-  if(!form.checkValidity()){form.reportValidity();return;}approved=before;form.requestSubmit(button);
-},true);
+const submitButton=field(form,'[data-stay-submit]'),requestFields=field(form,'[data-stay-fields]');
+const receiptPanel=field(form,'[data-stay-receipt]'),submissionStatus=field(form,'.form-status');
+let submissionEpoch=1;
+inquiry.addEventListener('close',()=>submissionEpoch++);
+const submitter=createStaySubmission({
+  send:payload=>['localhost','127.0.0.1','[::1]'].includes(location.hostname)?Promise.resolve({status:'preview',message:'Preview mode: your selected dates and details were checked. Nothing has been sent.'}):sendStayRequest(payload),
+  read:()=>Object.fromEntries(['villa','arrival','departure','adults','children','first-name','last-name','email','phone','message','privacy-consent','_gotcha'].map(key=>[key,key==='privacy-consent'?(form.elements[key].checked?'accepted':''):form.elements[key].value.trim()])),
+  context:()=>inquiry.open&&!field(document,'#booking-panel').hidden?String(submissionEpoch):null,
+  async validate(data) {
+    const selected=byTitle(data.villa),months=monthsForStay(data.arrival,data.departure);
+    if(!selected||!months.length)return {ok:false,message:'Choose your villa and dates in the controlled calendar before sending your enquiry.'};
+    if(!form.checkValidity()){form.reportValidity();return {ok:false,message:'Please complete the required details and privacy consent.'};}
+    if(data._gotcha)return {ok:false,message:'The enquiry could not be sent. Please reload the page and try again.'};
+    const snapshot=await readSource(selected,months,true),state=requestState(snapshot,data.arrival,data.departure);updateForm();
+    const capacity=Number(form.elements.villa.selectedOptions[0]?.dataset.capacity)||100;
+    const adults=Number(data.adults),children=Number(data.children);
+    if(!['available','unverified'].includes(state)||!Number.isInteger(adults)||!Number.isInteger(children)||adults<1||children<0||adults+children>capacity)
+      return {ok:false,message:'Your dates or group cannot currently be accepted. Please review them in the villa calendar. Nothing has been sent.'};
+    return {ok:true,metadata:{'availability-check':state,'source-page':location.pathname,'enquiry-type':'Availability request only — not a confirmed reservation'}};
+  },
+  render(result) {
+    const pending=['checking','sending'].includes(result.status),success=result.status==='success';
+    form.setAttribute('aria-busy',String(pending));requestFields.disabled=result.status==='sending';
+    requestFields.hidden=success;receiptPanel.hidden=!success;submitButton.hidden=success;note.hidden=success;
+    submitButton.disabled=pending;submitButton.textContent=result.status==='checking'?'Checking dates…':result.status==='sending'?'Sending enquiry…':'Request availability ↗';
+    submissionStatus.dataset.state=result.status;
+    submissionStatus.textContent=result.status==='checking'?'Rechecking your selected nights…':result.status==='sending'?'Sending your availability enquiry securely…':result.message||'';
+    if(success) {
+      const data=result.data;
+      field(form,'[data-stay-receipt-summary]').textContent=`${data.villa} · ${label(data.arrival)} – ${label(data.departure)} · ${data.adults} ${Number(data.adults)===1?'adult':'adults'} · ${data.children} ${Number(data.children)===1?'child':'children'}`;
+      field(form,'[data-stay-receipt-id]').textContent=`Enquiry reference: ${result.requestId}`;
+      if(inquiry.open)receiptPanel.focus();
+    } else if(result.message&&inquiry.open)submissionStatus.focus();
+  }
+});
+function resetSubmissionView() {
+  if(submitter.busy)return;
+  submissionEpoch++;requestFields.hidden=false;requestFields.disabled=false;receiptPanel.hidden=true;submitButton.hidden=false;submitButton.disabled=false;note.hidden=false;
+  submissionStatus.textContent='';delete submissionStatus.dataset.state;
+}
+document.addEventListener('stay:open',resetSubmissionView);
+document.addEventListener('concierge:inquiry',event=>{if(event.detail?.kind==='booking')resetSubmissionView();});
+field(form,'[data-stay-new-enquiry]').addEventListener('click',()=>{const title=form.elements.villa.value;form.reset();resetSubmissionView();updateForm();openPicker(title);});
+form.addEventListener('submit',event=>{event.preventDefault();event.stopImmediatePropagation();void submitter.submit();},true);
+submitButton.disabled=false;
 
 let searchTimer;
 window.SuperTuscanyAvailability={
