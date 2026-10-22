@@ -48,7 +48,11 @@ $('#concierge-close').addEventListener('click',()=>{dialog.close();launch.focus(
 dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();});
 form.addEventListener('submit',e=>{e.preventDefault();if(knowledge)send(input.value.trim());});
 input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();form.requestSubmit();}});
-document.querySelectorAll('[data-concierge-prompt]').forEach(button=>button.addEventListener('click',()=>{if(knowledge)send(button.dataset.conciergePrompt);}));
+document.querySelectorAll('[data-concierge-prompt]').forEach(button=>button.addEventListener('click',()=>{
+  input.value=button.dataset.conciergePrompt;
+  input.focus();
+  input.setSelectionRange(input.value.length,input.value.length);
+}));
 document.querySelectorAll('[data-concierge-panel]').forEach(button=>{
   button.addEventListener('click',()=>button.dataset.conciergePanel==='message'?quickMessage():selectPanel('guide',true));
   button.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();const panel=event.key==='Home'?'guide':event.key==='End'?'message':activePanel==='guide'?'message':'guide';selectPanel(panel);document.querySelector(`[data-concierge-panel="${panel}"]`).focus();}});
